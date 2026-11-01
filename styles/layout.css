@@ -727,3 +727,15 @@ body:not(.reveal-viewport) .cover h2 {font-size:52px;}
 #s01.cover .cover-share img {background:#fff;}
 
 #s01.cover .author-grid {row-gap:40px;}
+
+/* Match the projected logo treatment in phone and scrolling slide footers. */
+body:not(.reveal-viewport) #s01.cover :is(.logo-uic,.logo-rotman),
+.reveal .slides>section.speaker-change :is(.logo-uic,.logo-rotman) {
+  filter:grayscale(1) contrast(2) invert(1);
+  mix-blend-mode:screen;
+}
+body:not(.reveal-viewport) #s01.cover .logo-buffalo,
+.reveal .slides>section.speaker-change .logo-buffalo {
+  filter:none;
+  mix-blend-mode:screen;
+}
