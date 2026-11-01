@@ -1,0 +1,68 @@
+/* Continuous quantities become visible through a short business story. */
+#s24 .dc-story {position:relative;}
+#s24 .dc-context {font-size:14px;color:var(--teal);letter-spacing:.4px;margin:0 0 5px;}
+#s24 .dc-question {font-size:29px;line-height:1.25;letter-spacing:-.5px;color:var(--ink);margin:0 0 23px;}
+#s24 .dc-applications {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+#s24 .dc-app-panel {min-width:0;background:var(--tint);border-radius:13px;padding:24px;}
+#s24 .dc-inventory {grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:0 24px;align-items:center;min-height:345px;}
+#s24 .dc-app-title {display:none;font:500 24px/1.2 "Avenir Next","Segoe UI",sans-serif;color:var(--ink);letter-spacing:-.4px;margin:0;}
+#s24 .dc-illustration {min-width:0;}
+#s24 .dc-illustration svg {display:block;width:100%;height:auto;max-height:320px;overflow:visible;}
+#s24 .dc-quantity {padding:10px 4px;}
+#s24 .dc-quantity label {display:block;color:var(--teal);font-size:17px;line-height:1.3;margin-bottom:10px;}
+#s24 .dc-quantity output {display:block;font-size:57px;font-weight:500;line-height:1.1;letter-spacing:-2px;color:var(--ink);font-variant-numeric:tabular-nums;margin-bottom:25px;white-space:nowrap;}
+#s24 .dc-quantity output small {font-size:24px;color:var(--muted);letter-spacing:0;font-weight:400;}
+#s24 .dc-quantity input {display:block;width:100%;accent-color:var(--teal);cursor:pointer;margin:0;}
+#s24 .dc-range-ends {display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:7px;}
+#s24 .dc-control-caption {font-size:15px;color:var(--muted);margin:22px 0 0;}
+#s24 .dc-operating-labels {display:none;grid-column:1/-1;justify-content:center;gap:70px;font-size:16px;color:var(--orange);}
+#s24 .dc-options {display:none;}
+#s24 .dc-lead-time,#s24 .dc-age-batches {opacity:0;transition:opacity .4s ease;}
+#s24 .dc-story[data-phase="complexity"] .dc-lead-time,#s24 .dc-story[data-phase="complexity"] .dc-age-batches {opacity:1;}
+#s24 .dc-story[data-phase="complexity"] .dc-operating-labels {display:flex;}
+#s24 .dc-story[data-phase="complexity"] .dc-inventory {padding-top:15px;padding-bottom:15px;}
+#s24 .dc-story[data-phase="complexity"] .dc-illustration svg {max-height:300px;}
+#s24 .dc-flow {opacity:.35;}
+#s24 .dc-story[data-running="true"] .dc-flow {opacity:1;animation:dc-flow 1.4s linear infinite;}
+@keyframes dc-flow {to {stroke-dashoffset:-32;}}
+#s24 .dc-story[data-phase="business"] .dc-app-panel {display:flex;flex-direction:column;align-items:stretch;min-height:340px;padding:20px;animation:dc-appear .6s ease both;}
+#s24 .dc-story[data-phase="business"] .dc-inventory {grid-column:auto;}
+#s24 .dc-story[data-phase="business"] .dc-energy {background:#eff7f4;animation-delay:.08s;}
+#s24 .dc-story[data-phase="business"] .dc-production {background:#fff2e6;animation-delay:.16s;}
+#s24 .dc-story[data-phase="business"] .dc-app-title {display:block;margin-bottom:16px;}
+#s24 .dc-story[data-phase="business"] .dc-illustration {display:flex;align-items:center;justify-content:center;height:140px;margin-bottom:8px;}
+#s24 .dc-story[data-phase="business"] .dc-illustration svg {max-height:140px;}
+#s24 .dc-story[data-phase="business"] .dc-quantity {margin-top:auto;padding:8px 0 0;}
+#s24 .dc-story[data-phase="business"] .dc-quantity label {font-size:15px;margin-bottom:5px;}
+#s24 .dc-story[data-phase="business"] .dc-quantity output {font-size:38px;letter-spacing:-1px;margin-bottom:18px;}
+#s24 .dc-story[data-phase="business"] .dc-quantity output small {font-size:19px;}
+#s24 .dc-story[data-phase="business"] .dc-control-caption,#s24 .dc-story[data-phase="business"] .dc-operating-labels {display:none;}
+#s24 .dc-closing {opacity:0;visibility:hidden;font-size:24px;line-height:1.3;color:var(--teal);margin:22px 0 0;border-top:1px solid var(--line);padding-top:16px;transition:opacity .5s ease;}
+#s24 .dc-story[data-phase="business"] .dc-closing {opacity:1;visibility:visible;}
+#s24 .dc-closing strong {font-weight:650;}
+#s24 .dc-story>.fragment {position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;}
+#s24 .dc-story[data-running="true"] .dc-belt {animation:dc-belt var(--dc-production-speed,1s) linear infinite;}
+#s24 .dc-story[data-running="true"] .dc-power-flow {animation:dc-flow var(--dc-power-speed,1s) linear infinite;}
+#s24 .dc-story[data-production-stopped="true"] .dc-belt,#s24 .dc-story[data-power-stopped="true"] .dc-power-flow {animation-play-state:paused;}
+@keyframes dc-belt {to {stroke-dashoffset:-30;}}
+@keyframes dc-appear {from {opacity:0;transform:translateY(9px);}to {opacity:1;transform:none;}}
+@media(max-width:700px) {
+ body:not(.reveal-viewport) #s24 .dc-applications {grid-template-columns:minmax(0,1fr);gap:18px;}
+ body:not(.reveal-viewport) #s24 .dc-app-panel {min-height:0;}
+ body:not(.reveal-viewport) #s24 .dc-question {font-size:25px;}
+ body:not(.reveal-viewport) #s24 .dc-closing {font-size:22px;}
+}
+@media(prefers-reduced-motion:reduce) {#s24 .dc-app-panel,#s24 .dc-flow,#s24 .dc-power-flow,#s24 .dc-belt {animation:none!important;}#s24 .dc-lead-time,#s24 .dc-age-batches,#s24 .dc-closing {transition:none;}}
+
+#s24 .dc-story[data-order-stopped="true"] .dc-supply-flow {opacity:.15;animation:none;}
+#s24 .dc-story[data-order-stopped="true"] .dc-truck {opacity:.25;}
+
+#s24 .dc-story[data-phase="business"] .dc-inventory-art svg {overflow:hidden;}
+.reveal #s24 .continuous-focus-note {font-size:27px;line-height:1.3;margin:24px 0 0;color:#a9dcd4;}
+
+#s24 .dc-story[data-phase="business"] .dc-options {background:#eff7f4;animation-delay:.08s;}
+
+/* Both examples now run without participant controls. */
+#s24 .dc-inventory {grid-template-columns:minmax(0,1fr);}
+#s24 .dc-story[data-phase="business"] .dc-illustration {height:230px;margin:8px 0 0;}
+#s24 .dc-story[data-phase="business"] .dc-illustration svg {max-height:230px;}

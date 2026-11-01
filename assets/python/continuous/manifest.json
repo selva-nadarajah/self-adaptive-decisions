@@ -1,0 +1,25 @@
+{
+  "source": "Site 1/section-4-self-adapting-mdps-research-readout.qmd",
+  "pyodide": "0.29.3",
+  "packages": [
+    "numpy",
+    "scipy",
+    "matplotlib"
+  ],
+  "modules": [
+    "config.py",
+    "mdp.py",
+    "basis.py",
+    "policy.py",
+    "helper.py",
+    "psmd/__init__.py",
+    "psmd/psmd.py",
+    "self_guided_alp/__init__.py",
+    "self_guided_alp/falp.py",
+    "self_guided_alp/cvl_lower_bound.py",
+    "self_guided_alp/sgalp.py",
+    "psmd_notebook_results.json",
+    "psmd_seed111_3000.json"
+  ],
+  "initialization": "demo_helpers.py"
+}

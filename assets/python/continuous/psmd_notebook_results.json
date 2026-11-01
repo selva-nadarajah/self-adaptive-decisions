@@ -1,0 +1,227 @@
+{
+  "source": "https://github.com/Self-Adapting-MDP-Approximations/INFORMS-Tutorial/blob/main/continuous-mdp/notebooks/psmd.ipynb",
+  "section": 9,
+  "precision": "Printed experiment table, one decimal place",
+  "histories": {
+    "111": [
+      {
+        "lower_bound": -27666.7,
+        "policy_cost": 3772.8,
+        "best_lower_bound": -27666.7,
+        "best_policy_cost": 3772.8,
+        "iteration": 1
+      },
+      {
+        "lower_bound": 1074.0,
+        "policy_cost": 3772.8,
+        "best_lower_bound": 1074.0,
+        "best_policy_cost": 3772.8,
+        "iteration": 300
+      },
+      {
+        "lower_bound": 1608.5,
+        "policy_cost": 3772.8,
+        "best_lower_bound": 1608.5,
+        "best_policy_cost": 3772.8,
+        "iteration": 600
+      },
+      {
+        "lower_bound": 1763.9,
+        "policy_cost": 3773.6,
+        "best_lower_bound": 1763.9,
+        "best_policy_cost": 3772.8,
+        "iteration": 900
+      },
+      {
+        "lower_bound": 1837.2,
+        "policy_cost": 3791.8,
+        "best_lower_bound": 1837.2,
+        "best_policy_cost": 3772.8,
+        "iteration": 1200
+      },
+      {
+        "lower_bound": 1878.1,
+        "policy_cost": 3824.5,
+        "best_lower_bound": 1878.1,
+        "best_policy_cost": 3772.8,
+        "iteration": 1500
+      }
+    ],
+    "222": [
+      {
+        "lower_bound": -28561.2,
+        "policy_cost": 3783.9,
+        "best_lower_bound": -28561.2,
+        "best_policy_cost": 3783.9,
+        "iteration": 1
+      },
+      {
+        "lower_bound": 1007.6,
+        "policy_cost": 3783.9,
+        "best_lower_bound": 1007.6,
+        "best_policy_cost": 3783.9,
+        "iteration": 300
+      },
+      {
+        "lower_bound": 1566.2,
+        "policy_cost": 3783.9,
+        "best_lower_bound": 1566.2,
+        "best_policy_cost": 3783.9,
+        "iteration": 600
+      },
+      {
+        "lower_bound": 1739.2,
+        "policy_cost": 3782.7,
+        "best_lower_bound": 1739.2,
+        "best_policy_cost": 3782.7,
+        "iteration": 900
+      },
+      {
+        "lower_bound": 1818.8,
+        "policy_cost": 3793.4,
+        "best_lower_bound": 1818.8,
+        "best_policy_cost": 3782.7,
+        "iteration": 1200
+      },
+      {
+        "lower_bound": 1863.4,
+        "policy_cost": 3818.6,
+        "best_lower_bound": 1863.4,
+        "best_policy_cost": 3782.7,
+        "iteration": 1500
+      }
+    ],
+    "333": [
+      {
+        "lower_bound": -19876.8,
+        "policy_cost": 3753.4,
+        "best_lower_bound": -19876.8,
+        "best_policy_cost": 3753.4,
+        "iteration": 1
+      },
+      {
+        "lower_bound": 1050.9,
+        "policy_cost": 3753.4,
+        "best_lower_bound": 1050.9,
+        "best_policy_cost": 3753.4,
+        "iteration": 300
+      },
+      {
+        "lower_bound": 1593.9,
+        "policy_cost": 3753.4,
+        "best_lower_bound": 1593.9,
+        "best_policy_cost": 3753.4,
+        "iteration": 600
+      },
+      {
+        "lower_bound": 1757.4,
+        "policy_cost": 3752.7,
+        "best_lower_bound": 1757.4,
+        "best_policy_cost": 3752.7,
+        "iteration": 900
+      },
+      {
+        "lower_bound": 1833.8,
+        "policy_cost": 3769.5,
+        "best_lower_bound": 1833.8,
+        "best_policy_cost": 3752.7,
+        "iteration": 1200
+      },
+      {
+        "lower_bound": 1874.7,
+        "policy_cost": 3799.3,
+        "best_lower_bound": 1874.7,
+        "best_policy_cost": 3752.7,
+        "iteration": 1500
+      }
+    ],
+    "444": [
+      {
+        "lower_bound": -23233.9,
+        "policy_cost": 3749.8,
+        "best_lower_bound": -23233.9,
+        "best_policy_cost": 3749.8,
+        "iteration": 1
+      },
+      {
+        "lower_bound": 1129.7,
+        "policy_cost": 3749.8,
+        "best_lower_bound": 1129.7,
+        "best_policy_cost": 3749.8,
+        "iteration": 300
+      },
+      {
+        "lower_bound": 1630.1,
+        "policy_cost": 3749.8,
+        "best_lower_bound": 1630.1,
+        "best_policy_cost": 3749.8,
+        "iteration": 600
+      },
+      {
+        "lower_bound": 1781.8,
+        "policy_cost": 3750.5,
+        "best_lower_bound": 1781.8,
+        "best_policy_cost": 3749.8,
+        "iteration": 900
+      },
+      {
+        "lower_bound": 1849.5,
+        "policy_cost": 3775.5,
+        "best_lower_bound": 1849.5,
+        "best_policy_cost": 3749.8,
+        "iteration": 1200
+      },
+      {
+        "lower_bound": 1887.1,
+        "policy_cost": 3803.4,
+        "best_lower_bound": 1887.1,
+        "best_policy_cost": 3749.8,
+        "iteration": 1500
+      }
+    ],
+    "555": [
+      {
+        "lower_bound": -24447.3,
+        "policy_cost": 3780.1,
+        "best_lower_bound": -24447.3,
+        "best_policy_cost": 3780.1,
+        "iteration": 1
+      },
+      {
+        "lower_bound": 1226.0,
+        "policy_cost": 3780.1,
+        "best_lower_bound": 1226.0,
+        "best_policy_cost": 3780.1,
+        "iteration": 300
+      },
+      {
+        "lower_bound": 1672.4,
+        "policy_cost": 3780.1,
+        "best_lower_bound": 1672.4,
+        "best_policy_cost": 3780.1,
+        "iteration": 600
+      },
+      {
+        "lower_bound": 1809.3,
+        "policy_cost": 3785.3,
+        "best_lower_bound": 1809.3,
+        "best_policy_cost": 3780.1,
+        "iteration": 900
+      },
+      {
+        "lower_bound": 1870.8,
+        "policy_cost": 3810.0,
+        "best_lower_bound": 1870.8,
+        "best_policy_cost": 3780.1,
+        "iteration": 1200
+      },
+      {
+        "lower_bound": 1902.4,
+        "policy_cost": 3840.1,
+        "best_lower_bound": 1902.4,
+        "best_policy_cost": 3780.1,
+        "iteration": 1500
+      }
+    ]
+  }
+}

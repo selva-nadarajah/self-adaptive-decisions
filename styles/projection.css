@@ -1,0 +1,165 @@
+/* Projection typography. Keep the reading view and technical appendix unchanged. */
+.reveal .continuous-import-slide .slide-body {font-size:24px;}
+.reveal #s25 .equation-box {font-size:27px;padding:16px 20px;}
+.reveal #s25 .equation-box h3 {font-size:25px;}
+.reveal #s25 .lp-value-chart svg text {font-size:23px;}
+.reveal #s27 .alp-input {font-size:24px;}
+.reveal #s27 .alp-input p:last-child {font-size:22px;}
+.reveal #s27 .slide-body>.equation-box {font-size:26px;}
+.reveal #s27 .badge {display:none;}
+.reveal #s27 .slide-body>h3 {display:none;}
+.reveal #s29 .inventory-model-visual h3 {font-size:24px!important;}
+.reveal #s29 .equation-box {font-size:24px;padding:12px 16px;}
+.reveal #s29 .equation-box :is(math,.polished-math) {font-size:25px;}
+.reveal #s29 .inventory-cost-key {grid-template-columns:repeat(4,1fr);margin:12px 0;}
+.reveal #s29 .inventory-cost-key span {font-size:20px;padding:10px 3px;}
+.reveal #s29 .inventory-cost-details small:last-child {font-size:22px;}
+.reveal #s29 .inventory-model-visual svg text {font-size:22px;}
+.reveal #s29 .inventory-transition-plot text {font-size:22px;}
+.reveal #s29 .inventory-transition-plot {height:90px;}
+.reveal #s29 .inventory-demand-plot {height:95px;}
+.reveal #vfa-adaptation-transition .adaptation-headings {font-size:23px;letter-spacing:.02em;}
+.reveal #vfa-adaptation-transition .adaptation-choice h3 {font-size:27px!important;}
+.reveal #vfa-adaptation-transition .adaptation-choice p {font-size:24px;}
+.reveal #s38 .vfa-transition {font-size:26px;margin-bottom:12px;}
+.reveal #s38 .slide-body>.columns>.column>.equation-box {padding:10px 14px;min-height:130px;}
+.reveal #s38 .slide-body>.columns>.column>.equation-box .center {font-size:22px;}
+.reveal #s38 .equation-box :is(math,.polished-math) {font-size:24px;}
+.reveal #s38 .slide-body>.columns>.column>.equation-box .display-math {font-size:24px;}
+.reveal #s38 .slide-body:has(.feature-family-formulas.visible)>.columns {display:none;}
+.reveal #s38 .feature-family-formulas {font-size:23px;gap:18px;margin:10px 0;}
+.reveal #s38 .feature-family-formulas strong,.reveal #s38 .feature-family-formulas .polished-math {font-size:23px;}
+.reveal #s39 .falp-construction-grid {grid-template-columns:.8fr 1.2fr;gap:18px;}
+.reveal #s39 .falp-construction-grid .step-card {font-size:21px;padding:10px 16px;}
+.reveal #s39 .falp-construction-grid .derivation-label {font-size:24px;}
+.reveal #s39 .falp-construction-grid .display-math {font-size:23px;}
+.reveal #s39 .falp-compare-headings h3 {font-size:23px!important;}
+.reveal #s39 .falp-compare-legend {font-size:17px;gap:20px;}
+.reveal #s39 .falp-compare-controls {font-size:16px;}
+.reveal #s39 .falp-compare-takeaway {font-size:18px;}
+.reveal #s39 .falp-compare-svg {height:170px;margin-top:30px;overflow:visible;}
+.reveal #s39 .falp-compare-svg text {font-size:28px;}
+.reveal #s39 .theorem-box {font-size:25px;padding:16px 20px;}
+.reveal #s39 .theorem-box :is(math,.polished-math) {font-size:27px;}
+.reveal #s39 .theorem-box .small {font-size:22px!important;}
+.reveal #s40 .warehouse-phase,.reveal #s40 .warehouse-estimate-label,
+.reveal #s40 .warehouse-old-estimate,.reveal #s40 .warehouse-true-cost,
+.reveal #s40 .warehouse-selection {font-size:23px;}
+.reveal #s40 .warehouse-old-estimate {min-height:29px;}
+.reveal #s41 .sg-parallel .display-math {font-size:25px;line-height:1.15;}
+.reveal #s41 .sg-round-heading h3,.reveal #s41 .sg-round-heading .polished-math {font-size:27px;}
+.reveal #s41 .sg-parallel-column {padding:12px 16px;}
+.reveal #s41 .sg-parallel-models {height:275px;}
+.reveal #s41 .sg-parallel-note {font-size:22px;line-height:1.2;}
+.reveal #s41 .sg-parallel-column>svg {height:135px;}
+.reveal #s41 .sg-side-legend {font-size:22px;margin-top:10px;}
+.reveal #s43 .relevance-dual-definition,
+.reveal #s43 .relevance-dual-definition .polished-math {font-size:24px;}
+.reveal :is(#s38,#s42,#s43,#s44) textarea[data-demo-editor] {font-size:22px;line-height:1.3;padding:10px 12px;}
+.reveal :is(#s38,#s42,#s44) .demo-controls button {font-size:21px;padding:8px 13px;}
+.reveal :is(#s38,#s42,#s44) :is([data-progression-count],[data-bounds-count]) {font-size:24px;}
+.reveal :is(#s38,#s42,#s43,#s44) .demo-editor-label {font-size:22px;}
+.reveal :is(#s38,#s42,#s43,#s44) .demo-output>.demo-hint {font-size:22px;}
+.reveal #s38 .continuous-python-lab {grid-template-columns:minmax(300px,.75fr) minmax(0,1.6fr);gap:10px 20px;}
+.reveal #s38 .demo-controls {gap:7px;}
+.reveal #s38 textarea[data-demo-editor] {height:160px;min-height:160px;max-height:160px;}
+.reveal #s38 .demo-output {min-height:225px;max-height:270px;}
+.reveal #s38 .demo-output img {max-height:260px;}
+.reveal #s42 textarea[data-demo-editor] {height:105px;min-height:105px;}
+.reveal #s44 textarea[data-demo-editor] {height:135px;min-height:135px;}
+.reveal #s44 .continuous-python-lab {grid-template-columns:1.55fr 1fr;}
+.reveal #s44 .demo-output {max-height:365px;}
+.reveal #s44 .demo-output img {max-height:355px;}
+.reveal .assort-lp-label strong {font-size:25px;}
+.reveal .assort-lp-label span {font-size:22px;line-height:1.2;}
+.reveal .assort-lp-label>b {font-size:22px;}
+.reveal .assort-lp-row {display:grid;grid-template-columns:350px minmax(0,1fr);column-gap:18px;padding:12px 0;align-items:center;}
+.reveal .assort-lp-label {position:relative;top:auto;left:auto;width:auto;padding-left:36px;grid-column:1;grid-row:1 / span 2;}
+.reveal .assort-lp-row>p {grid-column:2;margin:4px 0;}
+.reveal :is(.assort-solution-pair small,.assort-objective small,.assort-policy p,
+.pricing-definitions>div,.pricing-parts small,.pricing-result>span,
+.complexity-chain div span,.complexity-implication p,.assort-cor-summary div>span) {font-size:23px;}
+.reveal .assort-state-buttons button {font-size:22px;}
+.reveal .assort-policy strong {font-size:26px;}
+.reveal :is(#s18,#s20,#s21,#s22) .assort-label {font-size:22px;}
+.reveal :is(#s18,#s20,#s21,#s22) .assort-small {font-size:22px;line-height:1.3;}
+.reveal :is(#s18,#s22) .assort-prepared {font-size:20px;}
+.reveal #s22 .assort-comparison>div {padding:12px 20px;}
+.reveal #s22 .assort-comparison p {font-size:22px;margin:8px 0 12px;}
+.reveal #s22 .assort-result-row {font-size:23px;margin-top:6px;}
+.reveal #s22 .assort-cor-summary {margin-top:22px;}
+.reveal #s20 .pricing-formula {padding:20px 0 8px;}
+.reveal #s20 .pricing-definitions {padding-bottom:10px;gap:28px;}
+.reveal #s20 .pricing-definitions span {max-width:none;}
+.reveal #s20 .pricing-example {padding:12px 20px;}
+.reveal #s20 .pricing-result {margin-top:14px;}
+.reveal #s20 .assort-small {margin-top:12px;}
+.reveal #s21 .complexity-theorem {padding:18px 25px;}
+.reveal #s21 .complexity-chain {margin-top:18px;}
+.reveal #s21 .complexity-implication {margin-top:16px;padding-top:12px;}
+.reveal .setting-description,.reveal .slide-body .setting-description,
+.reveal .setting-stage dt,.reveal .setting-stage dd {font-size:23px;}
+.reveal .display-exercise .python-output {font-size:24px;}
+.reveal .display-exercise .python-output pre {font-size:22px;}
+.reveal .display-exercise .python-output small {font-size:21px;}
+
+/* A consistent heading baseline and a clear margin above the shared footer. */
+.reveal .slides>section.slide:not(.cover)>h2 {margin:20px 0 18px!important;}
+.reveal .cover h2 {text-wrap:balance;}
+.reveal .cover .source {bottom:32px;}
+.reveal #s03 .decision-event {min-height:196px;}
+.reveal #s03 .lede {margin-bottom:16px;}
+.reveal #s03 .decision-event {padding:12px;}
+.reveal #s03 .event-heading {margin-bottom:10px;}
+.reveal #s03 .inventory-outcome {margin-top:8px;padding:10px;}
+.reveal #s03 .inventory-outcome .cubes {display:none;}
+.reveal #s03 .inventory-controls {margin-bottom:8px;}
+.reveal #s03 .inventory-introduction {font-size:24px;line-height:1.3;margin:0 0 8px;}
+.reveal #s03 [data-widget="inventory"] {margin-top:20px;}
+.reveal #s03 .inventory-prompt {font-size:22px;line-height:1.3;padding:8px 12px;margin-bottom:10px;color:var(--ink);background:#fff6e9;border-left-color:#b56827;}
+.reveal #s03 .inventory-prompt-label {color:#9b4e20;font-weight:600;}
+.reveal #s03 .inventory-controls :is(label,button) {font-size:20px;}
+.reveal #s03 .inventory-periods {font-size:20px;margin-bottom:8px;}
+.reveal #s03 .event-heading {font-size:22px;gap:8px;}
+.reveal #s03 .event-heading>span {font-size:18px;width:24px;height:24px;flex-shrink:0;}
+.reveal #s03 .decision-event .event-detail {font-size:20px;line-height:1.3;margin:8px 0 0;}
+.reveal #s03 .event-quantity {font-size:35px;}
+.reveal #s03 .event-quantity small {font-size:20px;}
+.reveal #s03 .inventory-outcome,
+.reveal #s03 .inventory-outcome>strong {font-size:20px;line-height:1.3;}
+.reveal #s03 .inventory-outcome>span b {font-size:22px;}
+.reveal #s03 .inventory-ledger,
+.reveal #s03 .inventory-ledger>span:first-child {font-size:20px;}
+.reveal #s03 .inventory-ledger b {font-size:22px;}
+.reveal #s03 .inventory-ledger>strong {font-size:24px;}
+
+/* Give the assortment timeline more white space at projection size. */
+.reveal #s12 .assort-lede {font-size:21px;}
+.reveal #s12 .assort-catalog-products img {width:66px;height:84px;}
+.reveal #s12 .assort-catalog-products figcaption {font-size:20px;}
+.reveal #s12 .assort-catalog-products figcaption span {font-size:17px;}
+.reveal #s12 .assort-catalog-budget>strong {font-size:21px;}
+.reveal #s12 .assort-catalog-budget p {font-size:18px;}
+.reveal #s12 .assort-flow {min-height:284px;margin-top:36px;}
+.reveal #s12 .assort-flow-period {font-size:18px;}
+.reveal #s12 .assort-flow-stage h3 {font-size:21px;}
+.reveal #s12 .assort-flow-content {margin-top:60px;}
+.reveal #s12 .assort-flow-subset {height:96px;}
+.reveal #s12 .assort-flow-subset img {width:72px;height:96px;}
+.reveal #s12 .assort-flow-subset>span {font-size:22px;}
+.reveal #s12 .assort-flow-selection {font-size:19px;}
+.reveal #s12 .assort-flow-budget {font-size:17px;}
+.reveal #s12 .assort-flow-observations img {width:38px;height:47px;}
+.reveal #s12 .assort-flow-observations span {font-size:18px;}
+.reveal #s12 .assort-flow-observations strong {font-size:19px;}
+.reveal #s12 .assort-period-goal {font-size:18px;margin-top:18px;}
+
+.reveal #s19 .guided-support :is(th,td) {padding-top:8px;padding-bottom:8px;}
+.reveal #s19 .guided-products {height:42px;}
+.reveal #s19 .guided-prediction {min-height:52px;}
+.reveal #s19 .guided-key {margin:8px 0 10px;}
+.reveal #s40 .policy-norm-summary .display-math,
+.reveal #s40 .policy-norm-summary mjx-container[display="true"] {text-align:center;}
+.reveal #s42 textarea[data-demo-editor] {height:125px;min-height:125px;max-height:125px;}
+.reveal #s43 .demo-output {min-height:280px;max-height:320px;}
+.reveal #s43 .demo-output img {width:100%;max-height:310px;object-fit:contain;}

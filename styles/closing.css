@@ -1,0 +1,25 @@
+/* Closing block: route, evidence, benefits, and an invitation to contribute. */
+.reveal #s11 .opening-route-closing {font-size:24px;line-height:1.35;margin:24px 0 0;}
+.closing-route .route-method {min-height:64px!important;}
+.reveal .closing-route .closing-route-takeaway {font-size:27px;line-height:1.35;margin:28px 0 0;}
+.reveal .closing-route .closing-route-broader {font-size:26px;line-height:1.35;margin:16px 0 0;}
+.reveal .closing-route.speaker-change :is(.closing-route-takeaway,.closing-route-broader) {color:#edf0f2;}
+.reveal .closing-route.speaker-change .panel {color:var(--ink);}
+.closing-route .route-focus {font-size:26px!important;line-height:1.4!important;}
+.reveal .closing-audience-prompt {font-size:29px;line-height:1.3;color:var(--accent);margin:0 0 26px;}
+.closing-evidence,.reveal .closing-evidence {list-style:none;margin:0;padding:0;}
+.closing-evidence li {display:grid;grid-template-columns:235px minmax(0,1fr);gap:30px;align-items:center;padding:24px 0;border-top:1px solid var(--line);}
+.closing-evidence strong {font-size:29px;font-weight:600;line-height:1.2;color:var(--teal);}
+.closing-evidence p,.reveal .closing-evidence p {font-size:26px;line-height:1.4;margin:0;}
+.reveal .closing-assessment-takeaway {font-size:27px;line-height:1.3;margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--accent);}
+.reveal .closing-benefits-intro {font-size:25px;line-height:1.3;margin:0 0 18px;}
+.adaptation-benefits {display:block;width:100%;height:auto;max-height:430px;overflow:visible;}
+.closing-frontiers,.reveal .closing-frontiers {list-style:none;margin:8px 0 0;padding:0;}
+.closing-frontiers li {padding:17px 0 20px;border-top:1px solid var(--line);}
+.closing-frontiers strong {font-size:29px;line-height:1.2;font-weight:600;color:var(--accent);}
+.closing-frontiers p,.reveal .closing-frontiers p {font-size:25px;line-height:1.35;margin:9px 0 0;}
+.reveal .closing-participation {font-size:28px;line-height:1.45;margin:24px 0 0;color:var(--teal);}
+body:not(.reveal-viewport) .adaptation-benefits {max-height:none;}
+@media(max-width:700px) {
+ body:not(.reveal-viewport) .closing-evidence li {grid-template-columns:1fr;gap:12px;}
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="QR code placeholder; presentation link to be added">
+  <rect width="100" height="100" fill="white"/>
+  <g fill="none" stroke="#9cafb6" stroke-width="3">
+    <path d="M13 13h22v22H13zM65 13h22v22H65zM13 65h22v22H13z"/>
+  </g>
+  <g fill="#9cafb6">
+    <path d="M19 19h10v10H19zM71 19h10v10H71zM19 71h10v10H19z"/>
+    <path d="M44 13h6v6h-6zM50 19h6v12h-6zM43 34h6v9h-6zM13 44h12v6H13zM25 50h12v6H25zM44 50h6v12h-6zM56 42h6v6h-6zM68 44h12v6H68zM81 50h6v12h-6zM44 73h6v14h-6zM56 81h7v6h-7zM81 81h6v6h-6z"/>
+  </g>
+  <text x="71" y="73" fill="#7c929a" font-family="Arial,sans-serif" font-size="14" text-anchor="middle">QR</text>
+</svg>

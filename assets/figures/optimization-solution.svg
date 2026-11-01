@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="158" viewBox="0 0 360 158" role="img" aria-labelledby="title desc">
+  <title id="title">Optimal solution of the example program</title>
+  <desc id="desc">The optimal solution is x one equals zero and x two equals five. The objective value is ten. All constraints are satisfied and the optimality gap is zero.</desc>
+  <rect x="1" y="1" width="358" height="156" rx="8" fill="#fff" fill-opacity=".8" stroke="#e3cfbe"/>
+  <circle cx="25" cy="25" r="11" fill="#267f77"/>
+  <path d="m19 25 4 4 8-9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="45" y="31" fill="#267f77" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="17" font-weight="600">Optimal solution</text>
+  <g fill="#182c3e" font-family="Georgia, 'Times New Roman', serif" font-size="27">
+    <text x="22" y="77"><tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="17">1</tspan> = 0</text>
+    <text x="124" y="77"><tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="17">2</tspan> = 5</text>
+  </g>
+  <path d="M235 52v50" stroke="#e3cfbe"/>
+  <g font-family="'Avenir Next', 'Segoe UI', sans-serif">
+    <text x="290" y="48" text-anchor="middle" fill="#5f7180" font-size="13">Objective</text>
+    <text x="290" y="77" text-anchor="middle" fill="#a64e16" font-size="32" font-weight="600">10</text>
+    <path d="M20 115h320" stroke="#e3cfbe"/>
+    <text x="20" y="140" fill="#5f7180" font-size="15">Feasible · optimality gap 0%</text>
+  </g>
+</svg>

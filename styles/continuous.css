@@ -1,0 +1,92 @@
+/* Continuous-MDP and Python slides inherit the established light deck. */
+.continuous-slide .slide-body,.python-slide .slide-body {font-size:23px;line-height:1.45;}
+.continuous-slide math {font-family:"STIX Two Math","Cambria Math",serif;}
+.continuous-slide .cont-lede,.python-slide .cont-lede {font-size:24px;margin:0 0 24px;max-width:1130px;}
+.cont-kicker {color:var(--teal);font-size:15px;letter-spacing:.6px;margin:0 0 10px;display:block;}
+.cont-grid {display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.cont-grid.thirds {grid-template-columns:repeat(3,1fr);gap:28px;}
+.cont-grid > * {min-width:0;}
+.cont-card {padding:24px 26px;border:1px solid var(--line);border-radius:12px;}
+.cont-card.blue {background:var(--tint);border-color:transparent;}
+.cont-card.peach {background:#fff2e6;border-color:transparent;}
+.cont-card.sage {background:#eff7f4;border-color:transparent;}
+.cont-card strong {color:var(--accent);font-size:25px;display:block;margin-bottom:10px;}
+.cont-card p,.reveal .cont-card p {font-size:22px;margin:10px 0;}
+.cont-symbol {font-family:Georgia,serif;font-style:italic;font-size:37px;display:block;color:var(--teal);margin:12px 0;}
+.cont-equation {text-align:center;padding:22px 16px;font-size:30px;border-radius:12px;background:#f3f7f9;margin:20px 0;overflow-x:auto;}
+.cont-equation p,.reveal .cont-equation p {margin:0;}
+.cont-equation.compact {font-size:25px;padding:18px 12px;}
+.cont-equation.peach {background:#fff2e6;}
+.cont-equation.sage {background:#eff7f4;}
+.cont-key {display:flex;gap:28px;font-size:20px;margin-top:20px;}
+.cont-key > div {flex:1;min-width:0;}
+.cont-key b {display:block;color:var(--teal);margin-bottom:6px;}
+.cont-key span {display:block;}
+.cont-takeaway,.reveal .cont-takeaway {border-top:1px solid var(--line);padding-top:17px;margin:24px 0 0;font-size:23px;}
+.cont-takeaway strong {color:var(--teal);}
+.cont-small,.reveal .cont-small {font-size:17px;color:var(--muted);line-height:1.45;margin:16px 0 0;}
+.cont-steps {display:flex;gap:20px;align-items:center;margin:26px 0;}
+.cont-steps > div {flex:1;padding:20px 18px;border-left:3px solid #82b3ac;}
+.cont-steps b {display:block;color:var(--teal);font-size:24px;}
+.cont-steps span {display:block;font-size:20px;margin-top:7px;}
+.cont-steps > i {color:var(--orange);font-size:30px;font-style:normal;}
+.cont-figure {margin:18px 0 0;text-align:center;}
+.cont-figure img,.reveal .cont-figure img {display:block;max-width:100%;width:auto;max-height:335px;object-fit:contain;box-shadow:none;margin:0 auto;}
+.cont-figure.wide img,.reveal .cont-figure.wide img {width:100%;max-height:300px;}
+.cont-figure figcaption {font-size:16px;color:var(--muted);margin-top:12px;}
+.cont-figure-side {grid-template-columns:1.15fr .85fr;align-items:center;}
+.cont-figure-side img,.reveal .cont-figure-side img {max-height:330px;}
+.continuous-slide .widget {margin-top:10px;}
+.continuous-slide .heat-layout {grid-template-columns:1.1fr 1fr;}
+.continuous-slide .toolbar {margin:10px 0;}
+.continuous-slide .heat-axes {font-size:14px;}
+.continuous-slide .status {font-size:17px;}
+.continuous-slide .heat-layout .readout {font-size:22px;}
+.continuous-slide .heat-layout .readout strong {font-size:31px;}
+.continuous-slide .heat-layout .readout p {font-size:19px;}
+.continuous-slide .heat-layout canvas {max-height:235px;}
+.cont-feature-layout {grid-template-columns:.8fr 1.2fr;gap:35px;}
+.cont-feature-layout .plot svg {max-height:250px;}
+.cont-proof {font-size:31px;color:var(--accent);padding:18px 0;}
+.cont-table {border-collapse:collapse;width:100%;font-size:22px;margin:24px 0;}
+.cont-table th,.cont-table td {padding:14px 20px;text-align:left;border-bottom:1px solid var(--line);}
+.cont-table th {font-size:18px;color:var(--teal);font-weight:600;}
+.cont-table tbody tr:last-child {background:#eff7f4;}
+.python-lab {display:grid;grid-template-columns:1.15fr 1fr;gap:34px;}
+.python-editor-label {display:block;font-size:16px;color:var(--teal);margin-bottom:10px;}
+.python-lab textarea {display:block;resize:vertical;min-height:264px;height:280px;max-height:310px;width:100%;padding:17px;border:1px solid #c1d2da;border-radius:10px;background:#f5f8fa;color:var(--ink);font:18px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4;}
+.python-lab textarea:focus-visible {outline:3px solid var(--teal);outline-offset:3px;}
+.python-controls {display:flex;gap:12px;align-items:center;margin:14px 0;}
+.python-controls button {background:white;color:var(--accent);border:1px solid #b3c9cf;padding:9px 18px;border-radius:7px;font-size:18px;}
+.python-controls button:first-child {background:var(--accent);color:white;border-color:var(--accent);}
+.python-controls button:disabled {opacity:.45;cursor:default;}
+.python-controls a {font-size:15px;margin-left:auto;}
+.python-status {font-size:16px;color:var(--muted);min-height:24px;}
+.python-output {border-left:1px solid var(--line);padding:6px 0 0 28px;min-height:340px;max-height:420px;overflow:auto;}
+.python-caption {font-size:16px;color:var(--teal);display:block;}
+.python-objective {display:block;font-size:48px;color:var(--teal);line-height:1.2;margin:7px 0 16px;}
+.python-period {margin:12px 0;}
+.python-period > b {font-size:16px;color:var(--muted);}
+.python-weight {display:flex;flex-wrap:wrap;justify-content:space-between;position:relative;padding:7px 0;font-size:19px;}
+.python-weight i {display:block;flex-basis:auto;height:4px;border-radius:3px;background:#80b2a5;margin-top:4px;}
+.python-weight span {width:80%;}
+.python-policy,.reveal .python-policy {font-size:17px;margin:18px 0 5px;}
+.python-output small {font-size:14px;color:var(--muted);}
+.python-error,.reveal .python-error {white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.4 ui-monospace,monospace;max-height:350px;overflow:auto;color:#9b3f34;box-shadow:none;width:100%;}
+@media(max-width:700px) {
+  body:not(.reveal-viewport) .cont-grid,body:not(.reveal-viewport) .cont-grid.thirds,.python-lab {grid-template-columns:1fr;gap:20px;}
+  .cont-key,.cont-steps {flex-direction:column;gap:18px;}
+  .cont-steps > i {display:none;}
+  .continuous-slide .cont-lede,.python-slide .cont-lede {font-size:21px;}
+  .cont-equation {font-size:25px;padding:15px 8px;}
+  .cont-equation.compact {font-size:22px;}
+  .cont-card {padding:20px;}
+  .cont-card p,.reveal .cont-card p {font-size:20px;}
+  .cont-table {font-size:17px;}
+  .cont-table th,.cont-table td {padding:9px 7px;}
+  .cont-table th {font-size:15px;}
+  .continuous-slide .heat-layout {grid-template-columns:1fr;}
+  .python-output {border-left:0;border-top:1px solid var(--line);padding:20px 0 0;min-height:120px;max-height:none;}
+  .python-controls {flex-wrap:wrap;gap:10px;}
+  .python-lab textarea {font-size:14px;}
+}

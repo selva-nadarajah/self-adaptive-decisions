@@ -1,0 +1,139 @@
+{
+  "seed": 111,
+  "iterations": 3000,
+  "source": "Repository notebook configuration, single-seed recomputation",
+  "history": [
+    {
+      "iteration": 1,
+      "lower_bound": -27666.72076309137,
+      "policy_cost": 3772.8192284938013,
+      "best_lower_bound": -27666.72076309137,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.1414213562373095,
+      "acceptance_rate": 0.47333333333333333,
+      "lower_bound_lambda": 1.3153149633651543e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 8.103759050369263
+    },
+    {
+      "iteration": 300,
+      "lower_bound": 1073.9612336260095,
+      "policy_cost": 3772.8192284938013,
+      "best_lower_bound": 1073.9612336260095,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.0115278083540847,
+      "acceptance_rate": 0.37666666666666665,
+      "lower_bound_lambda": 1.3386847519420845e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 17.47813606262207
+    },
+    {
+      "iteration": 600,
+      "lower_bound": 1608.5034241602843,
+      "policy_cost": 3772.8192284938013,
+      "best_lower_bound": 1608.5034241602843,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.008158170164480042,
+      "acceptance_rate": 0.36,
+      "lower_bound_lambda": 1.3375359596125863e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 26.885175943374634
+    },
+    {
+      "iteration": 900,
+      "lower_bound": 1763.854936709225,
+      "policy_cost": 3773.5610604233498,
+      "best_lower_bound": 1763.854936709225,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.006662966046527696,
+      "acceptance_rate": 0.39,
+      "lower_bound_lambda": 1.3367436777539695e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 36.29936718940735
+    },
+    {
+      "iteration": 1200,
+      "lower_bound": 1837.1700747332877,
+      "policy_cost": 3791.808341451483,
+      "best_lower_bound": 1837.1700747332877,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.005771098568247613,
+      "acceptance_rate": 0.38333333333333336,
+      "lower_bound_lambda": 1.3359477299213982e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 45.67632699012756
+    },
+    {
+      "iteration": 1500,
+      "lower_bound": 1878.140974149845,
+      "policy_cost": 3824.459133178768,
+      "best_lower_bound": 1878.140974149845,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.005162257329196673,
+      "acceptance_rate": 0.34,
+      "lower_bound_lambda": 1.335390601539077e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 55.095361948013306
+    },
+    {
+      "iteration": 1800,
+      "lower_bound": 1900.678712599357,
+      "policy_cost": 3860.3292086322817,
+      "best_lower_bound": 1900.678712599357,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.004712736296262731,
+      "acceptance_rate": 0.3233333333333333,
+      "lower_bound_lambda": 1.334930565212474e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 64.46205687522888
+    },
+    {
+      "iteration": 2100,
+      "lower_bound": 1915.8392423721698,
+      "policy_cost": 3887.280802145741,
+      "best_lower_bound": 1915.8392423721698,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.004363319042880853,
+      "acceptance_rate": 0.29333333333333333,
+      "lower_bound_lambda": 1.334558102099724e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 73.84239411354065
+    },
+    {
+      "iteration": 2400,
+      "lower_bound": 1927.1644501765884,
+      "policy_cost": 3910.9742475114435,
+      "best_lower_bound": 1927.1644501765884,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.004081632653061225,
+      "acceptance_rate": 0.31833333333333336,
+      "lower_bound_lambda": 1.3342573660637473e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 83.23072099685669
+    },
+    {
+      "iteration": 2700,
+      "lower_bound": 1934.5662679504076,
+      "policy_cost": 3927.985442640482,
+      "best_lower_bound": 1934.5662679504076,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.0038482892144202246,
+      "acceptance_rate": 0.3383333333333333,
+      "lower_bound_lambda": 1.33399365502981e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 92.58468294143677
+    },
+    {
+      "iteration": 3000,
+      "lower_bound": 1939.8709482554646,
+      "policy_cost": 3952.937586722666,
+      "best_lower_bound": 1939.8709482554646,
+      "best_policy_cost": 3772.8192284938013,
+      "step_size": 0.003650875288184562,
+      "acceptance_rate": 0.33166666666666667,
+      "lower_bound_lambda": 1.333753070347806e-07,
+      "lower_bound_mc_samples": 192000,
+      "elapsed_seconds": 101.92338490486145
+    }
+  ]
+}

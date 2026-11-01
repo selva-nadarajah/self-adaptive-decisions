@@ -1,0 +1,62 @@
+/* A quiet entry point to the existing Quarto contents menu. */
+.reveal .slide-menu-button.contents-ready {
+  display:block;left:20px;bottom:10px;font-size:12px;line-height:1;z-index:40;
+}
+.reveal .slide-menu-button.contents-ready a {
+  display:flex;align-items:center;gap:7px;min-height:30px;padding:6px 9px;box-sizing:border-box;
+  color:#657782;background:rgba(255,255,255,.95);border:1px solid transparent;
+  border-radius:5px;text-decoration:none;font:500 12px/1.2 "Avenir Next","Segoe UI",sans-serif;
+}
+.reveal .slide-menu-button.contents-ready a:hover {color:var(--teal);border-color:var(--line);}
+.reveal .slide-menu-button .contents-icon {font-size:15px;line-height:1;}
+/* Extra specificity keeps these styles above the plugin's late-loaded CSS. */
+body .slide-menu-wrapper {font-family:"Avenir Next","Segoe UI",sans-serif;}
+body .slide-menu-wrapper .slide-menu {
+  background:#fff;color:var(--ink);border-right:1px solid var(--line);
+  box-shadow:8px 0 35px #182c3e14;max-width:calc(100vw - 24px);
+}
+body .slide-menu-wrapper .slide-menu-toolbar {
+  display:flex;align-items:center;gap:8px;height:70px;padding:16px 18px;
+  border-bottom:1px solid var(--line);font-size:14px;
+}
+body .slide-menu-wrapper .slide-menu-toolbar > li {display:block;padding:8px 10px;color:var(--muted);border-radius:5px;}
+body .slide-menu-wrapper .slide-menu-toolbar > li.active-toolbar-button {
+  background:var(--tint);color:var(--accent);text-shadow:none;text-decoration:none;
+}
+body .slide-menu-wrapper .slide-menu-toolbar > li:hover {color:var(--teal);background:var(--tint);}
+body .slide-menu-wrapper .slide-menu-toolbar #close {margin-left:auto;}
+body .slide-menu-wrapper .slide-menu-toolbar i,body .slide-menu-wrapper .slide-menu-toolbar br {display:none;}
+body .slide-menu-wrapper .slide-menu-toolbar .slide-menu-toolbar-label {visibility:visible;}
+body .slide-menu-wrapper .slide-menu-panel {top:70px;height:calc(100% - 70px);color:var(--ink);}
+body .slide-menu-wrapper .slide-menu-items {border-color:var(--line);}
+body .slide-menu-wrapper .slide-menu-item,body .slide-menu-wrapper .slide-tool-item {
+  border-top:1px solid #edf1f3;color:var(--ink);padding:13px 22px;font-size:15px;line-height:1.4;
+}
+body .slide-menu-wrapper .slide-menu-item {display:flex;align-items:baseline;gap:9px;}
+body .slide-menu-wrapper .slide-menu-item-number {min-width:23px;flex:none;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;}
+body .slide-menu-wrapper .active-menu-panel li.active {color:var(--teal);font-weight:600;}
+body .slide-menu-wrapper .active-menu-panel li.selected {background:#edf5f3;color:var(--teal);}
+body .slide-menu-wrapper .slide-menu-panel a {color:var(--accent);}
+body .slide-menu-wrapper .slide-menu-panel a:hover {color:var(--teal);}
+body .slide-menu-wrapper .slide-tool-item kbd {border-color:var(--line);}
+body .slide-menu-wrapper [tabindex]:focus-visible {outline:2px solid var(--teal);outline-offset:-3px;}
+body .slide-menu-wrapper .slide-menu-overlay.active {opacity:.16;}
+
+/* Reserve the right side of the title slide for participant access. */
+.reveal .cover .author-grid {width:calc(100% - 290px);gap:20px 35px;}
+.cover-share {text-align:center;}
+.reveal .cover-share {position:absolute;right:35px;top:250px;width:210px;}
+.cover-share strong {display:block;font-size:20px;font-weight:500;color:var(--teal);margin-bottom:12px;}
+.cover-share a {display:block;width:190px;max-width:100%;margin:auto;}
+.cover-share a[aria-disabled="true"] {pointer-events:none;}
+.cover-share img,.reveal .cover-share img {display:block;width:190px;height:190px;margin:0;max-height:none;max-width:100%;border:0;box-shadow:none;}
+.cover-share small {display:block;font-size:13px;line-height:1.45;color:var(--muted);margin-top:12px;overflow-wrap:anywhere;}
+body:not(.reveal-viewport) .cover .slide-body {position:relative;padding-right:250px;}
+body:not(.reveal-viewport) .cover-share {position:absolute;right:0;top:72px;width:210px;}
+@media(max-width:900px) {
+  body:not(.reveal-viewport) .cover .slide-body {padding-right:0;}
+  body:not(.reveal-viewport) .cover-share {position:static;width:210px;margin:28px 0 0;}
+}
+@media print {
+  .slide-menu-wrapper,.slide-menu-button {display:none!important;}
+}

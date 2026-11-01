@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How few assortments do we need?</title>
+  <link rel="stylesheet" href="audience-choice.css?v=4">
+  <script defer src="audience-choice-data.js"></script>
+  <script defer src="audience-choice-state.js"></script>
+  <script defer src="audience-choice.js?v=4"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Delayed allocation · Tutorial §3.3</p>
+      <nav aria-label="Demonstration stages"><span data-stage-label="choose">1 · Start small</span><span data-stage-label="refine">2 · Find useful additions</span><span data-stage-label="result">3 · Assess</span></nav>
+    </header>
+    <h1 id="demo-title">Do we need every feasible assortment?</h1>
+    <p id="demo-intro">Can a small collection match the LP containing all five feasible assortments per period?</p>
+    <section class="quality-overview" aria-label="Collection size and LP objective">
+      <div class="support-panel">
+        <h2>Assortments represented</h2>
+        <div id="support-counts"></div>
+        <p class="support-key">Filled options are included. Each is a separate assortment.</p>
+      </div>
+      <div class="quality-panel">
+        <h2>LP objective</h2>
+        <div class="quality-label"><span>Current collection</span><strong id="current-objective">0</strong></div>
+        <div class="quality-track" id="quality-progress" role="progressbar" aria-label="Current LP objective relative to the full LP" aria-valuemin="0" aria-valuenow="0"><div id="quality-bar"></div></div>
+        <div class="quality-label reference-label"><span>All five assortments in each period</span><strong id="reference-objective"></strong></div>
+        <div class="quality-track reference-track"><div></div></div>
+        <p id="quality-gap"></p>
+      </div>
+    </section>
+    <section id="choose-view">
+      <p class="instruction">Start with only <strong>“Offer nothing”</strong> in each period. Use the solved model to find useful additions.</p>
+      <div class="all-assortments" id="all-assortments" aria-label="The five feasible assortments"></div>
+      <div class="start-actions">
+        <button class="primary" id="start">Predict a useful addition →</button>
+        <button class="subtle" id="resume" hidden>Resume previous run</button>
+      </div>
+    </section>
+    <section id="refine-view" hidden>
+      <div class="choice-heading">
+        <div class="period-tabs" role="group" aria-label="Period to refine"><button data-period="0">Period 0</button><button data-period="1">Period 1</button></div>
+        <button id="pricing" class="subtle" aria-pressed="false">Show what the LP suggests</button>
+      </div>
+      <div id="addition-options" class="action-grid" role="group" aria-label="Omitted assortment"></div>
+      <button class="primary" id="add" disabled>Choose an assortment to test →</button>
+      <p id="pricing-message" class="insight" hidden></p>
+    </section>
+    <section id="result-view" hidden>
+      <p id="addition-description" class="choice-reminder"></p>
+      <p id="result-insight" class="insight"></p>
+      <div class="progression">
+        <table>
+          <caption>Collection size and solution quality</caption>
+          <thead><tr><th scope="col">Collection</th><th scope="col">Period 0 assortments</th><th scope="col">Period 1 assortments</th><th scope="col">LP objective</th></tr></thead>
+          <tbody id="progression-rows"></tbody>
+        </table>
+      </div>
+      <div class="result-actions">
+        <button class="primary" id="continue">Predict another useful addition →</button>
+        <details class="policy-details"><summary>Policy evaluation and LP weights</summary><p id="policy-evaluation"></p><div id="weights"></div></details>
+      </div>
+    </section>
+    <footer>
+      <button id="reset" class="subtle" hidden>Restart demonstration</button>
+      <details>
+        <summary>Model and tutorial source</summary>
+        <p>Tutorial §3.3, Example 5. Resource constraints and feasible actions follow Example 1. The demonstration begins with only the empty assortment, as in the tutorial. Audience choices test additions to one period at a time.</p>
+        <p>The original MDP stays fixed. We change which feasible joint actions the approximation represents. Each assortment is a separate option; adding Product 2 only does not combine it with Product 1.</p>
+        <p>Five feasible assortments exist in each period. Their resource use satisfies 2a₁ + 10a₂ + 8a₃ ≤ 14 and 3a₁ + 18a₂ + 15a₃ ≤ 20. The empty assortment is counted because its probability weight is represented in the model.</p>
+        <table><caption>Profit when a product is offered</caption><thead><tr><th>Product</th><th>Initial state</th><th>Changed state</th><th>Chance of changing after an offer</th></tr></thead><tbody><tr><th>1</th><td>1</td><td>42</td><td>50%</td></tr><tr><th>2</th><td>22</td><td>32</td><td>50%</td></tr><tr><th>3</th><td>0.5</td><td>11</td><td>100%</td></tr></tbody></table>
+        <p>All products start in their initial state. An unoffered product stays there. There are two decision periods and no terminal reward.</p>
+        <p>The reference value of 49 comes from solving this small example with all five feasible assortments in both periods. It is a teaching reference, not an assumption that the full model can be enumerated in large applications. This example does not establish that every MDP needs equally few assortments.</p>
+        <p>Every collection was solved with SciPy / HiGHS. Policy profit exactly evaluates independent draws of whole assortments from the optimized period weights. Matching the full LP objective does not by itself establish an optimal MDP policy.</p>
+        <p>Pricing uses the current LP dual solution. Its score is not the final profit gain. Positive scores can require several additions before strict improvement. No positive score in either period certifies the objective of the LP containing all feasible actions.</p>
+        <a href="../tutorial.pdf">Open the tutorial</a>
+      </details>
+    </footer>
+    <div id="announcement" class="sr-only" aria-live="polite"></div>
+  </main>
+</body>
+</html>

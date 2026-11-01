@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="158" viewBox="0 0 360 158" role="img" aria-labelledby="title desc">
+  <title id="title">An example mathematical program</title>
+  <desc id="desc">Minimize 3 x one plus 2 x two, subject to x one plus x two at least 5, 2 x one plus x two at most 8, and both variables nonnegative. The objective and constraints are labeled.</desc>
+  <rect x="1" y="1" width="358" height="156" rx="8" fill="#fff" fill-opacity=".8" stroke="#cedbe5"/>
+  <g fill="#182c3e" font-family="Georgia, 'Times New Roman', serif" font-size="22">
+    <text x="15" y="34">min</text>
+    <text x="68" y="34" fill="#226a85">3<tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">1</tspan> + 2<tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">2</tspan></text>
+    <text x="15" y="76" font-size="19">s.t.</text>
+    <text x="68" y="76"><tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">1</tspan> + <tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">2</tspan> ≥ 5</text>
+    <text x="68" y="106">2<tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">1</tspan> + <tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">2</tspan> ≤ 8</text>
+    <text x="68" y="136"><tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">1</tspan>, <tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="14">2</tspan> ≥ 0</text>
+  </g>
+  <path d="M214 19v18m-5-18h5m-5 18h5" fill="none" stroke="#226a85" stroke-width="1.4"/>
+  <path d="M214 59v79m-5-79h5m-5 79h5" fill="none" stroke="#267f77" stroke-width="1.4"/>
+  <g font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="16">
+    <text x="228" y="33" fill="#226a85">Objective</text>
+    <text x="228" y="104" fill="#267f77">Constraints</text>
+  </g>
+</svg>
