@@ -18,7 +18,7 @@ body:not(.reveal-viewport) section.level2 {scroll-margin-top:20px;}
   body:not(.reveal-viewport) {font-size:18px;line-height:1.5;overflow-wrap:break-word;}
   body:not(.reveal-viewport) main {padding:0 16px;}
   body:not(.reveal-viewport) section.level2 {padding:54px 0 28px;margin:0 0 16px;min-width:0;max-width:100%;overflow-x:auto;}
-  body:not(.reveal-viewport) section.cover {padding:54px 20px 24px;margin:0 -16px;}
+  body:not(.reveal-viewport) section.cover {padding:54px 20px 24px;margin:0 -16px;width:calc(100% + 32px);max-width:none;}
   body:not(.reveal-viewport) h2 {font-size:30px;letter-spacing:-.7px;line-height:1.2;}
   body:not(.reveal-viewport) .cover h2 {font-size:34px;letter-spacing:-1px;}
   body:not(.reveal-viewport) .cover .author-grid {row-gap:24px;margin-top:24px;}
@@ -36,6 +36,8 @@ body:not(.reveal-viewport) section.level2 {scroll-margin-top:20px;}
   body:not(.reveal-viewport) .slide-body {min-width:0;}
   body:not(.reveal-viewport) .slide-body>p {font-size:20px;line-height:1.5;}
   body:not(.reveal-viewport) .discrete-methods-overview .application-method h4 {white-space:normal;min-height:0;font-size:23px;}
+  body:not(.reveal-viewport) .discrete-methods-overview .overview-products {gap:8px;padding-left:0;padding-right:0;}
+  body:not(.reveal-viewport) .discrete-methods-overview .overview-products span {font-size:16px;white-space:nowrap;}
   body:not(.reveal-viewport) :is(.falp-construction-grid,.sg-parallel-columns,.sg-side-comparison,.sg-initialize-card,.pricing-definitions) {
     grid-template-columns:minmax(0,1fr)!important;gap:20px;
   }
@@ -60,4 +62,16 @@ body:not(.reveal-viewport) section.level2 {scroll-margin-top:20px;}
   body:not(.reveal-viewport) #s39 .falp-comparison {max-width:100%;overflow-x:auto;}
   body:not(.reveal-viewport) #s39 :is(.falp-compare-headings,.falp-compare-svg,.falp-compare-legend) {min-width:570px;}
   body:not(.reveal-viewport) #s39 .falp-compare-svg {height:210px;}
+  body:not(.reveal-viewport) #s38 .feature-family-formulas {grid-template-columns:minmax(0,1fr);gap:20px;}
+  body:not(.reveal-viewport) #s38 .feature-family-formulas>div {min-width:0;overflow-x:auto;}
+  body:not(.reveal-viewport) #s38 .feature-family-formulas strong {display:block;margin:0 0 8px;}
+  body:not(.reveal-viewport) #vfa-adaptation-transition .adaptation-headings {display:none;}
+  body:not(.reveal-viewport) #vfa-adaptation-transition .adaptation-map {grid-template-columns:minmax(0,1fr);gap:12px;}
+  body:not(.reveal-viewport) #vfa-adaptation-transition .adaptation-choice {min-height:0;padding:20px;}
+  body:not(.reveal-viewport) #vfa-adaptation-transition .adaptation-choice::before {content:"Initial choice";display:block;font-size:14px;color:var(--muted);margin-bottom:10px;}
+  body:not(.reveal-viewport) #vfa-adaptation-transition .adaptation-next::before {content:"Refinement";color:var(--teal);}
+  body:not(.reveal-viewport) #vfa-adaptation-transition .adaptation-arrow {transform:rotate(90deg)!important;color:var(--teal);line-height:1;}
+  body:not(.reveal-viewport) :is(#s38,#s42,#s43,#s44) .demo-output {max-width:100%;overflow-x:auto;}
+  body:not(.reveal-viewport) :is(#s38,#s42,#s43,#s44) .demo-output img {width:700px;min-width:700px;max-width:none;height:auto;}
+  body:not(.reveal-viewport) :is(#s38,#s42,#s43,#s44) .demo-output:has(img)::before {content:"Swipe to view the full plot";display:block;font-size:14px;color:var(--muted);margin-bottom:10px;}
 }
