@@ -241,7 +241,15 @@
   // Group the shared Markdown content into reading sections where Pandoc leaves it flat.
   const reading=document.querySelector('main[aria-label="Tutorial reading view"]');
   if(reading){[...reading.querySelectorAll(':scope > h2')].forEach(h=>{const section=document.createElement('section');section.className='level2 '+h.className;section.id=h.id;h.removeAttribute('id');h.className='';reading.insertBefore(section,h);section.append(h);while(section.nextSibling&&section.nextSibling.nodeName!=='H2')section.append(section.nextSibling);});
-    const jump=document.querySelector('#reading-jump');reading.querySelectorAll('section.level2').forEach((s,i)=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${i+1}. ${s.querySelector('h2').textContent}`;jump.append(o);});jump.addEventListener('change',()=>document.getElementById(jump.value).scrollIntoView({behavior:'instant'}));
+    const jump=document.querySelector('#reading-jump');reading.querySelectorAll('section.level2').forEach((s,i)=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${i+1}. ${s.querySelector('h2').textContent}`;jump.append(o);});
+    jump.addEventListener('change',()=>{
+      const section=document.getElementById(jump.value);
+      if(!section)return;
+      history.replaceState(history.state,'','#'+section.id);
+      section.scrollIntoView({behavior:'instant'});
+      const slideView=document.querySelector('[data-slide-view]');
+      if(slideView)slideView.hash='/'+section.id;
+    });
   }
   const deck=document.querySelector('.reveal');
   if(deck){const original=deck.querySelector('.logo-strip');if(original){const footer=original.cloneNode(true);footer.classList.add('projected-footer');footer.querySelectorAll('img').forEach(img=>{if(img.dataset.src)img.src=img.dataset.src;img.removeAttribute('data-src');img.loading='eager';});deck.append(footer);}}
