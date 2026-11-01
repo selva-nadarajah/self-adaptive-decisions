@@ -121,6 +121,38 @@
 
   function start() {
     shareCode();
+    const reading = document.querySelector('main[aria-label="Tutorial reading view"]');
+    if (reading) {
+      // Wide tables scroll within their own region, not the entire phone page.
+      reading.querySelectorAll('table').forEach(table => {
+        if (table.parentElement.classList.contains('reading-overflow')) return;
+        const region = document.createElement('div');
+        region.className = 'reading-overflow';
+        region.tabIndex = 0;
+        region.setAttribute('role', 'region');
+        region.setAttribute('aria-label', 'Table, scroll horizontally if needed');
+        table.before(region);
+        region.append(table);
+      });
+      const target = location.hash.replace(/^#\/?/, '');
+      const section = target && document.getElementById(target);
+      if (section) {
+        const jump = document.querySelector('#reading-jump');
+        if (jump) jump.value = section.id;
+        window.addEventListener('load', () => section.scrollIntoView(), {once:true});
+        // Equations can change earlier sections' heights after the initial load.
+        let interacted = false;
+        const inputEvents = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
+        const markInteraction = () => { interacted = true; };
+        inputEvents.forEach(type => window.addEventListener(type, markInteraction, {once:true, passive:true}));
+        window.addEventListener('tutorial:math-ready', () => {
+          if (!interacted) section.scrollIntoView();
+          inputEvents.forEach(type => window.removeEventListener(type, markInteraction));
+        }, {once:true});
+      }
+      const slideLink = document.querySelector('[data-slide-view]');
+      if (slideLink && target) slideLink.hash = '/' + target;
+    }
     if (!document.querySelector('.reveal')) return;
     if (window.Reveal?.isReady()) contents();
     else window.Reveal?.on('ready', contents);

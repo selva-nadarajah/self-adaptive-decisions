@@ -1,0 +1,55 @@
+/* Reading view only: never change the projected presentation. */
+body:not(.reveal-viewport) :is(.falp-bottom-stages,.policy-end-stages,.sg-model-stages) {
+  display:flex!important;flex-direction:column;gap:24px;
+}
+body:not(.reveal-viewport) .reading-overflow {
+  max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;
+}
+body:not(.reveal-viewport) section.level2 {scroll-margin-top:20px;}
+@media(max-width:700px) {
+  body:not(.reveal-viewport) {font-size:18px;line-height:1.5;overflow-wrap:break-word;}
+  body:not(.reveal-viewport) main {padding:0 16px;}
+  body:not(.reveal-viewport) section.level2 {padding:54px 0 28px;margin:0 0 16px;min-width:0;max-width:100%;overflow-x:auto;}
+  body:not(.reveal-viewport) section.cover {padding:54px 20px 24px;margin:0 -16px;}
+  body:not(.reveal-viewport) h2 {font-size:30px;letter-spacing:-.7px;line-height:1.2;}
+  body:not(.reveal-viewport) .cover h2 {font-size:34px;letter-spacing:-1px;}
+  body:not(.reveal-viewport) .cover .author-grid {row-gap:24px;margin-top:24px;}
+  body:not(.reveal-viewport) .author-grid strong {font-size:21px;}
+  body:not(.reveal-viewport) .author-grid :is(p,a) {font-size:16px;overflow-wrap:anywhere;}
+  body:not(.reveal-viewport) .cover-share {display:none;}
+  body:not(.reveal-viewport) .reading-nav {padding:12px 16px;gap:8px 18px;font-size:15px;}
+  body:not(.reveal-viewport) .reading-nav a {display:inline-flex;align-items:center;min-height:40px;}
+  body:not(.reveal-viewport) .reading-nav label {flex-basis:100%;width:100%;}
+  body:not(.reveal-viewport) .reading-nav select {font:inherit;min-height:44px;width:0;}
+  body:not(.reveal-viewport) .logo-strip {display:block;padding-top:18px;}
+  body:not(.reveal-viewport) .logo-strip>p {display:flex;flex-wrap:wrap;justify-content:flex-start;gap:16px;padding:0;}
+  body:not(.reveal-viewport) .logo-strip .footer-authors {display:block;margin-bottom:16px;white-space:normal;}
+  body:not(.reveal-viewport) .logo-strip .logo-buffalo {max-width:148px;}
+  body:not(.reveal-viewport) .slide-body {min-width:0;}
+  body:not(.reveal-viewport) .slide-body>p {font-size:20px;line-height:1.5;}
+  body:not(.reveal-viewport) .discrete-methods-overview .application-method h4 {white-space:normal;min-height:0;font-size:23px;}
+  body:not(.reveal-viewport) :is(.falp-construction-grid,.sg-parallel-columns,.sg-side-comparison,.sg-initialize-card,.pricing-definitions) {
+    grid-template-columns:minmax(0,1fr)!important;gap:20px;
+  }
+  body:not(.reveal-viewport) :is(.continuous-python-lab,.refinement-python-lab) {display:flex!important;flex-direction:column;align-items:stretch;gap:14px;}
+  body:not(.reveal-viewport) :is(.continuous-python-lab,.refinement-python-lab)>* {width:100%;min-width:0;grid-area:auto;}
+  body:not(.reveal-viewport) .continuous-import-slide .demo-output {min-height:0;max-height:none;border:0;padding:8px 0;}
+  body:not(.reveal-viewport) .continuous-import-slide .demo-output img {max-height:none;height:auto;}
+  body:not(.reveal-viewport) :is(.display-math,.equation-box,.theorem-box,.coupled-bellman,.bellman-objective-link) {max-width:100%;overflow-x:auto;overflow-y:hidden;}
+  body:not(.reveal-viewport) .polished-math.display-math {display:block;}
+  body:not(.reveal-viewport) textarea {font-size:16px!important;max-width:100%;}
+  body:not(.reveal-viewport) button {min-height:44px;}
+  body:not(.reveal-viewport) .sg-parallel-models {height:auto!important;min-height:210px;}
+  body:not(.reveal-viewport) .notes {font-size:16px;padding:16px;}
+  body:not(.reveal-viewport) .closing-evidence p {font-size:21px;}
+  body:not(.reveal-viewport) .adaptation-benefits {display:none;}
+  body:not(.reveal-viewport) .reading-benefits {display:block;}
+  body:not(.reveal-viewport) .reading-benefits h3 {font-size:24px;color:var(--teal);margin:24px 0 6px;}
+  body:not(.reveal-viewport) .reading-benefits p {margin:0 0 20px;font-size:19px;}
+  body:not(.reveal-viewport) .reading-benefits dl {border-top:1px solid var(--line);padding-top:16px;}
+  body:not(.reveal-viewport) .reading-benefits dt {color:var(--accent);font-weight:600;margin-top:16px;}
+  body:not(.reveal-viewport) .reading-benefits dd {margin:4px 0 0;}
+  body:not(.reveal-viewport) #s39 .falp-comparison {max-width:100%;overflow-x:auto;}
+  body:not(.reveal-viewport) #s39 :is(.falp-compare-headings,.falp-compare-svg,.falp-compare-legend) {min-width:570px;}
+  body:not(.reveal-viewport) #s39 .falp-compare-svg {height:210px;}
+}

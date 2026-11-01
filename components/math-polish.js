@@ -44,6 +44,7 @@
         section.dataset.mathReady = 'true';
       }
       window.MATH_POLISH_READY = true;
+      window.dispatchEvent(new Event('tutorial:math-ready'));
       const layout = () => window.Reveal?.layout();
       if (window.Reveal?.isReady()) layout();
       else window.Reveal?.on('ready', layout);

@@ -44,11 +44,12 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/continuous-import.css?v=all-tutorial-math">
 <link rel="stylesheet" href="styles/closing.css">
 <link rel="stylesheet" href="styles/navigation.css">
+<link rel="stylesheet" href="styles/mobile-reading.css?v=20261031">
 </head>
 
 <body>
 
-<nav class="reading-nav" aria-label="Presentation views"><a href="index.html">Slide view</a><a href="backup.html">Technical backup</a><a href="assets/tutorial.pdf">Tutorial manuscript (PDF)</a><label>Jump to <select id="reading-jump" aria-label="Jump to section"></select></label></nav>
+<nav class="reading-nav" aria-label="Presentation views"><a href="index.html?view=slides" data-slide-view="">Slide view</a><a href="backup.html">Technical backup</a><a href="assets/tutorial.pdf">Tutorial manuscript (PDF)</a><label>Jump to <select id="reading-jump" aria-label="Jump to section"></select></label></nav>
 <main aria-label="Tutorial reading view">
 
 
@@ -2259,6 +2260,18 @@ Use problem structure, data, and solution progress.
     </g>
   </g>
 </svg>
+<div class="reading-benefits reading-only">
+  <h3 class="anchored">Performance</h3>
+  <p>Computation and decision quality</p>
+  <h3 class="anchored">Accessibility</h3>
+  <p>Less technical knowledge to use advanced methods</p>
+  <p><strong>Self adapting MDP approximations</strong></p>
+  <dl>
+    <dt>Construct</dt><dd>Exploit problem structure</dd>
+    <dt>Optimize</dt><dd>Solve the current model</dd>
+    <dt>Refine</dt><dd>Assess and update</dd>
+  </dl>
+</div>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
 <div class="footer-authors">
@@ -2319,10 +2332,10 @@ Use problem structure, data, and solution progress.
 <script src="components/refinement-python.js" defer=""></script>
 <script src="components/continuous-python.js?v=projection-svg" defer=""></script>
 <script src="assets/vendor/qrcode-generator/qrcode.js" defer=""></script>
-<script src="components/navigation.js" defer=""></script>
+<script src="components/navigation.js?v=20261031" defer=""></script>
 <script src="components/sequential-applications.js" defer=""></script>
 
-<script src="components/math-polish.js?v=all-tutorial-math" defer=""></script>
+<script src="components/math-polish.js?v=mobile-20261031" defer=""></script>
 
 <script src="components/lp-value-animation.js" defer=""></script>
 

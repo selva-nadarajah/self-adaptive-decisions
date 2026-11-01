@@ -14,6 +14,7 @@
 .reveal .closing-assessment-takeaway {font-size:27px;line-height:1.3;margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--accent);}
 .reveal .closing-benefits-intro {font-size:25px;line-height:1.3;margin:0 0 18px;}
 .adaptation-benefits {display:block;width:100%;height:auto;max-height:430px;overflow:visible;}
+.reading-benefits {display:none;}
 .closing-frontiers,.reveal .closing-frontiers {list-style:none;margin:8px 0 0;padding:0;}
 .closing-frontiers li {padding:17px 0 20px;border-top:1px solid var(--line);}
 .closing-frontiers strong {font-size:29px;line-height:1.2;font-weight:600;color:var(--accent);}
