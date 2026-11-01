@@ -1,4 +1,12 @@
 /* Reading view only: never change the projected presentation. */
+/* Hide the original notes before JavaScript turns them into closed disclosures. */
+body:not(.reveal-viewport) .notes {display:none!important;}
+.reading-notes {margin-top:20px;color:var(--muted);font-size:16px;line-height:1.5;}
+.reading-notes>summary {cursor:pointer;font-size:14px;padding:12px 0;min-height:44px;}
+.reading-notes>summary:focus-visible {outline:2px solid var(--teal);outline-offset:3px;}
+.reading-notes[open] .reading-notes-content {background:var(--tint);padding:16px;border-radius:6px;}
+.reading-notes-content>:first-child {margin-top:0;}
+.reading-notes-content>:last-child {margin-bottom:0;}
 body:not(.reveal-viewport) :is(.falp-bottom-stages,.policy-end-stages,.sg-model-stages) {
   display:flex!important;flex-direction:column;gap:24px;
 }

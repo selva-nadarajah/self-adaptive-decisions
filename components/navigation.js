@@ -123,6 +123,17 @@
     shareCode();
     const reading = document.querySelector('main[aria-label="Tutorial reading view"]');
     if (reading) {
+      reading.querySelectorAll('.notes').forEach(notes => {
+        const disclosure = document.createElement('details');
+        disclosure.className = 'reading-notes';
+        const summary = document.createElement('summary');
+        summary.textContent = 'Presenter notes';
+        const content = document.createElement('div');
+        content.className = 'reading-notes-content';
+        content.append(...notes.childNodes);
+        disclosure.append(summary, content);
+        notes.replaceWith(disclosure);
+      });
       // Wide tables scroll within their own region, not the entire phone page.
       reading.querySelectorAll('table').forEach(table => {
         if (table.parentElement.classList.contains('reading-overflow')) return;
