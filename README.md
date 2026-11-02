@@ -5,7 +5,7 @@ Published presentation: https://self-adaptive-decisions.com/
 This repository contains the rendered INFORMS tutorial presentation, reading view, technical backup, and bundled browser demonstrations.
 
 Source repository: https://github.com/andrecire/informs-tutorial-2026
-Source revision: 744f293 (local authoring commit, based on upstream 8697f99)
+Source revision: 4bc1405 (local authoring commit, based on upstream 8697f99)
 
 Phones open the responsive reading view automatically. Use `index.html?view=slides` to choose the presentation view explicitly.
 
