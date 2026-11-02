@@ -258,6 +258,17 @@ body:not(.reveal-viewport) .discrete-methods-overview .tutorial-focus {color:var
 .dictionary .definition .term {font-size:58px;}
 .dictionary .definition p {font-size:25px;}
 .definition-emphasis {color:var(--orange);font-weight:400;}
+/* Restored dictionary slide: readable definitions, sources, and MDP connection. */
+#self-adapting-definition .definition p {font-size:28px;line-height:1.45;}
+#self-adapting-definition .definition .pronunciation {font-size:23px;}
+#self-adapting-definition .definition-source {font-size:20px;line-height:1.4;}
+#self-adapting-definition .definition-insight {font-size:28px;line-height:1.4;margin:38px 0 0;padding-top:24px;border-top:1px solid var(--line);}
+@media(max-width:700px) {
+ body:not(.reveal-viewport) #self-adapting-definition .definition p {font-size:24px;}
+ body:not(.reveal-viewport) #self-adapting-definition .definition .pronunciation {font-size:20px;}
+ body:not(.reveal-viewport) #self-adapting-definition .definition-source {font-size:18px;}
+ body:not(.reveal-viewport) #self-adapting-definition .definition-insight {font-size:23px;margin-top:28px;}
+}
 .diagram-row {display:flex;gap:18px;align-items:stretch;margin:24px 0;}
 .diagram-row > div {flex:1;padding:22px;background:var(--tint);}
 .diagram-row .arrow {flex:0;align-self:center;padding:0;background:none;color:var(--teal);font-size:28px;}

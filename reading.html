@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 
 
-<link rel="stylesheet" href="styles/layout.css?v=logos-20261031">
+<link rel="stylesheet" href="styles/layout.css?v=dictionary-20261102">
 <link rel="stylesheet" href="styles/assortment.css?v=live-refinement-20261030">
 <link rel="stylesheet" href="styles/continuous.css">
 <link rel="stylesheet" href="styles/continuous-decisions.css">
@@ -385,6 +385,43 @@ Less user effort, more efficient computation, better decisions.
 </ol>
 <p class="outcomes-closing">
 We hope this foundation helps you explore adaptation’s value in your own MDP research and applications.
+</p>
+</div>
+<div class="logo-strip" aria-label="Authors and participating universities">
+<div class="footer-authors">
+<p>Cire · Nadarajah · Pakiman · Soheili</p>
+</div>
+<p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
+</div>
+<!-- ====================================================================
+DEFINITION — Restored from the former technical backup
+==================================================================== -->
+<h2 class="dictionary anchored" id="self-adapting-definition">Adapt and self-adapting</h2>
+<div class="slide-body">
+<div class="definition-grid">
+<div class="definition">
+<span class="term">adapt</span>
+<p class="pronunciation">
+verb · /əˈdæpt/
+</p>
+<p>
+<em>“<span class="definition-emphasis">to change</span>, or <span class="definition-emphasis">to change</span> something, to suit different conditions or uses”</em>
+</p>
+<a class="definition-source" href="https://dictionary.cambridge.org/dictionary/english/adapt">Cambridge Dictionary</a>
+</div>
+<div class="definition fragment" data-fragment-index="0">
+<span class="term">self-adapting</span>
+<p class="pronunciation">
+adjective · working definition
+</p>
+<p>
+<em>able to adjust itself to become <span class="definition-emphasis">more effective</span> or <span class="definition-emphasis">suitable</span></em>
+</p>
+<a class="definition-source" href="https://dictionary.cambridge.org/dictionary/english/self-adjusting">Adapted from Cambridge’s “self-adjusting”</a>
+</div>
+</div>
+<p class="definition-insight fragment" data-fragment-index="1">
+<strong>For MDPs:</strong> automate approximation choices using problem structure, data, or solution feedback.
 </p>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
@@ -1456,7 +1493,8 @@ V_\beta(s)=\beta_0+\sum_{n=1}^{N}\beta_n\varphi_n(s),
 <strong>Semi-infinite approximate linear program (ALP)</strong>
 </p>
 <div class="alp-objective-versions">
-<p class="alp-reward-formulation fragment fade-out" data-fragment-index="2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mi mathvariant="normal">max</mi><mrow><mi>β</mi><mo>∈</mo><mi>B</mi></mrow></munder><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">s.t.</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><mspace width="0.167em"></mspace><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+<p class="alp-reward-formulation fragment fade-out" data-fragment-index="2">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mi mathvariant="normal">max</mi><mrow><mi>β</mi><mo>∈</mo><mi>B</mi></mrow></munder><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">s.t.</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><mspace width="0.167em"></mspace><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 \max_{\beta\in B}\quad
     &amp; \mathbb E_\nu[V_\beta(s)] \\
@@ -1464,7 +1502,8 @@ V_\beta(s)=\beta_0+\sum_{n=1}^{N}\beta_n\varphi_n(s),
     &amp; V_\beta(s) \le c(s,a)
       +\gamma\,\mathbb E[V_\beta(S')\mid s,a], \quad \forall(s,a)\in\mathcal{S}\times\mathcal{A}(s).
 \end{aligned}
-</annotation></semantics></math></p>
+</annotation></semantics></math>
+</p>
 <p class="alp-distance-formulation fragment" data-fragment-index="2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr mathcolor="blue"><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mi mathvariant="normal">min</mi><mrow><mi>β</mi><mo>∈</mo><mi>B</mi></mrow></munder><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mrow><mo stretchy="true" form="prefix">‖</mo><msup><mi>V</mi><mo>*</mo></msup><mo>−</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="true" form="postfix">‖</mo></mrow><mrow><mn>1</mn><mo>,</mo><mi>ν</mi></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">s.t.</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><mspace width="0.167em"></mspace><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 {\color{blue}\min_{\beta\in B}}\quad
