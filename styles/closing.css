@@ -1,4 +1,4 @@
-/* Closing block: route, solver evolution, evidence, benefits, and an invitation. */
+/* Closing block: route, solver evolution, evidence, benefits, and invitations. */
 .reveal #s11 .opening-route-closing {font-size:24px;line-height:1.35;margin:24px 0 0;}
 .closing-route .route-method {min-height:64px!important;}
 .reveal .closing-route .closing-route-takeaway {font-size:27px;line-height:1.35;margin:28px 0 0;}
@@ -64,6 +64,27 @@ body:not(.reveal-viewport) .solver-evolution .solver-evolution-examples {min-hei
  body:not(.reveal-viewport) .closing-notebooks-link {font-size:18px;}
 }
 body:not(.reveal-viewport) .adaptation-benefits {max-height:none;}
+.contributor-layout {display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:54px;align-items:start;margin-top:12px;}
+.contributor-invitation p,.reveal .contributor-invitation p {font-size:26px;line-height:1.4;margin:0 0 22px;}
+.contributor-invitation .contributor-lead,.reveal .contributor-invitation .contributor-lead {font-size:31px;font-weight:600;line-height:1.25;color:var(--accent);margin-bottom:18px;}
+.contributor-invitation .contributor-gathering,.reveal .contributor-invitation .contributor-gathering {font-size:24px;line-height:1.45;padding-left:20px;border-left:3px solid var(--teal);}
+.contributor-invitation .contributor-email,.reveal .contributor-invitation .contributor-email {font-size:25px;line-height:1.5;margin-bottom:24px;}
+.contributor-email span {font-size:22px;color:var(--muted);}
+.contributor-email a {overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:4px;}
+.contributor-invitation .contributor-welcome,.reveal .contributor-invitation .contributor-welcome {font-size:28px;line-height:1.35;font-weight:600;color:var(--teal);margin:0;}
+.contributor-form {min-width:0;padding:24px;background:var(--tint);border-top:3px solid var(--teal);}
+.contributor-form h3,.reveal .contributor-form h3 {font-size:29px!important;font-weight:600;line-height:1.2;letter-spacing:-.4px;text-transform:none;color:var(--teal);margin:0 0 10px;}
+.contributor-form p,.reveal .contributor-form p {font-size:22px;line-height:1.35;margin:0 0 14px;}
+.contributor-qr {display:block;width:240px;max-width:100%;margin:0 0 16px;}
+.contributor-qr img,.reveal .contributor-qr img {display:block;width:240px;max-width:100%;height:auto;margin:0;border:0;box-shadow:none;background:#fff;}
+.contributor-form-link {display:block;font-size:22px;line-height:1.4;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:4px;}
+@media(max-width:900px) {
+ body:not(.reveal-viewport) .contributor-layout {grid-template-columns:minmax(0,1fr);gap:28px;}
+ body:not(.reveal-viewport) .contributor-invitation p {font-size:21px;}
+ body:not(.reveal-viewport) .contributor-invitation .contributor-lead {font-size:26px;}
+ body:not(.reveal-viewport) .contributor-invitation .contributor-welcome {font-size:24px;}
+ body:not(.reveal-viewport) .contributor-form-link {font-size:20px;}
+}
 @media(max-width:700px) {
  body:not(.reveal-viewport) .closing-evidence li {grid-template-columns:1fr;gap:12px;}
 }
