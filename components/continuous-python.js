@@ -1,7 +1,7 @@
 /* One shared browser Python session preserves related demos' computed results. */
 (() => {
   const workerURL = new URL('continuous-python-worker.js', document.currentScript.src);
-  workerURL.searchParams.set('v', 'projection-svg');
+  workerURL.searchParams.set('v', 'random-feature-tables-20261102');
   const labs = [...document.querySelectorAll('[data-continuous-python]')];
   if (!labs.length) return;
   let worker, active, timer;
@@ -59,7 +59,9 @@
           stdout(state, data.text);
         } else if (data.type === 'result') {
           showImages(state, data.images, data.mimeType);
-          state.root.dispatchEvent(new Event("demo-images-ready"));
+          state.root.dispatchEvent(new CustomEvent("demo-images-ready", {
+            detail: {randomFeatureFit: data.randomFeatureFit}
+          }));
           state.status.textContent = ['constraint-violation', 'gibbs-density'].includes(state.root.dataset.demoId) ? '' : 'Finished on your device. Edit the code to explore.';
           state.root.dataset.completed = String(state.editor.value === state.executedCode);
           if (!state.output.childElementCount) stdout(state, 'Code finished without printed output or a figure.');

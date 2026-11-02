@@ -38,7 +38,7 @@ INK, PRIMARY, TEAL = '#182c3e', '#226a85', '#267f77'
 ACCENT, MUTED, DANGER = '#a4592f', '#dce4e9', '#9b3f34'
 plt.rcParams.update({'text.color': INK, 'axes.labelcolor': INK,
                      'xtick.color': INK, 'ytick.color': INK, 'figure.dpi': 130})
-import io as _browser_io, base64 as _browser_base64
+import io as _browser_io, base64 as _browser_base64, json as _browser_json
 _browser_images = []
 def _browser_capture_figures(*args, **kwargs):
     for number in list(plt.get_fignums()):
@@ -64,11 +64,14 @@ self.onmessage = async ({data}) => {
     executing = true;
     send('running');
     send('status', {text: 'Running Python on your device…'});
-    await python.runPythonAsync("_browser_images = []\nplt.close('all')", {globals: scope});
+    await python.runPythonAsync("_browser_images = []\n_random_feature_fit_details = None\nplt.close('all')", {globals: scope});
     await python.runPythonAsync(data.code, {globals: scope});
     await python.runPythonAsync('_browser_capture_figures()', {globals: scope});
     images = scope.get('_browser_images');
-      send('result', {images: images.toJs(), mimeType: 'image/svg+xml', version: python.version});
+    const randomFeatureFit = data.id === 'random-features'
+      ? JSON.parse(python.runPython('_browser_json.dumps(_random_feature_fit_details)', {globals: scope}))
+      : null;
+    send('result', {images: images.toJs(), mimeType: 'image/svg+xml', version: python.version, randomFeatureFit});
   } catch (error) {
     send('error', {text: String(error.message || error)});
     // A failed initial load can be retried with a new worker.
