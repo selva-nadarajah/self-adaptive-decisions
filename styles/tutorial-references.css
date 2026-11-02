@@ -1,0 +1,23 @@
+/* Application overview slides: one advance shows full, readable paper references. */
+.tutorial-paper-overview .tutorial-papers {display:grid;gap:20px;margin-top:18px;}
+.tutorial-paper-overview .tutorial-paper {padding:14px 20px;border-top:1px solid var(--line);border-left:4px solid transparent;}
+.tutorial-paper-overview .tutorial-paper-presented {border-left-color:var(--teal);background:#e1f0ec;}
+.tutorial-paper-overview .tutorial-paper-label,.reveal .tutorial-paper-overview .tutorial-paper-label {font-size:22px;line-height:1.25;font-weight:600;color:var(--muted);margin:0 0 10px;}
+.tutorial-paper-overview .tutorial-paper-title,.reveal .tutorial-paper-overview .tutorial-paper-title {font-size:28px;line-height:1.25;font-weight:500;margin:0 0 12px;}
+.tutorial-paper-overview .tutorial-paper-title a {color:var(--ink);text-decoration:none;}
+.tutorial-paper-overview .tutorial-paper-title a:hover,.tutorial-paper-overview .tutorial-paper-title a:focus-visible {text-decoration:underline;text-underline-offset:4px;}
+.tutorial-paper-overview .tutorial-paper-details,.reveal .tutorial-paper-overview .tutorial-paper-details {font-size:24px;line-height:1.3;color:var(--muted);margin:0;}
+.tutorial-paper-overview .tutorial-paper-details em {white-space:nowrap;}
+.reveal .tutorial-paper-overview .tutorial-papers:not(.visible) {display:none;}
+.reveal .tutorial-paper-overview:has(.tutorial-papers.visible) :is(.discrete-applications,.methods-shared,.dc-applications) {display:none!important;}
+.reveal .tutorial-paper-overview .tutorial-paper {border-top-color:#ffffff40;}
+.reveal .tutorial-paper-overview .tutorial-paper-title a {color:#edf0f2;}
+.reveal .tutorial-paper-overview :is(.tutorial-paper-label,.tutorial-paper-details) {color:#d4d9dd;}
+.reveal .tutorial-paper-overview .tutorial-paper-presented {background:#ffffff0d;border-left-color:#a9dcd4;}
+.reveal .tutorial-paper-overview .tutorial-paper-presented :is(.tutorial-paper-label,.tutorial-paper-title a) {color:#a9dcd4;}
+.tutorial-paper-overview .tutorial-paper-presented .tutorial-paper-label {color:var(--teal);}
+@media(max-width:700px) {
+ body:not(.reveal-viewport) .tutorial-paper-overview .tutorial-paper {padding:14px 16px;}
+ body:not(.reveal-viewport) .tutorial-paper-overview .tutorial-paper-title {font-size:24px;}
+ body:not(.reveal-viewport) .tutorial-paper-overview .tutorial-paper-details {font-size:21px;}
+}

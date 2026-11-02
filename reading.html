@@ -43,6 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/continuous-decisions.css">
 <link rel="stylesheet" href="styles/continuous-import.css?v=all-tutorial-math">
 <link rel="stylesheet" href="styles/closing.css?v=readable-references-20261102">
+<link rel="stylesheet" href="styles/tutorial-references.css?v=full-papers-20261102">
 <link rel="stylesheet" href="styles/navigation.css">
 <link rel="stylesheet" href="styles/mobile-reading.css?v=browser-review-20261031">
 </head>
@@ -595,7 +596,7 @@ SLIDE 11 — Two examples we will explore in this tutorial
 <p>Source: <a href="assets/tutorial.pdf">Tutorial §§3–4</a></p>
 <p>The route is discrete decisions first, then continuous decisions. Each panel uses the three COR stages; “Solve” is the Optimize stage. Delayed allocation represents feasible actions and expands the represented action set. The continuous section focuses on self guided ALP from Tutorial §4.3: choose a random feature family, solve an ALP, then add features and guiding constraints across solves. This does not require PSMD or the constraint violation learning algorithm, which is in the technical appendix. The discrete panel is visible on entry. Advance once to reveal the continuous panel. The reading view shows both panels. The final line previews the closing block: takeaways, assessing adaptation, performance and accessibility, and open opportunities.</p>
 </div>
-<h2 class="content-slide discrete-methods-overview speaker-change anchored" data-background-color="#30353b" id="discrete-methods">In the tutorial</h2>
+<h2 class="content-slide discrete-methods-overview tutorial-paper-overview speaker-change anchored" data-background-color="#30353b" id="discrete-methods">In the tutorial</h2>
 <div class="slide-body">
 <p class="methods-context">
 <strong>Weakly coupled MDPs</strong>: independent MDPs with linking constraints.
@@ -622,7 +623,18 @@ SLIDE 11 — Two examples we will explore in this tutorial
   </div>
 </div>
 <p class="methods-shared">Both methods apply across these settings.</p>
-<p class="tutorial-focus fragment" data-fragment-index="0"><strong>Today:</strong> Delayed allocation for dynamic assortment</p>
+<div class="tutorial-papers fragment" data-fragment-index="0" aria-label="Two tutorial papers on weakly coupled MDPs">
+  <div class="tutorial-paper">
+    <p class="tutorial-paper-label">Also covered in the tutorial</p>
+    <p class="tutorial-paper-title"><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes.</a></p>
+    <p class="tutorial-paper-details">Nadarajah &amp; Cire (2025). <em>Management Science</em>, 71(2), 1779–1802.</p>
+  </div>
+  <div class="tutorial-paper tutorial-paper-presented">
+    <p class="tutorial-paper-label">Presented today · Dynamic assortment</p>
+    <p class="tutorial-paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326">Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes.</a></p>
+    <p class="tutorial-paper-details">Nadarajah &amp; Cire (2026). Working paper.</p>
+  </div>
+</div>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
 <div class="footer-authors">
@@ -634,7 +646,7 @@ SLIDE 11 — Two examples we will explore in this tutorial
 <p>Source: Tutorial §3 opening, §3.2 Self Adapting Network Relaxations, and §3.3 Delayed Allocation and Vertex Policies.</p>
 <p>Use the two animated applications to motivate shared feasibility constraints. Cell towers serving the same area cannot receive software updates simultaneously because of coverage risks; products compete for limited display space. The cell tower application follows the presenter supplied Preemptive Maintenance slides. Updates can fail and make a tower ineffective; the component state in that example is time since the last maintenance, with failure risk increasing with that state. This overview shows feasible update choices, without simulating failure outcomes. Both approximation methods apply to weakly coupled MDPs in either setting. The tutorial uses dynamic assortment as its worked example for both methods; maintenance is a motivating application named in its introduction to §3.</p>
 <p>Network relaxations construct a network encoding feasible joint actions. The network size adapts to the structure of the linking constraints. Delayed allocation instead maintains an explicit restricted collection of feasible joint actions and adds actions when optimization indicates that they can improve the LP. This is a conceptual overview, not a claim that the network method applies only to maintenance or that delayed allocation applies only to assortment.</p>
-<p>The maintenance illustration uses three towers with a single coverage conflict edge between towers 1 and 2. Tower 3 has no conflict with either tower. The amber towers are updating and the green towers remain online. Alternate between updating towers 1 and 3 together and tower 2 alone. Each update set is a stable set because it contains no adjacent towers; these choices need not be maximal stable sets. This illustrates the independent set constraints in the supplied slides, including simultaneous updates to towers without a coverage conflict. The edge represents a shared coverage conflict, not the network constructed by the approximation method. Compact tower icons, numeric identifiers, and one shared status line keep this overview light. The assortment illustration cycles through backpack plus cooler, tent alone, and backpack plus tent, using 5, 6, and 8 of the 8 display space units. Every shown selection is feasible. These are illustrative decisions over time, not outputs from either approximation algorithm. Both animations pause off slide, stop for reduced motion preferences, and have static reading view fallbacks. Advance once to mark the presentation focus. Spend about 30 seconds here, then use the next slide to walk through product selections and demand observations over two periods. The following section concentrates on delayed allocation and its computational theory.</p>
+<p>The maintenance illustration uses three towers with a single coverage conflict edge between towers 1 and 2. Tower 3 has no conflict with either tower. The amber towers are updating and the green towers remain online. Alternate between updating towers 1 and 3 together and tower 2 alone. Each update set is a stable set because it contains no adjacent towers; these choices need not be maximal stable sets. This illustrates the independent set constraints in the supplied slides, including simultaneous updates to towers without a coverage conflict. The edge represents a shared coverage conflict, not the network constructed by the approximation method. Compact tower icons, numeric identifiers, and one shared status line keep this overview light. The assortment illustration cycles through backpack plus cooler, tent alone, and backpack plus tent, using 5, 6, and 8 of the 8 display space units. Every shown selection is feasible. These are illustrative decisions over time, not outputs from either approximation algorithm. Both animations pause off slide, stop for reduced motion preferences, and have static reading view fallbacks. Advance once to replace the application illustrations with full references for the two tutorial papers, highlighting delayed allocation as the paper presented today. The reading view retains both illustrations and references. Spend about 30 seconds here, then use the next slide to walk through product selections and demand observations over two periods. The following section concentrates on delayed allocation and its computational theory.</p>
 </div>
 <!-- ====================================================================
 SLIDE 12 — Which products should we feature?
@@ -1430,7 +1442,7 @@ Period 0 · assortment probabilities
 <!-- ====================================================================
 SLIDE 24 — Continuous decisions
 ==================================================================== -->
-<h2 class="content-slide continuous-slide continuous-story-slide speaker-change anchored" data-background-color="#30353b" id="s24">In the tutorial</h2>
+<h2 class="content-slide continuous-slide continuous-story-slide tutorial-paper-overview speaker-change anchored" data-background-color="#30353b" id="s24">In the tutorial</h2>
 <div class="slide-body">
 <div class="dc-story" data-continuous-story="" data-phase="business">
  <p class="dc-intro">Continuous states and decisions arise across <strong>many business problems.</strong></p>
@@ -1447,9 +1459,18 @@ SLIDE 24 — Continuous decisions
  </div>
 
 </div>
-<p class="continuous-focus-note fragment" data-fragment-index="0">
-<strong>Today:</strong> Inventory control with self guided ALP
-</p>
+<div class="tutorial-papers fragment" data-fragment-index="0" aria-label="Two tutorial papers on approximate linear programming">
+  <div class="tutorial-paper">
+    <p class="tutorial-paper-label">Also covered in the tutorial</p>
+    <p class="tutorial-paper-title"><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage.</a></p>
+    <p class="tutorial-paper-details">Lin, Nadarajah &amp; Soheili (2020). <em>Management Science</em>, 66(4), 1544–1562.</p>
+  </div>
+  <div class="tutorial-paper tutorial-paper-presented">
+    <p class="tutorial-paper-label">Presented today · Inventory control</p>
+    <p class="tutorial-paper-title"><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038">Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes.</a></p>
+    <p class="tutorial-paper-details">Pakiman, Nadarajah, Soheili &amp; Lin (2025). <em>Management Science</em>, 71(4), 3384–3404.</p>
+  </div>
+</div>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
 <div class="footer-authors">
@@ -1458,7 +1479,8 @@ SLIDE 24 — Continuous decisions
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
 <div class="notes">
-<p>This is a visual introduction to continuous models. Advance once to identify inventory control with self guided ALP as the focus of this presentation; the two application illustrations remain visible. Inventory levels and option prices are continuous state quantities in these illustrations; they are not themselves the control decisions. Order quantities, exercise policies, or hedging positions are decisions in the associated models.</p>
+<p>Sources: Tutorial §4.2, §4.3, and references [14] and [22].</p>
+<p>This is a visual introduction to continuous models. Advance once to replace the application illustrations with full references for the two tutorial papers, highlighting self-guided ALP with inventory control as the paper presented today. The reading view retains both illustrations and references. Inventory levels and option prices are continuous state quantities in these illustrations; they are not themselves the control decisions. Order quantities, exercise policies, or hedging positions are decisions in the associated models.</p>
 <p>Both examples appear immediately and animate while the slide is visible. Inventory rises with replenishment and falls with demand; three illustrative asset-price paths evolve over time. Motion runs locally and respects reduced-motion preferences. These are illustrative paths, not calibrated market data.</p>
 </div>
 <!-- ====================================================================
