@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/continuous.css">
 <link rel="stylesheet" href="styles/continuous-decisions.css">
 <link rel="stylesheet" href="styles/continuous-import.css?v=all-tutorial-math">
-<link rel="stylesheet" href="styles/closing.css?v=references-value-20261102">
+<link rel="stylesheet" href="styles/closing.css?v=readable-references-20261102">
 <link rel="stylesheet" href="styles/navigation.css">
 <link rel="stylesheet" href="styles/mobile-reading.css?v=browser-review-20261031">
 </head>
@@ -2195,16 +2195,16 @@ SLIDE 35 — Computational tools for MDP approximations
 <div class="slide-body">
 <ul class="solver-evolution" aria-label="Complementary computational tools for MDP approximations">
   <li>
-    <h3 class="anchored">Mathematical<br>programming <span class="solver-ref-keys">[1, 2, 4]</span></h3>
+    <h3 class="anchored">Mathematical<br>programming <span class="solver-ref-keys">[1, 2, 3]</span></h3>
     <p class="solver-evolution-task">Compact formulations and adaptive action generation.</p>
   </li>
   <li class="fragment" data-fragment-index="0">
-    <h3 class="anchored">First-order<br>methods <span class="solver-ref-keys">[3, 5]</span></h3>
+    <h3 class="anchored">First-order<br>methods <span class="solver-ref-keys">[4, 5]</span></h3>
     <p class="solver-evolution-task">Inexpensive updates and parallel value-function optimization.</p>
   </li>
   <li class="fragment" data-fragment-index="1">
-    <h3 class="anchored">High-dimensional<br>sampling <span class="solver-ref-keys">[2, 3]</span></h3>
-    <p class="solver-evolution-task">Target constraint violations and enrich value functions with sampled features.</p>
+    <h3 class="anchored">High-dimensional<br>sampling <span class="solver-ref-keys">[2, 4]</span></h3>
+    <p class="solver-evolution-task">Target violations and enrich value functions with sampled features.</p>
   </li>
   <li class="fragment" data-fragment-index="2">
     <h3 class="anchored">Foundation<br>models</h3>
@@ -2222,11 +2222,11 @@ SLIDE 35 — Computational tools for MDP approximations
   </li>
   <li>
     <span class="solver-paper-number">[3]</span>
-    <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage.</a> <span class="solver-paper-details">Lin, Nadarajah &amp; Soheili (2020). <em>Management Science.</em></span></p>
+    <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes.</a> <span class="solver-paper-details">Nadarajah &amp; Cire (2025). <em>Management Science.</em></span></p>
   </li>
   <li>
     <span class="solver-paper-number">[4]</span>
-    <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes.</a> <span class="solver-paper-details">Nadarajah &amp; Cire (2025). <em>Management Science.</em></span></p>
+    <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage.</a> <span class="solver-paper-details">Lin, Nadarajah &amp; Soheili (2020). <em>Management Science.</em></span></p>
   </li>
   <li>
     <span class="solver-paper-number">[5]</span>
@@ -2242,7 +2242,7 @@ SLIDE 35 — Computational tools for MDP approximations
 </div>
 <div class="notes">
 <p>Sources: Tutorial §3.2, §3.3, §4.2, §4.3, and §5; references [14], [17], [18], [22], and [33]. Allow about one minute. Mathematical programming is visible on entry; reveal first-order methods, high-dimensional sampling, and foundation models in sequence.</p>
-<p>These are complementary computational tools. Mathematical programming exploits formulation structure, first-order methods provide inexpensive iterative updates, and sampling supports both optimization and approximation construction. The categories overlap: constraint-violation learning combines primal-dual stochastic mirror descent with adaptive sampling, so both columns point to slide reference [3], Lin, Nadarajah, and Soheili (2020). The five unique papers are listed once beneath the columns, with full titles, authors, years, and publication venues or working-paper status. Slide references [1] and [2] are the two methods developed in detail in this presentation; [3] is the foundational constraint-violation learning paper, followed by network relaxations [4] and weakly time-coupled approximation [5]. This is a capability map, not an invention or adoption timeline.</p>
+<p>These are complementary computational tools. Mathematical programming exploits formulation structure, first-order methods provide inexpensive iterative updates, and sampling supports both optimization and approximation construction. The categories overlap: constraint-violation learning combines primal-dual stochastic mirror descent with adaptive sampling, so both columns point to slide reference [4], Lin, Nadarajah, and Soheili (2020). The five unique papers are listed once beneath the columns, with full titles, authors, years, and publication venues or working-paper status. Slide references [1] and [2] are the two methods developed in detail in this presentation; [3] covers network relaxations, [4] is the foundational constraint-violation learning paper, and [5] covers weakly time-coupled approximation. This is a capability map, not an invention or adoption timeline.</p>
 <p>For mathematical programming, self-adapting network relaxations compress the representation of feasible decisions while retaining linking constraints. Delayed allocation maintains a restricted support of feasible joint actions and expands it through pricing. Their bounds and policy guarantees depend on the conditions established in the respective papers.</p>
 <p>For first-order methods, constraint-violation learning fits value-function coefficients through primal-dual stochastic mirror descent. The weakly time-coupled approximation reorganizes temporal dependence to support parallel block-coordinate optimization. Its horizon-independent complexity result relies on the paper’s formulation and assumptions; it is not a general property of all first-order methods.</p>
 <p>For sampling, constraint-violation learning samples informative state-action pairs from a density adapted to constraint violations, replacing repeated global separation with targeted sampling. Sampling this density can itself be difficult in high dimensions. Self-guided ALPs sample random features and enrich the approximation across solves, reducing manual basis design. They still require solving the resulting ALPs; random-feature sampling alone is not an optimization algorithm. Representation, optimization, and policy-quality guarantees remain distinct.</p>
@@ -2251,8 +2251,8 @@ SLIDE 35 — Computational tools for MDP approximations
 <ol type="1">
 <li>Nadarajah, S., and Cire, A. A. (2026). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326">Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes</a>. Working paper. Tutorial reference [18].</li>
 <li>Pakiman, P., Nadarajah, S., Soheili, N., and Lin, Q. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038">Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes</a>. <em>Management Science</em>, 71(4), 3384–3404. Tutorial reference [22].</li>
-<li>Lin, Q., Nadarajah, S., and Soheili, N. (2020). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage</a>. <em>Management Science</em>, 66(4), 1544–1562. Tutorial reference [14].</li>
 <li>Nadarajah, S., and Cire, A. A. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes</a>. <em>Management Science</em>, 71(2), 1779–1802. Tutorial reference [17].</li>
+<li>Lin, Q., Nadarajah, S., and Soheili, N. (2020). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage</a>. <em>Management Science</em>, 66(4), 1544–1562. Tutorial reference [14].</li>
 <li>Soheili, N., Nadarajah, S., and Yang, B. (2026). <a href="https://arxiv.org/abs/2603.12636">Weakly Time-Coupled Approximation of Markov Decision Processes</a>. Working paper. Tutorial reference [33].</li>
 </ol>
 </div>
