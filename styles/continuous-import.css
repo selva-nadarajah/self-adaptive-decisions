@@ -133,7 +133,6 @@ body:not(.reveal-viewport) .continuous-import-slide .slide-body {font-size:20px;
 body:not(.reveal-viewport) .continuous-import-slide .demo-output {max-height:none;}
 body:not(.reveal-viewport) .continuous-import-slide .demo-output img {max-height:none;}
 body:not(.reveal-viewport) .continuous-import-slide textarea[data-demo-editor] {min-height:140px;max-height:300px;}
-body:not(.reveal-viewport) .continuous-import-slide .notes {margin:25px 0 0;color:var(--muted);font-size:17px;}
 @media(max-width:700px) {
  body:not(.reveal-viewport) .continuous-import-slide .columns {display:block;}
  body:not(.reveal-viewport) .continuous-import-slide .column {width:100%!important;margin-bottom:20px;}
