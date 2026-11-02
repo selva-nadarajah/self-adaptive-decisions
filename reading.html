@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/assortment.css?v=live-refinement-20261030">
 <link rel="stylesheet" href="styles/continuous.css">
 <link rel="stylesheet" href="styles/continuous-decisions.css">
-<link rel="stylesheet" href="styles/continuous-import.css?v=random-feature-max5-20261102">
+<link rel="stylesheet" href="styles/continuous-import.css?v=sg-plot-height-300-20261102">
 <link rel="stylesheet" href="styles/closing.css?v=readable-references-20261102">
 <link rel="stylesheet" href="styles/tutorial-references.css?v=full-papers-20261102">
 <link rel="stylesheet" href="styles/navigation.css">
@@ -1719,11 +1719,8 @@ Replay fitting
 <p class="center">
 <strong>Key convergence result:</strong>
 </p>
-<p class="center">
-Since we have <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>N</mi></msub><mo>≤</mo><msup><mi>V</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">V_N\le V^*</annotation></semantics></math>, the FALP optimal objective value <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\mathbb E_{\nu}[V_N]</annotation></semantics></math> is a valid lower bound on the optimal policy cost <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msup><mi>V</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\mathbb E_{\nu}[V^*]</annotation></semantics></math>.
-</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msup><mi>V</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">]</mo><mo>−</mo><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>≤</mo><msub><mrow><mo stretchy="true" form="prefix">‖</mo><msup><mi>V</mi><mo>*</mo></msup><mo>−</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="true" form="postfix">‖</mo></mrow><mrow><mn>1</mn><mo>,</mo><mi>ν</mi></mrow></msub><mo>≤</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
-0\le \mathbb E_{\nu}[V^*]-\mathbb E_{\nu}[V_N] \le \lVert V^*-V_N\rVert_{1,\nu} \le O(\frac{1}{\sqrt{N}})
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mrow><mo stretchy="true" form="prefix">‖</mo><msup><mi>V</mi><mo>*</mo></msup><mo>−</mo><msub><mi>V</mi><mi>N</mi></msub><mo stretchy="true" form="postfix">‖</mo></mrow><mrow><mn>1</mn><mo>,</mo><mi>ν</mi></mrow></msub><mo>≤</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+0\le \lVert V^*-V_N\rVert_{1,\nu} \le O(\frac{1}{\sqrt{N}})
 </annotation></semantics></math></p>
 <p class="small center">
 Under some regularity and universal-feature assumptions, this convergence holds with high probability.
@@ -1742,14 +1739,14 @@ Under some regularity and universal-feature assumptions, this convergence holds 
 <div class="policy-end-stages">
 <div class="policy-illustration-stage fragment fade-out" data-fragment-index="4">
 <p class="warehouse-question">
-Which warehouse should ship the order?
+Does increasing N reduce policy cost?
 </p>
 <div class="warehouse-choice-demo" data-warehouse-choice="">
 <span class="warehouse-show-estimates fragment" data-fragment-index="0" aria-hidden="true"></span>
 <span class="warehouse-pick-trigger fragment" data-fragment-index="1" aria-hidden="true"></span>
 <span class="warehouse-fit-trigger fragment" data-fragment-index="2" aria-hidden="true"></span>
 <span class="warehouse-ranking-trigger fragment" data-fragment-index="3" aria-hidden="true"></span>
-<p class="warehouse-phase" data-warehouse-phase="">The true values are shown for comparison; the policy does not know them.</p>
+<p class="warehouse-phase" data-warehouse-phase=""></p>
 <div class="warehouse-feature-count fragment" data-fragment-index="2">Increase random features: <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext>N\;\longrightarrow\;N+B</mtext><annotation encoding="application/x-tex">N\;\longrightarrow\;N+B</annotation></semantics></math></div>
 <div class="warehouse-options">
 <div class="warehouse-option" data-warehouse="north"><div class="warehouse-card-title"><svg viewbox="0 0 96 70" aria-hidden="true"><path d="M12 60V23L48 6L84 23V60Z" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="2"></path><path d="M36 60V37H60V60M22 29H30M66 29H74" fill="none" stroke="currentColor" stroke-width="2"></path></svg><h3 class="anchored">North warehouse</h3></div>
@@ -1761,11 +1758,11 @@ Which warehouse should ship the order?
 <div class="warehouse-option" data-warehouse="south"><div class="warehouse-card-title"><svg viewbox="0 0 96 70" aria-hidden="true"><path d="M12 60V23L48 6L84 23V60Z" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="2"></path><path d="M36 60V37H60V60M22 29H30M66 29H74" fill="none" stroke="currentColor" stroke-width="2"></path></svg><h3 class="anchored">South warehouse</h3></div>
 <div class="warehouse-true-cost"><span>True total cost</span><strong><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext>V^*(\mathrm{South})=\$10</mtext><annotation encoding="application/x-tex">V^*(\mathrm{South})=\$10</annotation></semantics></math></strong></div>
 <div class="warehouse-approximation fragment" data-fragment-index="0"><div class="warehouse-estimate-label">Approximation <span data-warehouse-before-label=""><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext>V_N(\mathrm{South})</mtext><annotation encoding="application/x-tex">V_N(\mathrm{South})</annotation></semantics></math></span><span data-warehouse-after-label="" hidden=""><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext>V_{N+B}(\mathrm{South})</mtext><annotation encoding="application/x-tex">V_{N+B}(\mathrm{South})</annotation></semantics></math></span></div>
-<div class="warehouse-estimate" data-warehouse-estimate="south">$4</div>
+<div class="warehouse-estimate" data-warehouse-estimate="south">$8</div>
 <div class="warehouse-old-estimate" data-warehouse-old="south"></div></div>
 <div class="warehouse-selection" data-warehouse-selection="south"></div></div>
 </div>
-<div class="warehouse-logical-takeaway"><span class="fragment" data-fragment-index="2">Both estimates move closer to the true costs</span><span class="fragment" data-fragment-index="3"> ⇒ <strong>Better estimates ⇒ <span class="warehouse-worse-choice">Worse choice</span></strong></span></div>
+<div class="warehouse-logical-takeaway"><span class="fragment" data-fragment-index="2">Overall approximation error decreases</span><span class="fragment" data-fragment-index="3"> ⇒ <strong>Better value fit ⇒ <span class="warehouse-worse-choice">Worse choice</span></strong></span></div>
 </div>
 </div>
 <div class="policy-norm-summary fragment" data-fragment-index="4">
@@ -1918,10 +1915,9 @@ Keep the previous self-guided VFA as a floor.
 <svg data-sg-guided="" viewbox="0 0 550 185" preserveaspectratio="none" role="img" aria-label="Illustrative value function approximation progression"></svg>
 </div>
 </div>
-<div class="sg-side-legend">
-<span class="sg-blue-line"></span> Current VFA <span class="sg-orange-line"></span> Previous VFA
-</div>
-<p><span class="sg-round-step fragment" data-round="1" data-fragment-index="0" aria-hidden="true"></span> <span class="sg-round-step fragment" data-round="2" data-fragment-index="1" aria-hidden="true"></span> <span class="sg-round-step fragment" data-round="3" data-fragment-index="2" aria-hidden="true"></span></p>
+<span class="sg-round-step fragment" data-round="1" data-fragment-index="0" aria-hidden="true"></span>
+<span class="sg-round-step fragment" data-round="2" data-fragment-index="1" aria-hidden="true"></span>
+<span class="sg-round-step fragment" data-round="3" data-fragment-index="2" aria-hidden="true"></span>
 </div>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
@@ -2283,7 +2279,7 @@ Use problem structure, data, and solution progress.
 
 <script src="components/falp-comparison.js?v=bounded-animation" defer=""></script>
 
-<script src="components/policy-ranking.js" defer=""></script>
+<script src="components/policy-ranking.js?v=warehouse-values-20261102" defer=""></script>
 
 <script src="components/sgalp-guide.js?v=projection-type" defer=""></script>
 
