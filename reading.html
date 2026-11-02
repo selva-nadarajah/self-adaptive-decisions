@@ -70,8 +70,6 @@ WHAT TO EDIT
   - Emphasis in HTML: <strong>bold</strong> and <em>italic</em>.
   - A visible line break: <br>. Source line wrapping does not add one.
   - Mathematics: edit LaTeX between $...$ or the separate $$ lines.
-  - Speaker notes: edit the block labeled NOTES below each slide.
-    Notes are hidden on projected slides and shown in the reading view.
   - The Python example: edit the code inside the slide 23 textarea.
 
 WHAT TO KEEP WHEN CHANGING WORDING
@@ -164,10 +162,6 @@ locally, put the final public URL between the quotes below.
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Welcome. Participants can follow the examples on their own computers or watch the projected demonstration. Their controls affect their own pages. Allow about 55 minutes for the presentation, with discussion afterward.</p>
-</div>
 <!-- ====================================================================
 SLIDE 02 — What is Sequential Decision Making?
 ==================================================================== -->
@@ -214,10 +208,6 @@ Order today; carry stock into tomorrow.
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Each application connects a choice now to the information and resources available for the next choice. In energy investment and operations, investments in data centers and power infrastructure determine the resources available for later computing, cooling, electricity procurement, and expansion decisions as demand and power availability change. In health care and process innovation, treatment and care-delivery decisions affect patient progress and the resources available for subsequent care. Observed outcomes inform later treatment choices and improvements to scheduling, staffing, and workflows. In retailing and inventory control, an order changes the stock available after uncertain demand, and remaining stock affects the next replenishment decision.</p>
-<p>Images: AI-generated photographic illustrations of hypothetical applications, created with OpenAI image generation on November 2, 2026. They do not depict actual facilities, patients, or events. Asset paths and prompts: assets/figures/sequential-applications-2026-11-02.md.</p>
-</div>
 <!-- ====================================================================
 SLIDE 03 — Inventory Example: Order before demand is known
 ==================================================================== -->
@@ -244,13 +234,6 @@ Start with 0 units. Order 2 → demand 5 → carry 3 units of unmet demand and p
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: <a href="assets/tutorial.pdf">Tutorial §4, inventory example</a>. Illustrative two-period path.</p>
-<p>Allow about two minutes for audience participation. Ask for a show of hands: order 2, 4, or 6 units? Invite one brief explanation, set the chosen quantity, and place the order. Pause at the prediction prompt before revealing demand. After the first outcome, ask how the carried stock or backlog should affect the next order. Participants with laptops can make their own choices; everyone can participate in the projected example. The three suggested quantities keep the room discussion focused; the slider still allows any integer order from 0 to 6.</p>
-<p>If time permits, replay the same demands with another first order and compare costs. Explain that this comparison uses known outcomes and does not establish which policy has the lowest expected cost. Close by asking what information the next decision needs: the stock or backlog carried forward. This example introduces sequential decisions and feedback. Adapting a decision to a state is distinct from the adaptation of an approximation that the tutorial develops later.</p>
-<p>Begin with zero units in stock. Choose each order before revealing its demand. Each reveal draws a fresh independent, discrete uniform demand: 3, 4, or 5 units in period 1, and 1, 2, or 3 units in period 2. These small teaching distributions differ from the truncated-normal distribution used later in the full inventory model. Default orders are 2 and 1. One possible demand path, 5 then 3, gives 3 units of unmet demand and then 5, as in the static fallback. Ordering 6 units initially instead gives 1 unit left over after demand 5. Other runs can have different outcomes. A stockout here means demand that cannot be filled immediately; it waits as backlog and is filled by a later order. Show how carried stock or backlog changes the supply available from the second order. Purchases cost $20 per unit, holding costs $1 per unit per period, and backlogged demand costs $25 per unit per period. Displayed costs are realized and undiscounted, not the infinite-horizon objective or expected costs. This introductory model carries all unmet demand forward at the displayed $25/unit/period rate; it does not apply backlog limits or lost-sales penalties. The later inventory model introduces the manuscript’s bounds and additional costs. New run clears the old demands; Replay same demands retains the completed path so participants can compare different order choices fairly. The latter is a counterfactual replay of known outcomes, not a new unpredictable run. Neither order is claimed optimal.</p>
 </div>
 <!-- ====================================================================
 SLIDE 05 — The inventory problem as an MDP
@@ -333,13 +316,6 @@ State <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext>s_t</mt
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: <a href="assets/tutorial.pdf">Tutorial §2</a> · Finite-horizon cost formulation; teaching inventory example</p>
-<p>Allow about one minute. This slide combines the terminology and formulation explanations. Ask which quantity from the first period must be carried into the second: the resulting inventory, which can be negative for backlog. Start with the state, action and policy row. An action is one order; a policy is a rule that selects the order after observing the current inventory. For example, the rule π_t(s) = min{6, max{0, 6−s}} orders toward six units, subject to the six unit order limit. It is illustrative, not a claim of optimality.</p>
-<p>Reveal transition, expected cost, and objective. Demand G_t is the uncertainty observed after ordering. If stock is 0, the order is 2 and demand is 5, the next state is −3, representing three units of backlog. Use this example verbally if the audience needs it; it need not match the demo’s random draw. Explain that c_t averages the period expense over demand, whereas the demo showed realized costs. The period index is given when applying the Markov property. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒮</mi><annotation encoding="application/x-tex">\mathcal{S}</annotation></semantics></math> denotes the state space and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{A}(s)</annotation></semantics></math> the feasible action set.</p>
-<p>We use cost minimization to match the opening inventory example; section 2’s reward maximization is equivalent with r_t = −c_t. Periods are indexed t = 0, …, T−1, so the animation’s first and second periods correspond to t = 0 and t = 1. The objective writes the action explicitly as π_t(s_t), equivalent to a_t; the period subscript permits different decision rules at different times. A deterministic Markov policy is the sequence of feasible maps π_0, …, π_{T−1}; it chooses the second order after observing the resulting state, not both orders in advance. The transition kernel P_t can vary with time. The Markov property is conditional on the period as well as the current state/action, which matters because demand differs between periods here. For the illustrative model <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒮</mi><annotation encoding="application/x-tex">\mathcal{S}</annotation></semantics></math> may be taken as the integers (only finitely many are reachable from s_0 = 0 over two periods), with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>6</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal{A}(s) = \{0,\ldots,6\}</annotation></semantics></math>. Each of the three possible successor inventories has probability 1/3. In the cost expression the expectation is over G_t conditional on s and a; E^π in the objective averages the full trajectory induced by the policy. Costs are charged after each period’s demand, including holding or stockout costs in the second period; there is no extra terminal cost. All backlog carries forward without clipping, as in the opening animation. This is the finite-horizon teaching instance, not the later bounded continuous inventory model. Introduce Bellman’s equation on the next slide; defer infinite-horizon discounting to the later continuous inventory model.</p>
-</div>
 <!-- ====================================================================
 SLIDE 07 — Why solving the MDP becomes difficult
 ==================================================================== -->
@@ -375,14 +351,6 @@ Continuous states or actions can make these sets infinite.
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: <a href="assets/tutorial.pdf">Tutorial introduction and §2.1</a> · Bellman equation in costs; illustrative counts</p>
-<p>Allow about one minute. Define V_t^<em>(s) as the minimum expected cost from period t onward. The equation is visible on arrival: compare feasible actions using cost now and expected future cost. Explain verbally that the optimal objective on the preceding slide is V_0^</em>(s_0), so the equation computes the same objective. The horizon is finite and undiscounted, with V_T^*(s) = 0. The terminal period has no additional cost; holding and backlog costs in the final decision period are still included. The expectation uses P_t and c_t already averages immediate costs.</p>
-<p>First advance reveals the scaling illustration and audience question. Say that a tabular calculation must represent values for states and compare feasible actions. The number of candidate joint actions shown is before shared constraints are applied. The counter is a separate scaling illustration with 15 inventory levels and four order choices per product; it does not enumerate reachable states in the two period demo, whose order choices were 0 to 6.</p>
-<p>Start with one product and ask the displayed question. Pause for answers before moving the slider to two products. States increase from 15 to 225, while candidate actions increase from 4 to 16. Each additional product multiplies the counts by 15 and 4, respectively. Then move the slider further to show how quickly this growth compounds. Reset returns the counter to one product. Second advance introduces the continuous case. This motivates approximations that exploit structure; it does not claim that all exact methods enumerate every state and action.</p>
-<p>These are Cartesian-product counts, not counts of all reachable states in the manuscript instance. The slider ranges from 1 to 30 products, with 15 inventory levels and 4 order choices per product. Counts are calculated exactly; displays from one billion onward use approximate scientific notation, with the full integer available on hover. Shared constraints can eliminate action combinations but leave a difficult combinatorial search. The toy counter never enumerates the state space. The continuous case refers to states and actions ranging over nontrivial intervals.</p>
 </div>
 <!-- ====================================================================
 LEARNING OUTCOMES — After the state/action-space example
@@ -424,12 +392,6 @@ We hope this foundation helps you explore adaptation’s value in your own MDP r
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Allow about 50 seconds. All three outcomes and the closing invitation are visible together.</p>
-<p>“We now know how to describe the problem—and why solving it directly becomes difficult. Here is what we want to learn next.”</p>
-<p>Connect the first outcome to the inventory example and the state/action-space counter. Introduce construct, optimize, and refine as the three steps we will make precise in the upcoming COR diagram. Explain the value of adaptation: feedback from optimization can guide where to enrich an approximation, directing limited computational effort toward better decisions. This is a potential benefit to assess, not a guarantee that every refinement improves policy performance. For the third outcome, emphasize accessibility and performance together. Assess how adaptation reduces the burden of designing approximations, improves computational efficiency, and supports better decisions. These benefits need not come at the expense of one another. Use the examples to show which benefits each method delivers.</p>
-<p>Close with: “We hope this foundation helps you explore adaptation’s value in your own MDP research and applications.”</p>
 </div>
 <!-- ====================================================================
 SLIDE 10 — An optimization workflow for MDPs
@@ -495,13 +457,6 @@ update the approximation</td>
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Source: <a href="assets/tutorial.pdf">Tutorial introduction, pages 3–4, and §2.3</a>. Gurobi logo source: <a href="https://scipopt.org/images/GurobiLogo_Black-1-1-1.svg">official SCIP site</a>. The logo is an example solver, not an endorsement or a claim that it directly solves every MDP approximation.</p>
-<p>Allow about one minute. The mathematical optimization row and definition are visible on arrival. Start with what the audience knows: formulate a problem through variables, an objective and constraints; rely on the solver to manage much of the solution complexity; assess solution quality and revise the formulation if useful. Ask briefly which choices they expect the solver to handle. The tutorial’s aspiration is a comparable experience for MDPs: more freedom to model the actual problem, with less effort spent designing and configuring its approximation, while obtaining useful performance. This is the central analogy, not a guarantee that arbitrary mathematical programs or MDPs are easy to solve.</p>
-<p>First advance reveals the MDP row. Construct builds the representation and optimization model. Optimize solves that model and provides information used to extract a feasible policy. For delayed allocation, these are component flows and feasible joint action weights. For value function approximation, the fitted coefficients can induce a policy through an action optimization. Policy extraction is method dependent and its quality must be assessed. Refine evaluates quality using an appropriate bound or policy evaluation and feeds information back to Construct. Section 2.3 gives three examples: enriching the basis, tightening the model, or adjusting the state relevance distribution. These are different ways to update the approximation; Refine is not limited to adding features or enlarging a representation. Delayed allocation adds useful feasible joint actions; self guided ALPs can add basis functions and guiding constraints. Second advance closes the loop across solves. Not every method requires all three stages, and a model does not have to be revised after every successful solve.</p>
-<p>The definition applies to automatic choices in one or more stages, not to every modeling choice in the table. A manually repeated workflow alone is not what makes the approximation self adapting. The tutorial describes adaptation to problem structure, instance data or solution progress, with the aim of reducing user burden and retaining useful performance. In the later delayed allocation example the LP solution guides which omitted feasible assortments to add. That is an example of adaptation in Refine, not the definition of all adaptation.</p>
-<p>Keep the distinction from §2.3 precise for the optimization audience. In a MIP solver, presolve, search heuristics and cuts generated during a solve can be automated and adaptive. In this tutorial’s terminology, operations within a fixed model’s solve belong to Optimize; the Refine column describes model changes across solves. The mathematical optimization row is a familiar modeling and solution workflow, not a claim that a commercial solver automatically redesigns the user’s formulation across solves.</p>
 </div>
 <!-- ====================================================================
 SLIDE 11 — Two examples we will explore in this tutorial
@@ -591,11 +546,6 @@ SLIDE 11 — Two examples we will explore in this tutorial
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: <a href="assets/tutorial.pdf">Tutorial §§3–4</a></p>
-<p>The route is discrete decisions first, then continuous decisions. Each panel uses the three COR stages; “Solve” is the Optimize stage. Delayed allocation represents feasible actions and expands the represented action set. The continuous section focuses on self guided ALP from Tutorial §4.3: choose a random feature family, solve an ALP, then add features and guiding constraints across solves. This does not require PSMD or the constraint violation learning algorithm, discussed in Tutorial §4.2. The discrete panel is visible on entry. Advance once to reveal the continuous panel. The reading view shows both panels. The final line previews the closing block: takeaways, assessing adaptation, performance and accessibility, and open opportunities.</p>
-</div>
 <h2 class="content-slide discrete-methods-overview tutorial-paper-overview speaker-change anchored" data-background-color="#30353b" id="discrete-methods">In the tutorial</h2>
 <div class="slide-body">
 <p class="methods-context">
@@ -641,12 +591,6 @@ SLIDE 11 — Two examples we will explore in this tutorial
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Source: Tutorial §3 opening, §3.2 Self Adapting Network Relaxations, and §3.3 Delayed Allocation and Vertex Policies.</p>
-<p>Use the two animated applications to motivate shared feasibility constraints. Cell towers serving the same area cannot receive software updates simultaneously because of coverage risks; products compete for limited display space. The cell tower application follows the presenter supplied Preemptive Maintenance slides. Updates can fail and make a tower ineffective; the component state in that example is time since the last maintenance, with failure risk increasing with that state. This overview shows feasible update choices, without simulating failure outcomes. Both approximation methods apply to weakly coupled MDPs in either setting. The tutorial uses dynamic assortment as its worked example for both methods; maintenance is a motivating application named in its introduction to §3.</p>
-<p>Network relaxations construct a network encoding feasible joint actions. The network size adapts to the structure of the linking constraints. Delayed allocation instead maintains an explicit restricted collection of feasible joint actions and adds actions when optimization indicates that they can improve the LP. This is a conceptual overview, not a claim that the network method applies only to maintenance or that delayed allocation applies only to assortment.</p>
-<p>The maintenance illustration uses three towers with a single coverage conflict edge between towers 1 and 2. Tower 3 has no conflict with either tower. The amber towers are updating and the green towers remain online. Alternate between updating towers 1 and 3 together and tower 2 alone. Each update set is a stable set because it contains no adjacent towers; these choices need not be maximal stable sets. This illustrates the independent set constraints in the supplied slides, including simultaneous updates to towers without a coverage conflict. The edge represents a shared coverage conflict, not the network constructed by the approximation method. Compact tower icons, numeric identifiers, and one shared status line keep this overview light. The assortment illustration cycles through backpack plus cooler, tent alone, and backpack plus tent, using 5, 6, and 8 of the 8 display space units. Every shown selection is feasible. These are illustrative decisions over time, not outputs from either approximation algorithm. Both animations pause off slide, stop for reduced motion preferences, and have static reading view fallbacks. Advance once to replace the application illustrations with full references for the two tutorial papers, highlighting delayed allocation as the paper presented today. The reading view retains both illustrations and references. Spend about 30 seconds here, then use the next slide to walk through product selections and demand observations over two periods. The following section concentrates on delayed allocation and its computational theory.</p>
 </div>
 <!-- ====================================================================
 SLIDE 12 — Which products should we feature?
@@ -725,12 +669,6 @@ Select products, then observe their demand. Use what you learn in the next perio
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: tutorial section 3, dynamic assortment. This is a teaching specialization with a knapsack display constraint.</p>
-<p>The prominent display gives selected products additional visibility. The reward is incremental profit attributable to featuring a product; the rest of the store’s sales are outside this teaching model. Backpack, cooler, and tent need 2, 3, and 6 space units, respectively. Capacity is 8: backpack+tent fits, cooler+tent does not. Begin with the three available products and their space requirements. All three together need 11 units, exceeding the budget of 8. Normal slide advances build one illustrative two-period path. First select Backpack + Cooler, then observe high demand for Backpack and low demand for Cooler. Tent remains unknown. In the next period, select Backpack + Tent: Backpack’s high type and Cooler’s low type are remembered, while Tent’s demand is still unknown until its high type is observed. The capacity use changes from 5 to 8. Only selected products generate a new observation. Demand types persist across periods; the animation changes what is known, not a product’s underlying type. These illustrative choices are not claimed optimal and do not change the prepared LP inputs. Advance once for the first subset, again for its demand observations, then for the next subset and its observations. Backward navigation reverses these steps. The horizontal line advances from the selected subset to its demand observations, then to the next period. Earlier subsets and observations stay visible. The sequence stops after the second demand observation. The reading view shows the complete line.</p>
-<p>The numerical model has periods 0 and 1, then zero terminal reward. Each product has a persistent low/high demand type, initially equally likely and independent of the others. Featuring it reveals its type through observed sales; an unfeatured product’s type remains unknown. This perfect-information signal is a simplifying teaching assumption. Expected profits when featured are low/high: backpack $2/$10, cooler $4/$12, tent $0/$24. Before learning, they are $6, $8, and $12. Not featuring earns zero incremental profit. Information, not inherent demand, changes after a display. Transitions and rewards are local; substitution between products is excluded. Full inputs and exact validation are in scripts/prepare_assortment.pyx</p>
-</div>
 <!-- ====================================================================
 SLIDE 13 — The display problem as a weakly coupled MDP
 ==================================================================== -->
@@ -794,14 +732,6 @@ Can we feature cooler and tent together?
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Source: <a href="assets/tutorial.pdf">Tutorial §3.1, weakly coupled MDPs, and §3.3, delayed allocation</a>. The product inputs are a teaching illustration, not the numerical example from the paper.</p>
-<p>Allow about one minute. This slide explains the local structure and shared constraint. First connect the model to the product selections and demand observations on the preceding slide. The tuple order is backpack, cooler, tent. A component state s_j records demand knowledge: unknown, known low or known high. A joint state s records all three component states. A component action a_j is binary; a joint action a is one complete assortment. These are feature decisions, not order quantities or probabilities.</p>
-<p>Read the reward equation as an additive sum of local expected profits. Read the transition equation as a product of local transition probabilities, conditional on the current joint state and action. This uses the teaching assumption of independent product types and local observation signals, with no substitution between products. The next state is demand knowledge, not a change in the underlying product type. The products’ rewards and transitions depend on their own states and actions, while the display budget couples the actions. Cooler and tent are each feasible alone but their joint action requires nine space units, exceeding eight. Local structure does not make the joint value function or the optimal policy separable.</p>
-<p>The objective is to maximize expected profit over two decision periods, with no terminal reward. The Bellman recursion has the same current reward plus expected continuation value structure introduced earlier, now using max and profits. Its optimal objective is V_0(s_0), with V_2(s) = 0. The maximization is over the feasible assortments satisfying the shared display budget.</p>
-<p>The state and action descriptions are visible on arrival. First advance reveals the local rewards and transitions. Second advance reveals the shared budget and the cooler plus tent question. Pause for the audience to answer before advancing again. Third advance reveals that the pair uses nine units and is infeasible. Fourth advance reveals “Weakly coupled:” followed by the Bellman equation, with the current profit written as a sum of local product rewards. Expand the future-value expectation as one sum over the joint next-state vector s’, weighted by the product of the local transition probabilities. The sum ranges over the joint state space, just as the maximization ranges over joint action vectors. Even though the transitions factor, V_{t+1} depends on the whole joint next-state vector and need not separate by product. With three local states per product there are 3^J candidate joint states (27 for the three-product example). Some terms have zero transition probability for a particular state and assortment; this count is not a claim that all 27 outcomes are reachable in one step. Sparse transitions can reduce the work of a particular expectation, but the joint value function still has the growing domain. The product pictures use the same space requirements as the two-period animation. An individually attractive product cannot be chosen without considering the other products because their actions share this budget.</p>
-<p>The earlier inventory scaling demonstration establishes the growth issue; do not repeat the twenty product counts here. The running example has three products, six feasible joint actions and 27 candidate joint states. Introduce delayed allocation verbally as an approximation using component flows coordinated by selected feasible joint actions. The next slide introduces whole-subset probabilities and simulates their use, before Construct makes that change of representation concrete. Feasibility network relaxation is another approach in Tutorial §3.2. Computational tractability and quality guarantees are addressed later in the main sequence.</p>
-</div>
 <!-- ====================================================================
 SLIDE 12 — Construction intuition
 ==================================================================== -->
@@ -864,12 +794,6 @@ SLIDE 12 — Construction intuition
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Source: Tutorial §3.3, joint action weights. This one-period distribution is an illustrative choice, not the prepared LP solution used later. The same decision variables are assigned for each period.</p>
-<p>The four represented subsets are Backpack only, Tent, Backpack + Cooler, and Backpack + Tent. Their example probabilities are 20%, 20%, 30%, and 30%, respectively. The probabilities are nonnegative and sum to one. Every subset satisfies the 8-unit budget. Cooler + Tent and all three products are infeasible and therefore have no row in this collection. Other feasible subsets are simply omitted from this illustrative collection.</p>
-<p>On arrival only the title is visible. First advance reveals the idea, probability table, and draw area. Second advance, or a click on the now-visible draw area, samples a whole subset. The animation cycles through all four subsets in a randomly shuffled circular order and slows down before stopping. The final result is drawn from the displayed probabilities; the intermediate pictures are the roulette animation, not extra executed decisions or additional observations. Clicking the display again samples afresh. The simulation pauses off slide. Reduced motion selects the result immediately. Reading view starts with a static example and allows clicking to draw again.</p>
-<p>The next advance moves to Construct, which defines a flow as the probability of a state–action pair. With all states initially unknown, Backpack is selected in Backpack only, Backpack + Cooler, and Backpack + Tent. Their total probability is 0.20 + 0.30 + 0.30 = 0.80, so this illustrative policy has x_{0,B}(unknown,1)=0.80. This probability is across runs, not a claim that a single sampled subset has a fractional action. The later LP chooses its weights and local flows together; its prepared solution uses different values and a restricted initial collection.</p>
 </div>
 <!-- ====================================================================
 SLIDE 13 — Construct: modelling each product’s dynamics
@@ -948,12 +872,6 @@ The probability of the next state is the total incoming flow, weighted by transi
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Source: Tutorial §3.3, local state/action flows and local conservation. The transitions are the three-product teaching model’s local information transitions.</p>
-<p>On arrival focus on Backpack as product j. The table is initially hidden. Its state is demand knowledge: unknown, known low, or known high. The action is feature (1) or do not feature (0). The square brackets group state rows and action columns. First advance introduces x_{t,j}(s_j,a_j)=Pr(S_{t,j}=s_j,A_{t,j}=a_j). Second advance reveals the table headings and state rows, with the cells unfilled. Third advance reveals the six state/action flow variables. Fourth advance reveals the next-state rules in the table. Fifth advance reveals the local conservation equation below. When demand is unknown, not featuring leaves it unknown. Featuring reveals a persistent low or high demand type, each initially having probability one half. Once known, the demand type stays known under either action. “Next state” means the demand-knowledge state in the next period.</p>
-<p>For a specified next state s’_j, summing next-period flows over actions gives its probability. The right side collects incoming mass from every current state/action pair, weighting each flow by the probability of reaching s’_j from that pair. P is a conditional transition probability; x is the joint probability of the current state and action. A flow is not itself a transition probability or a physical inventory amount. Repeat this local representation for each product.</p>
-<p>The next slide assembles the objective, local conservation, and linking constraints in the LP. Backward navigation reverses the five reveals; reading and print show the full explanation.</p>
-</div>
 <!-- ====================================================================
 SLIDE 17 — Construct: the delayed-allocation flow LP
 ==================================================================== -->
@@ -999,11 +917,6 @@ Every assortment in <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics>
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: tutorial section 3, marginal-flow balances and delayed-allocation linking constraints.</p>
-<p>All variables are nonnegative. Flow constraints apply to every product and local state; the transition balance applies before the final decision period. The support constraints apply for both local actions, including actions absent from the represented collection (zero support). Normalization makes the displayed inequalities equivalent to equalities in this complete local-action formulation; the research implementation uses equalities. s_j denotes the current local state and s’_j the next local state; a_j is a local action (and a’_j a next-period local action); a is a full assortment. The linking sum uses tilde a as a dummy whole-assortment index, matching its j-th component to the specified local action a_j. This is the delayed-allocation formulation, not the simpler relaxation that enforces the resource budget only in expectation. The LP does not reconstruct every joint state/action correlation.</p>
 </div>
 <!-- ====================================================================
 SLIDE 18 — Optimize: solve the LP and sample a display
@@ -1076,13 +989,6 @@ Verify that each local action is supported at its current state, including the t
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: tutorial section 3, Policy; generated teaching data in assets/data/assortment.js.</p>
-<p>The randomized vertex policy samples a whole assortment according to its optimized weight mu_t. The static example shows Backpack + Cooler, a=(1,1,0), with period-1 weight 75%. This assortment uses 2+3=5 units and satisfies the shared 8-unit budget by construction. The remaining represented assortment, Tent only, has period-1 weight 25%.</p>
-<p>At the observed local states s_j, also check whether x_{1,j}(s_j,a_j)&gt;0 for every product. For the example this checks Backpack’s feature action, Cooler’s feature action, and Tent’s do-not-feature action. Positive local flow indicates support for that state/action pair; the full assortment’s budget feasibility comes from its membership in the feasible collection. A zero flow identifies an action outside the local flow support at the observed state; it does not by itself mean a budget violation. The slide states the support check without specifying how to handle an unsupported candidate.</p>
-<p>The initial LP objective is 31.5. Period-0 weights are 0.5 on Backpack + Cooler and 0.5 on Tent only; period-1 weights are 0.75 and 0.25. The observed states determine whether the example assortment’s three local actions have positive flow support.</p>
 </div>
 <!-- ====================================================================
 SLIDE 19 — Refine: add a useful assortment
@@ -1160,12 +1066,6 @@ Start with a small collection of feasible assortments. Add one and re-solve the 
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Source: tutorial section 3.3, equations (5) and (6); prepared teaching data in assets/data/assortment.js.</p>
-<p>The table lists all six feasible assortments for the three-product instance. Cooler + Tent and all three products exceed the budget and are not feasible rows. Initially, the restricted LP considers Nothing, Tent only, and Backpack + Cooler in both periods. In period 1 their optimal probabilities are 0%, 25%, and 75%, respectively. The omitted feasible assortments have probability zero because they are not represented. Nothing is represented but has zero optimal weight: zero probability alone does not imply that an assortment was omitted.</p>
-<p>On arrival show the title and introductory sentence. First advance reveals the table and total LP expected profit of $31.50. Second advance emphasizes that omitted assortments have probability zero. Third advance adds Backpack + Tent to the collection in both periods and re-solves the LP. The table animates to the new period-1 probabilities: Backpack + Cooler 50%, Backpack + Tent 50%, and all other rows 0%. The LP objective for both periods rises to $40.00, a gain of $8.50. The table’s period-1 probabilities sum to 100% throughout the visual tween; intermediate animation frames are interpolations, not additional optimized LP solutions. Period 0 also changes, to Backpack + Tent with probability one. This is an expected-profit maximization example, so improvement increases the objective rather than reducing a cost.</p>
-<p>Four represented assortments recover the full-support LP value of 40. This illustrates that a selected collection can suffice, without claiming that every instance has a small sufficient collection. The LP objective is an approximation bound, not the extracted policy’s expected profit. The next slide explains how reduced costs identify a useful assortment. Backward navigation restores the previous table; reading and print show the updated distribution and objective.</p>
-</div>
 <!-- ====================================================================
 SLIDE 20 — Refine: reduced costs identify LP opportunities
 ==================================================================== -->
@@ -1216,12 +1116,6 @@ The reduced cost differs from the LP gain. Evaluate policy performance separatel
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Source: tutorial section 3, eq:DA-tutorial-pricing; generated LP duals in assets/data/assortment.js.</p>
-<p>The score is the reduced cost of a prospective assortment-weight variable in this maximization LP. Exact pricing maximizes sum_j d_t,j(a_j) − ξ_t over the original feasible-action set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math>. For our example this is a deterministic 0–1 knapsack problem with weights 2,3,6 and capacity 8. In period 1, the generated dual prices for backpack=1, cooler=0, tent=1 are 5,0,0; ξ_1=0, giving score 5. The same candidate has score 7.5 in period 0. Both columns are added; the LP objective rises by 8.5 to 40. The reduced cost is evaluated at the old dual solution and is not the total gain after reoptimization.</p>
-<p>A positive reduced cost identifies a candidate that can improve the LP; degeneracy can require additional columns before strict improvement appears. If exact pricing finds no positive score in every period, the restricted LP attains the full-support LP optimum. That certificate is not an MDP policy-optimality certificate. The restricted master is continuous; pricing searches discrete feasible actions. The next slide addresses the complexity distinction.</p>
-</div>
 <!-- ====================================================================
 SLIDE 21 — When is delayed allocation tractable?
 ==================================================================== -->
@@ -1266,12 +1160,6 @@ The guarantee concerns the approximation framework. It does not solve the MDP ex
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<!-- NOTES: presenter guidance and reading-view explanations. -->
-<div class="notes">
-<p>Sources: Nadarajah and Cire, “Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes” (2026), <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326">paper</a>; <a href="https://selva-nadarajah.github.io/publications.html">author’s abstract</a>. The supplied IOSTalk_Feb2026.pptx, slides 17 and 31, states runtime-complexity transference, and slide 33 discusses polynomial-size action support. Tutorial section 3 cites Theorem 1 for the associated approximation-quality result.</p>
-<p>This is an informal summary, not a verbatim theorem or a claim of a verified theorem number for the complexity result. The public paper abstract confirms polynomially sized supports and polynomial-time computable models/policies obtained from suitable polynomial-time rounding or approximation algorithms; the author-supplied talk gives the oracle-based complexity statement. The paper’s full PDF could not be retrieved through the public SSRN endpoint during authoring. Do not attach an unverified rate or polynomial to this summary.</p>
-<p>The formal result requires the paper’s oracle/approximation assumptions and explicit finite local input data; polynomial time refers to the relevant encoded input sizes. A generic heuristic without the prescribed approximation property does not inherit the guarantee. The tutorial’s approximation-factor result concerns relaxation quality, not a blanket approximation ratio for achieved policy profit. A guarantee for the theoretical construction does not establish polynomially many simplex column-generation iterations for arbitrary pivot/column rules. The toy implementation enumerates six actions only to validate the example, not as a scalable implementation of the theorem.</p>
 </div>
 <!-- ====================================================================
 SLIDE 22 — Delayed allocation through Construct, Optimize, Refine
@@ -1318,10 +1206,6 @@ Find an improving assortment and add it to the collection.
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Source: tutorial §3.3, delayed allocation and pricing.</p>
-<p>Each advance animates one step: Construct, then Optimize, then Refine. The last advance also reveals that Optimize and Refine repeat. Construction uses a small collection of feasible whole assortments, local state/action flows, and their dynamics. Optimization determines x and mu. Exact pricing examines omitted feasible assortments and adds an improving column. Repeat until every omitted column in every period has nonpositive reduced cost within tolerance. This certifies the full-support LP objective, not optimality of an extracted policy for the original MDP. The next slide runs this loop in Python.</p>
 </div>
 <!-- ====================================================================
 SLIDE 23 — Exercise: when does the addition help?
@@ -1402,12 +1286,6 @@ Period 0 · assortment probabilities
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Source: tutorial §3.3, exact column generation; assets/python/delayed_allocation.py implements the same two-period product-learning model as the preceding slides using SciPy/HiGHS.</p>
-<p>Participants edit the three [low, high] reward pairs in Python, in Backpack, Cooler, Tent order, then click Run refinement. Rewards are dollars earned when a product is featured in each demand type. The unknown-state reward is the average of its low and high rewards, since each type initially has probability one half. The shared 8-unit space budget is unchanged. The LP maximizes expected reward, so the plotted objective increases as the collection grows. The algorithm begins with only the empty assortment in each period, solves the restricted flow LP, uses its equality duals to price every omitted feasible assortment in both periods, and adds the best positive-reduced-cost period/assortment pair. It re-solves and repeats until no score exceeds 1e-8. The finite six-assortment pricing set is enumerated exactly in this teaching instance.</p>
-<p>The plot and table show the computed LP iterates in order. Each row identifies the period and assortment added for that solve. Degeneracy can create plateaus, so an unchanged objective alone is not a stopping criterion. The stopping certificate is absence of an improving omitted column, not policy optimality. With the displayed rewards the final LP objective is 40. Setting the tent rewards to [0, 0] gives 28; doubling every reward gives 80. Setting all reward pairs to [0, 0] gives 0. A different optimal dual solution can change the order of additions without changing the final value. The LP can add an assortment with zero weight in the final solution. After convergence, the result also lists the optimized period-0 assortment probabilities below the stopping certificate. Positive weights are shown by assortment; all other assortments have probability zero.</p>
-<p>This executes Python in a browser worker using bundled Pyodide, SciPy, and Matplotlib; no backend or commercial solver is needed. The helper returns the full actual solve trace. Matplotlib generates a new SVG plot for each trace prefix, and those computed steps play in sequence. First use loads the runtime on demand. Stop cancels the worker and playback; Reset restores the original rewards. Code edits are local to the participant. Invalid rewards and Python errors appear in the status. The full downloadable Python file includes the LP, dual pricing, refinement loop, and plot function for local reuse. Results report LP expected reward, not the value of a sampled policy.</p>
-</div>
 <h2 class="content-slide route-checkpoint anchored" id="route-continuous">Tutorial route</h2>
 <div class="slide-body">
 <div class="cols settings-panels">
@@ -1435,9 +1313,6 @@ Period 0 · assortment probabilities
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>The foundations and weakly coupled MDP section are complete. Recall delayed allocation and the value of refining the represented action set. Next we focus on the self guided ALP paper from Tutorial §4.3: random features and guiding constraints refine the value function approximation. The constraint violation learning paper is discussed in Tutorial §4.2. After the continuous section, return to common lessons and close. The closing block returns to this route, assesses the value of adaptation, summarizes performance and accessibility aims, and invites work on the tutorial’s emerging frontiers.</p>
 </div>
 <!-- ====================================================================
 SLIDE 24 — Continuous decisions
@@ -1477,11 +1352,6 @@ SLIDE 24 — Continuous decisions
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Sources: Tutorial §4.2, §4.3, and references [14] and [22].</p>
-<p>This is a visual introduction to continuous models. Advance once to replace the application illustrations with full references for the two tutorial papers, highlighting self-guided ALP with inventory control as the paper presented today. The reading view retains both illustrations and references. Inventory levels and option prices are continuous state quantities in these illustrations; they are not themselves the control decisions. Order quantities, exercise policies, or hedging positions are decisions in the associated models.</p>
-<p>Both examples appear immediately and animate while the slide is visible. Inventory rises with replenishment and falls with demand; three illustrative asset-price paths evolve over time. Motion runs locally and respects reduced-motion preferences. These are illustrative paths, not calibrated market data.</p>
 </div>
 <!-- ====================================================================
 SLIDE 25 — Linear programming model
@@ -1539,9 +1409,6 @@ Maximizing the objective pushes feasible values upward
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Begin with the discounted-cost Bellman optimality equation. Advance once to reveal its equivalent exact linear program. The decision variable in the LP is the full value function; the objective averages it under the state-relevance distribution. Every feasible state-action pair contributes a Bellman inequality. Advance again to replace the LP with a conceptual animated plot; a further advance moves directly to the next slide. The animation uses V_delta = V* - delta, with delta decreasing to zero. Constant downward shifts of V* are Bellman-feasible in a discounted cost MDP: their Bellman slack gains (1-gamma)delta. Hence raising this family increases the integral objective and reaches V<em>. The plot is schematic, not a numerical inventory solution or an optimization algorithm. Being below V</em> is necessary but not sufficient for Bellman feasibility. Under the usual assumptions V* is the pointwise largest Bellman-feasible function and an LP optimizer. An objective under nu does not distinguish differences on nu-null sets without additional support/regularity assumptions.</p>
 </div>
 <!-- ====================================================================
 SLIDE 27 — Approximate Linear Program
@@ -1605,9 +1472,6 @@ V_\beta(s)=\beta_0+\sum_{n=1}^{N}\beta_n\varphi_n(s),
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Introduce the two top boxes: fixed features or basis functions on the left and optimized weights on the right. Advance to combine them into the finite-dimensional VFA, then advance to the semi-infinite ALP below it. The coefficient vector is finite, but feasibility must hold for every continuous state and every feasible action in the set A. That is the tension driving Section 4: the representation is compact, while finding the important constraints remains difficult.</p>
-</div>
 <h2 class="content-slide continuous-import-slide adaptation-transition-slide speaker-change anchored" data-background-color="#30353b" id="vfa-adaptation-transition">Adaptive basis functions and state relevance</h2>
 <div class="slide-body">
 <div class="adaptation-headings">
@@ -1663,9 +1527,6 @@ Self-guidance reweights states
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Source: Tutorial §4.3. Introduce two approximation choices: the basis family representing the value function and the state relevance distribution nu defining the ALP objective. First reveal random features as a way to enrich the representation. Then reveal self guidance as a way to adapt effective state relevance through guiding constraints. The density sketches are conceptual illustrations of weighting states. The quadratic is an example of an initial representation; it has not been optimized in an earlier continuous method in this main talk. Fixed basis functions do not mean fixed coefficients.</p>
 </div>
 <!-- ====================================================================
 SLIDE 29 — Inventory control example
@@ -1747,9 +1608,6 @@ c(s,a)=\mathbb E\big[&amp;20a+3000(-4-X)^++25(-S\prime)^+\\
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Use the left-side scale to distinguish backlog from stock and identify the state s. The marked point is illustrative. Then reveal the order arrow and demand distribution, followed by transition and expected cost on successive advances. This is a one-item, periodic-review MDP. The state is the inventory position before ordering. The action is an order placed before demand. Demand then creates raw ending inventory X; the nested maximum and minimum enforce the backlog and storage limits to produce the next state. The cost formula attaches a separate economic meaning to each hinge term. The same four colors connect the transition regions to the cost terms. Purchase cost is incurred when ordering; the other costs depend on the demand outcome. Expected cost averages over demand at a fixed state and action.</p>
-</div>
 <h2 class="content-slide continuous-import-slide random-feature-slide anchored" id="s38">Value function approximation via random features</h2>
 <div class="slide-body">
 <p class="vfa-transition">
@@ -1803,9 +1661,6 @@ plot_random_feature_fit(
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>This slide contrasts an illustrative quadratic representation with a random feature representation that can grow across solves, as in Tutorial §4.3. Both families use one fixed seed and nested pools of 48 features. Previous and Next compute 1, 3, 5, 12, 24, and 48 features live in browser Python. Linear least-squares weights are refitted to the same illustrative target, so grid RMSE is nonincreasing. The target is a smooth constructed function, not the inventory optimal value function; this is an illustration of representation capacity, not an ALP solution or a claim of monotonic policy improvement. Fourier and ReLU are the only displayed families.</p>
 </div>
 <h2 class="content-slide continuous-import-slide anchored" id="s39">Feature-based ALP with continuous constraints</h2>
 <div class="slide-body">
@@ -1883,9 +1738,6 @@ Under some regularity and universal-feature assumptions, this convergence holds 
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>FALP samples basis parameters, not Bellman constraints. Once the feature draw is fixed, the model is linear in beta, but it remains semi-infinite: the Bellman inequality must hold for every feasible state-action pair. S-prime denotes the random next state drawn from P given the current state-action pair, consistently with the earlier ALP slides. The objective uses s under the state-relevance distribution nu. The animated comparison solves a 21-state, two-action discounted toy MDP in browser JavaScript. Regression holds seven observed optimal-value labels fixed and compares candidate coefficient vectors, ending at the least-squares solution. Its target points never move. FALP uses nested feature sets with N=1,2,3; each finite LP is solved by enumerating vertices. The interpolated blue approximations remain Bellman feasible and the orange TV is recomputed at every frame. The weighted objective is nondecreasing as features are added; pointwise monotonicity is not asserted. Dashed V-star is a teaching reference, labeled unknown and never used by the LP. Regression and FALP share the same pool of three fixed random Fourier features. This finite toy is an illustration rather than the continuous inventory experiment.</p>
-</div>
 <h2 class="content-slide continuous-import-slide policy-ranking-slide anchored" id="s40">FALP policy convergence caveat</h2>
 <div class="slide-body">
 <div class="policy-end-stages">
@@ -1951,9 +1803,6 @@ Improving the average value fit does not guarantee a lower policy cost.
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Sequence: true values only; first click reveals approximations using N features; second picks North; third increases the feature count to N+B and improves both estimates; fourth picks South and reveals the higher true cost. V-star(North)=9 and V-star(South)=10 are audience references, unknown to the policy. Before, V_N=(3,4); after, V_(N+B)=(9,8). Both approximations are no greater than truth and improve pointwise. The policy compares approximate continuation costs with equal immediate costs, so it first selects North and then South. The selected continuation cost increases from 9 to 10. These values illustrate a possible local ranking reversal; they are not outputs of an asserted particular random-feature draw or a full FALP solve. A discounted absorbing-future model with gamma=0.9 and per-period costs 0.9 and 1 realizes the displayed true future values. Both approximations satisfy the absorbing-state Bellman inequalities. Add a decision state with zero-cost transitions to the futures and set its approximation to gamma times the smaller approximate future value to extend feasibility. Thus better approximation, even pointwise, does not alone imply a monotonically better greedy policy. Do not interpret the example as denying convergence under additional assumptions. A final click replaces the illustration with the norm comparison: decreasing weighted L1 approximation error from N to N+B does not imply decreasing PC_chi of the greedy policy. PC_chi denotes discounted policy cost from initial state chi. The statement concerns the absence of a monotonicity guarantee; it does not assert that every feature addition worsens policy performance.</p>
 </div>
 <h2 class="content-slide continuous-import-slide anchored" id="s41">Self-guided ALP</h2>
 <div class="slide-body">
@@ -2082,9 +1931,6 @@ Keep the previous self-guided VFA as a floor.
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Both columns initially solve the same FALP with N features and have identical VFAs. There is no guide constraint on the initial self-guided solve. Each click adds B features to both models. FALP retains Bellman inequalities only; self-guided FALP also keeps its own previous solution as a statewise floor. The plots share a fixed vertical scale. Curves illustrate the distinction rather than report numerical LP solves: FALP may cross its predecessor, whereas the self-guided VFA stays above its previous guide. This does not imply monotonically improving greedy-policy costs.</p>
-</div>
 <h2 class="content-slide continuous-import-slide sg-live-progression-slide anchored" id="s42">Self-guided ALP progression: inventory example</h2>
 <div class="slide-body">
 <div class="continuous-python-lab" data-continuous-python="" data-demo-id="feature-sequences" data-demo-autorun="false">
@@ -2100,9 +1946,6 @@ plot_self_guided_progression(
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Run Python solves the initial constant-basis model at N=0. Next increments the random-feature count by one and performs only the next self-guided solve. Earlier solutions are cached in the browser’s Python session; Previous redraws an earlier stage without solving it again. The plots compare FALP and self-guided FALP at the same feature count and with shared logarithmic axes. Current curves are bold; predecessors are faint references. It uses the repository Figure 7 settings: seed 111, 3000 Bellman constraint samples, 1000 demand samples, a fixed nested Fourier pool, displaying N=0 through N=3 on this slide, and exact guide inequalities at 3000 sampled guide states. The continuum guide applies to all states in the theoretical model, whereas this live numerical version imposes sampled Bellman and sampled guide constraints. No shift is applied before taking logs; positive grid values are checked. The vertical range covers all displayed curves and expands if necessary. The editable code is visible and runs in browser Python; this slide accepts feature counts only from 0 through 3. There are no precomputed VFA images on this slide.</p>
 </div>
 <h2 class="content-slide continuous-import-slide state-relevance-slide anchored" id="s43">Guidance reweights the state space</h2>
 <div class="slide-body">
@@ -2140,9 +1983,6 @@ _ = plot_state_relevance_updates(feature_demo, stage_counts, bandwidth=bandwidth
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>This plot uses the actual HiGHS multipliers from the same seed-111, 3,000-constraint self-guided solve used on the preceding Figure 7 slide. The code imposes the exact guide at sampled states, so its induced object is the displayed atomic measure rather than the paper’s continuum density. Kernel smoothing is only for visualization. A peak means guide shadow prices place more effective objective weight in that region; it does not mean every tight guide has a positive multiplier.</p>
-</div>
 <!-- ====================================================================
 SLIDE 44 — FALP and self-guided ALP tighten bounds
 Adapted from Site 1; Site 2 template and browser-local Python runtime.
@@ -2172,9 +2012,6 @@ plot_feature_bounds(seed, best_so_far, num_features)</textarea>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>The shaded area is the estimated bracket. Change the seed or show cumulative best values. These numbers come from the executed repository notebook, so the slide is instant and stable; use that notebook to recompute them. Do not call the stochastic tutorial estimates certified bounds.</p>
-</div>
 <h2 class="content-slide route-checkpoint closing-route speaker-change anchored" data-background-color="#30353b" id="closing-route">Back to the tutorial route</h2>
 <div class="slide-body">
 <div class="cols settings-panels">
@@ -2203,12 +2040,6 @@ plot_feature_bounds(seed, best_so_far, num_features)</textarea>
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Sources: Tutorial §2.3, §3.3, and §4.3. Allow about 45 seconds.</p>
-<p>Return to the same two settings and colors as the route earlier in the talk. Both sections are complete. In delayed allocation, the LP solution and reduced costs identify useful additions to the represented feasible action set. A small action support can be sufficient under the framework’s assumptions; the computational results connect appropriate approximation oracles to tractable models and policies. This is not a universal guarantee about arbitrary pricing heuristics or all column generation implementations.</p>
-<p>In self guided ALP, random features expand the representation and guiding constraints preserve earlier VFAs as a statewise floor. The guide also has an interpretation through effective state relevance. Monotonic improvement of the VFA does not establish monotonic improvement of greedy policy cost.</p>
-<p>The common statement on this slide concerns the two methods selected for the presentation, both of which engage Refine across solves. The broader definition of self adapting approximations also includes adaptation in Construct or Optimize. The network relaxation and constraint violation learning methods in the tutorial illustrate those alternatives.</p>
 </div>
 <!-- ====================================================================
 SLIDE 35 — Computational tools for MDP approximations
@@ -2262,22 +2093,6 @@ SLIDE 35 — Computational tools for MDP approximations
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Sources: Tutorial §3.2, §3.3, §4.2, §4.3, and §5; references [14], [17], [18], [22], and [33]. Allow about one minute. Mathematical programming is visible on entry; reveal first-order methods, high-dimensional sampling, and foundation models in sequence.</p>
-<p>These are complementary computational tools. Mathematical programming exploits formulation structure, first-order methods provide inexpensive iterative updates, and sampling supports both optimization and approximation construction. The categories overlap: constraint-violation learning combines primal-dual stochastic mirror descent with adaptive sampling, so both columns point to slide reference [4], Lin, Nadarajah, and Soheili (2020). The five unique papers are listed once beneath the columns, with full titles, authors, years, and publication venues or working-paper status. Slide references [1] and [2] are the two methods developed in detail in this presentation; [3] covers network relaxations, [4] is the foundational constraint-violation learning paper, and [5] covers weakly time-coupled approximation. This is a capability map, not an invention or adoption timeline.</p>
-<p>For mathematical programming, self-adapting network relaxations compress the representation of feasible decisions while retaining linking constraints. Delayed allocation maintains a restricted support of feasible joint actions and expands it through pricing. Their bounds and policy guarantees depend on the conditions established in the respective papers.</p>
-<p>For first-order methods, constraint-violation learning fits value-function coefficients through primal-dual stochastic mirror descent. The weakly time-coupled approximation reorganizes temporal dependence to support parallel block-coordinate optimization. Its horizon-independent complexity result relies on the paper’s formulation and assumptions; it is not a general property of all first-order methods.</p>
-<p>For sampling, constraint-violation learning samples informative state-action pairs from a density adapted to constraint violations, replacing repeated global separation with targeted sampling. Sampling this density can itself be difficult in high dimensions. Self-guided ALPs sample random features and enrich the approximation across solves, reducing manual basis design. They still require solving the resulting ALPs; random-feature sampling alone is not an optimization algorithm. Representation, optimization, and policy-quality guarantees remain distinct.</p>
-<p>Foundation models remain an open direction, as discussed in Tutorial §5. Possible roles span model construction, interpretation of solver output, refinement choices, and approximate subproblem oracles. How to integrate them with bounds and guarantees remains open. Assess any benefits using the computation, decision-quality, user-effort, and technical-knowledge criteria on the next slide.</p>
-<p>Paper references:</p>
-<ol type="1">
-<li>Nadarajah, S., and Cire, A. A. (2026). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326">Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes</a>. Working paper. Tutorial reference [18].</li>
-<li>Pakiman, P., Nadarajah, S., Soheili, N., and Lin, Q. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038">Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes</a>. <em>Management Science</em>, 71(4), 3384–3404. Tutorial reference [22].</li>
-<li>Nadarajah, S., and Cire, A. A. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes</a>. <em>Management Science</em>, 71(2), 1779–1802. Tutorial reference [17].</li>
-<li>Lin, Q., Nadarajah, S., and Soheili, N. (2020). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage</a>. <em>Management Science</em>, 66(4), 1544–1562. Tutorial reference [14].</li>
-<li>Soheili, N., Nadarajah, S., and Yang, B. (2026). <a href="https://arxiv.org/abs/2603.12636">Weakly Time-Coupled Approximation of Markov Decision Processes</a>. Working paper. Tutorial reference [33].</li>
-</ol>
-</div>
 <h2 class="content-slide closing-assessment anchored" id="closing-assessment">Assess the value of adaptation</h2>
 <div class="slide-body">
 <p class="closing-audience-prompt">
@@ -2308,12 +2123,6 @@ What evidence would convince you that adaptation helped?
 <p>Cire · Nadarajah · Pakiman · Soheili</p>
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
-</div>
-<div class="notes">
-<p>Sources: Tutorial introduction, §2.3, §3.3, and §4.3, including the limitations discussion. Allow about one minute, including a brief audience response.</p>
-<p>Pause at the question before advancing. Participants can answer verbally; no laptop is needed. Reveal the four criteria in order: computation, decision quality, user effort, and technical knowledge, after collecting one or two suggestions. These revisit the learning outcome of assessing the value of adaptation.</p>
-<p>Compare an adaptive procedure with a relevant fixed or manually designed baseline under comparable problem instances, computational budgets, and evaluation conditions. Count modeling, tuning, and iteration effort as well as solve time and memory. Distinguish user effort, the amount of manual work required, from technical knowledge, the method-specific expertise needed to perform that work. Assess these requirements for the intended users; automating a step can reduce effort without eliminating the expertise needed to interpret or validate its output. In delayed allocation, distinguish the relaxation objective from the performance of an extracted feasible policy. In the continuous section, distinguish approximation quality, simulated policy cost, and the estimated bound bracket shown in the demos. The tutorial’s exact formulations support theoretical bounds under their assumptions; sampled constraints and stochastic estimates need their corresponding qualifications.</p>
-<p>The tutorial does not assert an inevitable tradeoff among computation, decision quality, user effort, and technical knowledge. Nor does it guarantee that every refinement improves all four. Tailored features and state relevance can outperform generic random feature choices on structured high dimensional instances. Treat the benefits as quantities to assess, using computational theory and appropriate empirical comparisons.</p>
 </div>
 <h2 class="content-slide closing-benefits anchored" id="closing-benefits">The value of self adaptation</h2>
 <div class="slide-body">
@@ -2373,12 +2182,6 @@ Use problem structure, data, and solution progress.
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Sources: Tutorial introduction and §2.3. Diagram adapted from the presenter supplied “Solve Intelligence for MDPs?” reference slide. Allow about 45 seconds.</p>
-<p>Replace the reference’s reinforcement learning label with self adapting MDP approximations, and Preprocess, Solve, Postprocess with the tutorial’s Construct, Optimize, Refine framework. The metaphor organizes the framework and its aims; it is not a claim that every self adapting method must engage all three stages. In particular, the tutorial reserves Refine for adaptation across solves.</p>
-<p>The framework and columns are visible on entry. Reveal Performance, then Accessibility. Discuss both as aims whose achievement must be assessed using the criteria on the preceding slide. Performance includes computational efficiency and policy quality. Accessibility concerns both user effort and technical knowledge. User effort is the manual modeling, tuning, and iteration required; technical knowledge is the method-specific expertise needed to use the approach. Reducing either can help more users benefit from advanced methods. Automating approximation design and tuning are examples of how to pursue these aims. The triangle uses “Effort and technical knowledge” as a concise label for the two accessibility dimensions on the preceding slide. The two roofs are compatible aspirations, not an asserted tradeoff or a theorem of simultaneous improvement.</p>
-<p>Connect back to mathematical optimization: users specify a model and increasingly rely on solver mechanisms to manage computational choices. The tutorial develops a comparable direction for approximation methods for MDPs, with explicit qualifications and guarantees where available.</p>
-</div>
 <h2 class="content-slide closing-invitation anchored" id="closing-invitation">Much remains to be explored</h2>
 <div class="slide-body">
 <div class="closing-invitation-layout">
@@ -2415,14 +2218,6 @@ Use problem structure, data, and solution progress.
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Sources: Tutorial §5 Emerging Frontiers, and the definition and aims in §2.3. Allow about one minute, then advance to the contributor invitation.</p>
-<p>The tutorial identifies opportunities beyond the approximation choices emphasized in the talk. One direction adapts temporal structure and computational organization; another updates ambiguity sets using arriving data. These examples motivate the first question without requiring additional technical development in the closing block.</p>
-<p>The second question includes foundation models as aids for model construction, interpreting intermediate solver output, or approximate subproblem oracles. How to use them with bounds and guarantees remains open in the tutorial. Emerging solver paradigms, including the quantum directions discussed in §5, are opportunities to investigate, not established performance improvements for the examples in this presentation.</p>
-<p>The final question invites application and computational theory contributions. Existing theory is part of what makes these approaches attractive; new approximation choices and computational tools should be accompanied by appropriate guarantees and evidence. Do not imply that the tutorial has solved every design decision or removed high dimensional difficulty.</p>
-<p>Conclude with the intended learning outcome: these foundations can help the audience investigate how adaptation could add value to their own research and applications involving MDPs. Invite participants to bring problems, ideas, and theoretical questions. There is substantial work left to do; the talk is an invitation to participate in that work.</p>
-<p>Point participants to the <a href="https://github.com/Self-Adapting-MDP-Approximations/INFORMS-Tutorial">tutorial repository</a>. Its Jupyter notebooks connect the methods to implementation through worked examples, including dynamic assortment and inventory control. The repository README explains setup and links to the weakly coupled and continuous MDP notebook folders. Pause so participants can scan, open, or bookmark the material before moving to the contributor invitation.</p>
-</div>
 <h2 class="content-slide closing-contribute anchored" id="contribute">Contribute to Self-Adaptive Decisions</h2>
 <div class="slide-body">
 <div class="contributor-layout">
@@ -2449,10 +2244,6 @@ Use problem structure, data, and solution progress.
 </div>
 <p><img src="assets/logos/rotman.png" class="logo-rotman img-fluid" alt="Rotman School of Management"> <img src="assets/logos/uic-business-horizontal.png" class="logo-uic img-fluid" alt="UIC Business"> <img src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo img-fluid" alt="University at Buffalo School of Management"></p>
 </div>
-<div class="notes">
-<p>Invite participants to contribute problems, ideas, methods, implementations, or applications to Self-Adaptive Decisions. The short form asks for name, email, optional affiliation, and a paragraph describing their interest and potential contribution. Participants can also contact research@self-adaptive-decisions.com directly.</p>
-<p>Depending on the number of people interested, we will organize a gathering to exchange ideas and discuss contributions. We look forward to featuring their contributions. Leave this final slide visible during questions so participants can scan the QR code or follow the form link.</p>
-</div>
 
 </main>
 
@@ -2469,7 +2260,7 @@ Use problem structure, data, and solution progress.
 <script src="components/refinement-python.js" defer=""></script>
 <script src="components/continuous-python.js?v=projection-svg" defer=""></script>
 <script src="assets/vendor/qrcode-generator/qrcode.js" defer=""></script>
-<script src="components/navigation.js?v=notes-20261031" defer=""></script>
+<script src="components/navigation.js?v=public-slides-20261102" defer=""></script>
 <script src="components/sequential-applications.js" defer=""></script>
 
 <script src="components/math-polish.js?v=mobile-20261031" defer=""></script>
