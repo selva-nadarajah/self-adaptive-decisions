@@ -2675,6 +2675,68 @@ plot_feature_bounds(seed, best_so_far, num_features)</textarea>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- ====================================================================
+SLIDE 35 — Evolution of Solvers: Foundation Models
+==================================================================== -->
+</section>
+<section id="solver-evolution" class="slide level2 content-slide solver-evolution-slide">
+<h2>Evolution of Solvers: Foundation Models</h2>
+<div class="slide-body">
+<p class="solver-evolution-question">How do we solve sequential decision problems under uncertainty?</p>
+<p class="solver-evolution-direction">Increasing abstraction changes what users specify and control.</p>
+<ol class="solver-evolution" aria-label="Four stages in the evolution of computational tools">
+  <li>
+    <p class="solver-evolution-era">1988–2000s</p>
+    <h3>Mathematical<br> programming</h3>
+    <p class="solver-evolution-examples">CPLEX, Gurobi</p>
+    <p class="solver-evolution-task">You formulate the optimization model.</p>
+  </li>
+  <li class="fragment" data-fragment-index="0">
+    <p class="solver-evolution-era">1990s–2010</p>
+    <h3>Classical<br> machine learning</h3>
+    <p class="solver-evolution-examples">Trees, SVMs, scikit-learn</p>
+    <p class="solver-evolution-task">You engineer features and fit a model.</p>
+  </li>
+  <li class="fragment" data-fragment-index="1">
+    <p class="solver-evolution-era">2012–2015</p>
+    <h3>Deep<br> learning</h3>
+    <p class="solver-evolution-examples">Deep nets, PyTorch</p>
+    <p class="solver-evolution-task">You train a model to learn features.</p>
+  </li>
+  <li class="fragment" data-fragment-index="2">
+    <p class="solver-evolution-era">2020–2022</p>
+    <h3>Foundation<br> models</h3>
+    <p class="solver-evolution-examples">Language and vision models</p>
+    <p class="solver-evolution-task">You adapt a pretrained model.</p>
+  </li>
+</ol>
+<div class="solver-evolution-goal fragment" data-fragment-index="3">
+  <strong>The goal: faithful and accessible approaches</strong>
+  <p>Adapt the response to the needs and difficulty of the decision problem.</p>
+</div>
+</div>
+<div class="logo-strip" aria-label="Authors and participating universities">
+<div class="footer-authors">
+<p>Cire · Nadarajah · Pakiman · Soheili</p>
+</div>
+<p><img data-src="assets/logos/rotman.png" class="logo-rotman" alt="Rotman School of Management"> <img data-src="assets/logos/uic-business-horizontal.png" class="logo-uic" alt="UIC Business"> <img data-src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo" alt="University at Buffalo School of Management"></p>
+</div>
+<aside class="notes">
+<p>Source: Selvaprabu Nadarajah, ADA keynote, ADAKeyNoteDuke_2026_V6, slide 27, “Evolution of Solvers: Foundation Models.” The reference cites CPLEX / Bixby (1988), Pedregosa et al.&nbsp;(2011), Krizhevsky et al.&nbsp;(2012), and Bommasani et al.&nbsp;(2021). The date ranges are illustrative, overlapping adoption periods from the keynote, rather than invention dates or release dates for every example tool.</p>
+<p>Allow about one minute. Mathematical programming is visible on entry. Reveal classical machine learning, deep learning, and foundation models in sequence, then reveal the goal. These approaches continue to coexist and can complement one another.</p>
+<p>The progression shifts the level at which users work: specifying an optimization model, engineering features, training learned representations, and adapting a pretrained model. Greater abstraction can reduce implementation effort while giving users less direct control over some modeling and computational choices. It does not by itself ensure better decisions or preserve optimization guarantees.</p>
+<p>The keynote’s goal is a faithful, accessible response proportionate to each problem instance. For sequential decisions, fidelity means retaining the objectives, constraints, uncertainty, and dynamics that matter to the user. Accessibility means reducing the expertise and effort needed to obtain a useful approach. Foundation models offer opportunities to assist Construct, Optimize, or Refine, as discussed in Tutorial §5. Assess their effect on user effort, computation, and policy quality using the criteria on the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="closing-assessment" class="slide level2 content-slide closing-assessment">
 <h2>Assess the value of adaptation</h2>
