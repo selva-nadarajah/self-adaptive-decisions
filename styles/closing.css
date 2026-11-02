@@ -6,36 +6,38 @@
 .reveal .closing-route.speaker-change :is(.closing-route-takeaway,.closing-route-broader) {color:#edf0f2;}
 .reveal .closing-route.speaker-change .panel {color:var(--ink);}
 .closing-route .route-focus {font-size:26px!important;line-height:1.4!important;}
-.solver-evolution-question,.reveal .solver-evolution-question {font-size:26px;line-height:1.35;margin:0 0 28px;color:var(--accent);}
-.solver-evolution,.reveal .solver-evolution {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;list-style:none;margin:0;padding:0;}
+.solver-evolution,.reveal .solver-evolution {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;list-style:none;margin:0!important;padding:0!important;}
 .solver-evolution li {min-width:0;margin:0;padding:12px 0 0;border-top:3px solid var(--accent);}
 .solver-evolution li:nth-child(2),.solver-evolution li:nth-child(4) {border-color:var(--teal);}
 .solver-evolution li:nth-child(3) {border-color:#a85a28;}
 .solver-evolution h3,.reveal .solver-evolution h3 {font-size:27px!important;font-weight:600;line-height:1.15;letter-spacing:-.4px;text-transform:none;color:var(--accent);margin:0 0 13px;}
 .solver-evolution li:nth-child(2) h3,.solver-evolution li:nth-child(4) h3 {color:var(--teal);}
 .solver-evolution li:nth-child(3) h3 {color:#a85a28;}
-.solver-evolution .solver-evolution-task {font-size:25px;line-height:1.35;min-height:170px;margin:0;}
-.solver-evolution-citations {padding-top:18px;border-top:1px solid var(--line);}
-.solver-evolution-citations p,.reveal .solver-evolution-citations p {font-size:20px;line-height:1.4;margin:0 0 18px;}
-.solver-evolution-citations p:last-child {margin-bottom:0;}
-.solver-evolution-citations a {color:var(--muted);text-decoration:none;}
-.solver-evolution-citations a:hover,.solver-evolution-citations a:focus-visible {color:var(--accent);text-decoration:underline;}
-.solver-evolution .solver-evolution-open {font-size:22px;line-height:1.4;margin:0;padding-top:18px;border-top:1px solid var(--line);color:var(--teal);}
+.solver-evolution .solver-evolution-task {font-size:22px;line-height:1.3;margin:0;}
+.solver-ref-keys {font-size:18px;font-weight:500;white-space:nowrap;}
+.solver-paper-references,.reveal .solver-paper-references {list-style:none;margin:22px 0 0!important;padding:14px 0 0!important;border-top:1px solid var(--line);}
+.solver-paper-references li {display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;padding:0;margin:0 0 9px;}
+.solver-paper-references li:last-child {margin-bottom:0;}
+.solver-paper-references p,.reveal .solver-paper-references p,.solver-paper-number {font-size:18px;line-height:1.3;margin:0;}
+.solver-paper-number {font-weight:600;color:var(--accent);}
+.solver-paper-references a {color:var(--ink);text-decoration:none;}
+.solver-paper-references a:hover,.solver-paper-references a:focus-visible {color:var(--accent);text-decoration:underline;}
+.solver-paper-details {color:var(--muted);}
 @media(max-width:900px) {
  body:not(.reveal-viewport) .solver-evolution {grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;}
- body:not(.reveal-viewport) .solver-evolution .solver-evolution-task {min-height:0;margin-bottom:22px;}
+ body:not(.reveal-viewport) .solver-paper-references {margin-top:28px!important;}
 }
 @media(max-width:700px) {
  body:not(.reveal-viewport) .solver-evolution {grid-template-columns:minmax(0,1fr);gap:26px;}
  body:not(.reveal-viewport) .solver-evolution h3 br {display:none;}
  body:not(.reveal-viewport) .solver-evolution h3 {font-size:25px!important;}
  body:not(.reveal-viewport) .solver-evolution .solver-evolution-task {font-size:21px;}
- body:not(.reveal-viewport) .solver-evolution-citations p {font-size:18px;}
- body:not(.reveal-viewport) .solver-evolution .solver-evolution-open {font-size:20px;}
+ body:not(.reveal-viewport) .solver-paper-references li {margin-bottom:18px;}
+ body:not(.reveal-viewport) .solver-paper-references p {font-size:18px;line-height:1.45;}
 }
 .reveal .closing-audience-prompt {font-size:29px;line-height:1.3;color:var(--accent);margin:0 0 26px;}
 .closing-evidence,.reveal .closing-evidence {list-style:none;margin:0;padding:0;}
-.closing-evidence li {display:grid;grid-template-columns:235px minmax(0,1fr);gap:30px;align-items:center;padding:24px 0;border-top:1px solid var(--line);}
+.closing-evidence li {display:grid;grid-template-columns:300px minmax(0,1fr);gap:30px;align-items:center;padding:18px 0;border-top:1px solid var(--line);}
 .closing-evidence strong {font-size:29px;font-weight:600;line-height:1.2;color:var(--teal);}
 .closing-evidence p,.reveal .closing-evidence p {font-size:26px;line-height:1.4;margin:0;}
 .reveal .closing-assessment-takeaway {font-size:27px;line-height:1.3;margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--accent);}

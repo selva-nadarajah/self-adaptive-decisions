@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="styles/continuous.css">
   <link rel="stylesheet" href="styles/continuous-decisions.css">
   <link rel="stylesheet" href="styles/continuous-import.css?v=all-tutorial-math">
-  <link rel="stylesheet" href="styles/closing.css?v=solver-tools-20261102">
+  <link rel="stylesheet" href="styles/closing.css?v=references-value-20261102">
   <link rel="stylesheet" href="styles/projection.css?v=browser-review-20261031">
   <link rel="stylesheet" href="styles/navigation.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -2682,38 +2682,46 @@ SLIDE 35 — Computational tools for MDP approximations
 <section id="solver-evolution" class="slide level2 content-slide solver-evolution-slide">
 <h2>Computational tools for MDP approximations</h2>
 <div class="slide-body">
-<p class="solver-evolution-question">What capabilities enable self-adapting approximations?</p>
 <ul class="solver-evolution" aria-label="Complementary computational tools for MDP approximations">
   <li>
-    <h3>Mathematical<br> programming</h3>
-    <p class="solver-evolution-task">Exploit structure with compact formulations and adaptive action generation.</p>
-    <div class="solver-evolution-citations">
-      <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108" title="Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes">Nadarajah &amp; Cire<br><em>Management Science</em> (2025)</a></p>
-      <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326" title="Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes">Nadarajah &amp; Cire<br>Working paper (2026)</a></p>
-    </div>
+    <h3>Mathematical<br>programming <span class="solver-ref-keys">[1, 2]</span></h3>
+    <p class="solver-evolution-task">Compact formulations and adaptive action generation.</p>
   </li>
   <li class="fragment" data-fragment-index="0">
-    <h3>First-order<br> methods</h3>
-    <p class="solver-evolution-task">Fit value functions with inexpensive updates and parallel computation.</p>
-    <div class="solver-evolution-citations">
-      <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2984602" title="Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage">Lin, Nadarajah &amp; Soheili<br><em>Management Science</em> (2020)</a></p>
-      <p><a href="https://arxiv.org/abs/2603.12636" title="Weakly Time-Coupled Approximation of Markov Decision Processes">Soheili, Nadarajah &amp; Yang<br>Working paper (2026)</a></p>
-    </div>
+    <h3>First-order<br>methods <span class="solver-ref-keys">[3, 4]</span></h3>
+    <p class="solver-evolution-task">Inexpensive updates and parallel value-function optimization.</p>
   </li>
   <li class="fragment" data-fragment-index="1">
-    <h3>High-dimensional<br> sampling</h3>
+    <h3>High-dimensional<br>sampling <span class="solver-ref-keys">[3, 5]</span></h3>
     <p class="solver-evolution-task">Target constraint violations and enrich value functions with sampled features.</p>
-    <div class="solver-evolution-citations">
-      <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2984602" title="Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage">Lin, Nadarajah &amp; Soheili<br><em>Management Science</em> (2020)</a></p>
-      <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038" title="Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes">Pakiman et al.<br><em>Management Science</em> (2025)</a></p>
-    </div>
   </li>
   <li class="fragment" data-fragment-index="2">
-    <h3>Foundation<br> models</h3>
-    <p class="solver-evolution-task">What could we automate next?</p>
-    <p class="solver-evolution-open">An open frontier across<br>Construct, Optimize, and Refine.</p>
+    <h3>Foundation<br>models</h3>
+    <p class="solver-evolution-task">What could we automate next in Construct, Optimize, and Refine?</p>
   </li>
 </ul>
+<ol class="solver-paper-references" aria-label="Papers supporting the computational tools">
+  <li>
+    <span class="solver-paper-number">[1]</span>
+    <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes.</a> <span class="solver-paper-details">Nadarajah &amp; Cire (2025). <em>Management Science.</em></span></p>
+  </li>
+  <li>
+    <span class="solver-paper-number">[2]</span>
+    <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326">Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes.</a> <span class="solver-paper-details">Nadarajah &amp; Cire (2026). Working paper.</span></p>
+  </li>
+  <li>
+    <span class="solver-paper-number">[3]</span>
+    <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2984602">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage.</a> <span class="solver-paper-details">Lin, Nadarajah &amp; Soheili (2020). <em>Management Science.</em></span></p>
+  </li>
+  <li>
+    <span class="solver-paper-number">[4]</span>
+    <p><a href="https://arxiv.org/abs/2603.12636">Weakly Time-Coupled Approximation of Markov Decision Processes.</a> <span class="solver-paper-details">Soheili, Nadarajah &amp; Yang (2026). Working paper.</span></p>
+  </li>
+  <li>
+    <span class="solver-paper-number">[5]</span>
+    <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038">Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes.</a> <span class="solver-paper-details">Pakiman, Nadarajah, Soheili &amp; Lin (2025). <em>Management Science.</em></span></p>
+  </li>
+</ol>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
 <div class="footer-authors">
@@ -2723,11 +2731,11 @@ SLIDE 35 — Computational tools for MDP approximations
 </div>
 <aside class="notes">
 <p>Sources: Tutorial §3.2, §3.3, §4.2, §4.3, and §5; references [14], [17], [18], [22], and [33]. Allow about one minute. Mathematical programming is visible on entry; reveal first-order methods, high-dimensional sampling, and foundation models in sequence.</p>
-<p>These are complementary computational tools. Mathematical programming exploits formulation structure, first-order methods provide inexpensive iterative updates, and sampling supports both optimization and approximation construction. The categories overlap: constraint-violation learning combines primal-dual stochastic mirror descent with adaptive sampling, so Lin, Nadarajah, and Soheili (2020) appears in both columns. This is a capability map, not an invention or adoption timeline.</p>
+<p>These are complementary computational tools. Mathematical programming exploits formulation structure, first-order methods provide inexpensive iterative updates, and sampling supports both optimization and approximation construction. The categories overlap: constraint-violation learning combines primal-dual stochastic mirror descent with adaptive sampling, so both columns point to slide reference [3], Lin, Nadarajah, and Soheili (2020). The five unique papers are listed once beneath the columns, with full titles, authors, years, and publication venues or working-paper status. This is a capability map, not an invention or adoption timeline.</p>
 <p>For mathematical programming, self-adapting network relaxations compress the representation of feasible decisions while retaining linking constraints. Delayed allocation maintains a restricted support of feasible joint actions and expands it through pricing. Their bounds and policy guarantees depend on the conditions established in the respective papers.</p>
 <p>For first-order methods, constraint-violation learning fits value-function coefficients through primal-dual stochastic mirror descent. The weakly time-coupled approximation reorganizes temporal dependence to support parallel block-coordinate optimization. Its horizon-independent complexity result relies on the paper’s formulation and assumptions; it is not a general property of all first-order methods.</p>
 <p>For sampling, constraint-violation learning samples informative state-action pairs from a density adapted to constraint violations, replacing repeated global separation with targeted sampling. Sampling this density can itself be difficult in high dimensions. Self-guided ALPs sample random features and enrich the approximation across solves, reducing manual basis design. They still require solving the resulting ALPs; random-feature sampling alone is not an optimization algorithm. Representation, optimization, and policy-quality guarantees remain distinct.</p>
-<p>Foundation models remain an open direction, as discussed in Tutorial §5. Possible roles span model construction, interpretation of solver output, refinement choices, and approximate subproblem oracles. How to integrate them with bounds and guarantees remains open. Assess any benefits using the user-effort, computation, and decision-quality criteria on the next slide.</p>
+<p>Foundation models remain an open direction, as discussed in Tutorial §5. Possible roles span model construction, interpretation of solver output, refinement choices, and approximate subproblem oracles. How to integrate them with bounds and guarantees remains open. Assess any benefits using the computation, decision-quality, user-effort, and technical-knowledge criteria on the next slide.</p>
 <p>Paper references:</p>
 <ul>
 <li>Nadarajah, S., and Cire, A. A. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes</a>. <em>Management Science</em>, 71(2), 1779–1802. Tutorial reference [17].</li>
@@ -2756,19 +2764,23 @@ What evidence would convince you that adaptation helped?
 </p>
 <ol class="closing-evidence">
   <li class="fragment" data-fragment-index="0">
-    <strong>User effort</strong>
-    <p>Which approximation choices did the method automate?</p>
-  </li>
-  <li class="fragment" data-fragment-index="1">
     <strong>Computation</strong>
     <p>How much time and memory did it use?</p>
   </li>
-  <li class="fragment" data-fragment-index="2">
+  <li class="fragment" data-fragment-index="1">
     <strong>Decision quality</strong>
     <p>What do bounds and policy evaluation tell us?</p>
   </li>
+  <li class="fragment" data-fragment-index="2">
+    <strong>User effort</strong>
+    <p>How much manual modeling, tuning, and iteration did it require?</p>
+  </li>
+  <li class="fragment" data-fragment-index="3">
+    <strong>Technical knowledge</strong>
+    <p>What method-specific expertise did the user need?</p>
+  </li>
 </ol>
-<p class="closing-assessment-takeaway fragment" data-fragment-index="2">Evaluate the policy as well as the approximation.</p>
+<p class="closing-assessment-takeaway fragment" data-fragment-index="3">Evaluate the policy as well as the approximation process.</p>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
 <div class="footer-authors">
@@ -2778,9 +2790,9 @@ What evidence would convince you that adaptation helped?
 </div>
 <aside class="notes">
 <p>Sources: Tutorial introduction, §2.3, §3.3, and §4.3, including the limitations discussion. Allow about one minute, including a brief audience response.</p>
-<p>Pause at the question before advancing. Participants can answer verbally; no laptop is needed. Reveal the three criteria after collecting one or two suggestions. These revisit the learning outcome of assessing the value of adaptation.</p>
-<p>Compare an adaptive procedure with a relevant fixed or manually designed baseline under comparable problem instances, computational budgets, and evaluation conditions. Count modeling and tuning effort as well as solve time and memory. In delayed allocation, distinguish the relaxation objective from the performance of an extracted feasible policy. In the continuous section, distinguish approximation quality, simulated policy cost, and the estimated bound bracket shown in the demos. The tutorial’s exact formulations support theoretical bounds under their assumptions; sampled constraints and stochastic estimates need their corresponding qualifications.</p>
-<p>The tutorial does not assert an inevitable tradeoff between user effort, computation, and policy quality. Nor does it guarantee that every refinement improves all three. Tailored features and state relevance can outperform generic random feature choices on structured high dimensional instances. Treat the benefits as quantities to assess, using computational theory and appropriate empirical comparisons.</p>
+<p>Pause at the question before advancing. Participants can answer verbally; no laptop is needed. Reveal the four criteria in order: computation, decision quality, user effort, and technical knowledge, after collecting one or two suggestions. These revisit the learning outcome of assessing the value of adaptation.</p>
+<p>Compare an adaptive procedure with a relevant fixed or manually designed baseline under comparable problem instances, computational budgets, and evaluation conditions. Count modeling, tuning, and iteration effort as well as solve time and memory. Distinguish user effort, the amount of manual work required, from technical knowledge, the method-specific expertise needed to perform that work. Assess these requirements for the intended users; automating a step can reduce effort without eliminating the expertise needed to interpret or validate its output. In delayed allocation, distinguish the relaxation objective from the performance of an extracted feasible policy. In the continuous section, distinguish approximation quality, simulated policy cost, and the estimated bound bracket shown in the demos. The tutorial’s exact formulations support theoretical bounds under their assumptions; sampled constraints and stochastic estimates need their corresponding qualifications.</p>
+<p>The tutorial does not assert an inevitable tradeoff among computation, decision quality, user effort, and technical knowledge. Nor does it guarantee that every refinement improves all four. Tailored features and state relevance can outperform generic random feature choices on structured high dimensional instances. Treat the benefits as quantities to assess, using computational theory and appropriate empirical comparisons.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2801,7 +2813,7 @@ Use problem structure, data, and solution progress.
 </p>
 <svg class="adaptation-benefits" viewbox="0 0 1120 436" role="img" aria-labelledby="adaptation-benefits-title adaptation-benefits-description">
   <title id="adaptation-benefits-title">Performance and accessibility supported by the Construct, Optimize, Refine framework</title>
-  <desc id="adaptation-benefits-description">A diagram with three columns labeled Construct, Optimize, and Refine supporting self adapting MDP approximations. Two roofs represent the aims of performance and accessibility: efficient computation and better decisions, and less technical knowledge to use advanced methods.</desc>
+  <desc id="adaptation-benefits-description">A diagram with three columns labeled Construct, Optimize, and Refine supporting self adapting MDP approximations. Two roofs represent the aims of performance and accessibility: computation and decision quality, and user effort and technical knowledge.</desc>
   <g font-family="Avenir Next,Segoe UI,sans-serif" text-anchor="middle">
     <g class="fragment" data-fragment-index="0">
       <path d="M55 156L300 15L545 156Z" fill="#e3f0ec" stroke="#7b9ba9" stroke-width="1.6"></path>
@@ -2811,7 +2823,7 @@ Use problem structure, data, and solution progress.
     <g class="fragment" data-fragment-index="1">
       <path d="M575 156L820 15L1065 156Z" fill="#edf3f7" stroke="#7b9ba9" stroke-width="1.6"></path>
       <text x="820" y="96" font-size="30" font-weight="600" fill="#226a85">Accessibility</text>
-      <text x="820" y="134" font-size="22" fill="#49636f">Less technical knowledge</text>
+      <text x="820" y="134" font-size="22" fill="#49636f">Effort and technical knowledge</text>
     </g>
     <g transform="translate(0,26)">
     <rect x="55" y="145" width="1010" height="54" rx="6" fill="#226a85"></rect>
@@ -2837,7 +2849,7 @@ Use problem structure, data, and solution progress.
   <h3>Performance</h3>
   <p>Computation and decision quality</p>
   <h3>Accessibility</h3>
-  <p>Less technical knowledge to use advanced methods</p>
+  <p>Effort and technical knowledge</p>
   <p><strong>Self adapting MDP approximations</strong></p>
   <dl>
     <dt>Construct</dt><dd>Exploit problem structure</dd>
@@ -2855,7 +2867,7 @@ Use problem structure, data, and solution progress.
 <aside class="notes">
 <p>Sources: Tutorial introduction and §2.3. Diagram adapted from the presenter supplied “Solve Intelligence for MDPs?” reference slide. Allow about 45 seconds.</p>
 <p>Replace the reference’s reinforcement learning label with self adapting MDP approximations, and Preprocess, Solve, Postprocess with the tutorial’s Construct, Optimize, Refine framework. The metaphor organizes the framework and its aims; it is not a claim that every self adapting method must engage all three stages. In particular, the tutorial reserves Refine for adaptation across solves.</p>
-<p>The framework and columns are visible on entry. Reveal Performance, then Accessibility. Discuss both as aims whose achievement must be assessed using the criteria on the preceding slide. Performance includes computational efficiency and policy quality. Accessibility means lowering the technical knowledge required to use advanced methods, so more users can benefit from them. Automating approximation design and tuning are examples of how to pursue this broader aim. The two roofs are compatible aspirations, not an asserted tradeoff or a theorem of simultaneous improvement.</p>
+<p>The framework and columns are visible on entry. Reveal Performance, then Accessibility. Discuss both as aims whose achievement must be assessed using the criteria on the preceding slide. Performance includes computational efficiency and policy quality. Accessibility concerns both user effort and technical knowledge. User effort is the manual modeling, tuning, and iteration required; technical knowledge is the method-specific expertise needed to use the approach. Reducing either can help more users benefit from advanced methods. Automating approximation design and tuning are examples of how to pursue these aims. The triangle uses “Effort and technical knowledge” as a concise label for the two accessibility dimensions on the preceding slide. The two roofs are compatible aspirations, not an asserted tradeoff or a theorem of simultaneous improvement.</p>
 <p>Connect back to mathematical optimization: users specify a model and increasingly rely on solver mechanisms to manage computational choices. The tutorial develops a comparable direction for approximation methods for MDPs, with explicit qualifications and guarantees where available.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
