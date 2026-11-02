@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="styles/assortment.css?v=live-refinement-20261030">
   <link rel="stylesheet" href="styles/continuous.css">
   <link rel="stylesheet" href="styles/continuous-decisions.css">
-  <link rel="stylesheet" href="styles/continuous-import.css?v=refinement-loading-20261102">
+  <link rel="stylesheet" href="styles/continuous-import.css?v=alp-distance-objective-20261102">
   <link rel="stylesheet" href="styles/closing.css?v=readable-references-20261102">
   <link rel="stylesheet" href="styles/tutorial-references.css?v=full-papers-20261102">
   <link rel="stylesheet" href="styles/projection.css?v=sg-plot-height-override-20261102">
@@ -1584,7 +1584,8 @@ V_\beta(s)=\beta_0+\sum_{n=1}^{N}\beta_n\varphi_n(s),
 <p class="center">
 <strong>Semi-infinite approximate linear program (ALP)</strong>
 </p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mi mathvariant="normal">max</mi><mrow><mi>β</mi><mo>∈</mo><mi>B</mi></mrow></munder><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">s.t.</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><mspace width="0.167em"></mspace><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+<div class="alp-objective-versions">
+<p class="alp-reward-formulation fragment fade-out" data-fragment-index="2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mi mathvariant="normal">max</mi><mrow><mi>β</mi><mo>∈</mo><mi>B</mi></mrow></munder><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>𝔼</mi><mi>ν</mi></msub><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">s.t.</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><mspace width="0.167em"></mspace><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
 \max_{\beta\in B}\quad
     &amp; \mathbb E_\nu[V_\beta(s)] \\
@@ -1593,6 +1594,16 @@ V_\beta(s)=\beta_0+\sum_{n=1}^{N}\beta_n\varphi_n(s),
       +\gamma\,\mathbb E[V_\beta(S')\mid s,a], \quad \forall(s,a)\in\mathcal{S}\times\mathcal{A}(s).
 \end{aligned}
 </annotation></semantics></math></p>
+<p class="alp-distance-formulation fragment" data-fragment-index="2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr mathcolor="blue"><mtd columnalign="right" style="text-align: right; padding-right: 0"><munder><mi mathvariant="normal">min</mi><mrow><mi>β</mi><mo>∈</mo><mi>B</mi></mrow></munder><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mrow><mo stretchy="true" form="prefix">‖</mo><msup><mi>V</mi><mo>*</mo></msup><mo>−</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="true" form="postfix">‖</mo></mrow><mrow><mn>1</mn><mo>,</mo><mi>ν</mi></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">s.t.</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><mspace width="0.167em"></mspace><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>V</mi><mi>β</mi></msub><mo stretchy="false" form="prefix">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">]</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>∀</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+{\color{blue}\min_{\beta\in B}}\quad
+    &amp; {\color{blue}\lVert V^*-V_\beta\rVert_{1,\nu}} \\
+\text{s.t.}\quad
+    &amp; V_\beta(s) \le c(s,a)
+      +\gamma\,\mathbb E[V_\beta(S')\mid s,a], \quad \forall(s,a)\in\mathcal{S}\times\mathcal{A}(s).
+\end{aligned}
+</annotation></semantics></math></p>
+</div>
 </div>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">

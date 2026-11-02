@@ -235,6 +235,9 @@ body:not(.reveal-viewport) #s25 .lp-value-replay {display:none;}
 #s27 .slide-body>h3 {margin-bottom:12px;}
 #s27 .slide-body>.equation-box {font-size:23px;padding:10px 16px;margin-bottom:12px;}
 #s27 .display-math {margin:6px 0;}
+#s27 .alp-objective-versions {display:grid;min-width:0;}
+#s27 .alp-objective-versions>p {grid-area:1/1;min-width:0;}
+body:not(.reveal-viewport) #s27 .alp-objective-versions {display:block;}
 @media(max-width:700px){body:not(.reveal-viewport) #s27 .alp-inputs {grid-template-columns:minmax(0,1fr);}}
 
 /* General ALP derivation: a fixed objective and successively replaced constraints. */
