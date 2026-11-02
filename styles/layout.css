@@ -320,11 +320,12 @@ body:not(.reveal-viewport) .discrete-methods-overview .tutorial-focus {color:var
 .sequential-application {min-width:0;}
 .reveal .sequential-application.fragment.fade-up {transition-duration:750ms;transition-timing-function:ease-out;}
 .sequential-application img,.reveal .sequential-application img {display:block;width:100%;height:215px;object-fit:cover;margin:0;box-shadow:none;}
-.sequential-application h3,.reveal .sequential-application h3 {font-size:27px;font-weight:500;line-height:1.2;letter-spacing:-.5px;text-transform:none;color:var(--teal);margin:18px 0 10px;}
+.sequential-application h3,.reveal .sequential-application h3 {font-size:27px;font-weight:500;line-height:1.2;min-height:2.4em;letter-spacing:-.5px;text-transform:none;color:var(--teal);margin:18px 0 10px;}
 .sequential-application p,.reveal .sequential-application p {font-size:23px;line-height:1.4;margin:0;}
 @media(max-width:700px) {
  body:not(.reveal-viewport) .sequential-applications {grid-template-columns:1fr;gap:28px;}
  body:not(.reveal-viewport) .sequential-application img {height:auto;max-height:280px;}
+ body:not(.reveal-viewport) .sequential-application h3 {min-height:0;}
 }
 
 /* Two-period inventory story: each action precedes its demand observation. */
