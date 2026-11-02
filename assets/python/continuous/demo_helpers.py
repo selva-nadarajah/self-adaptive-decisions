@@ -714,19 +714,52 @@ def load_psmd_bound_sequence(seed=111):
 
 @_projection_plot
 def plot_random_feature_fit(seed=17, num_features=1):
-    x=np.linspace(-4,12,500);z=(x-4)/8;target=1+.5*np.sin(3*z)+.25*np.cos(7*z)+.6*np.maximum(z-.2,0)
-    rng=np.random.RandomState(int(seed));pool=48
-    fourier=np.cos(rng.uniform(0,2*np.pi,pool)[None,:]+z[:,None]*rng.normal(0,5,pool)[None,:]);knots=rng.uniform(-1,1,pool);relu=np.maximum(0,z[:,None]-knots[None,:]);
+    global _random_feature_fit_details
+    _random_feature_fit_details = None
+    x = np.linspace(-4, 12, 500)
+    z = (x - 4) / 8
+    target = 1 + .5*np.sin(3*z) + .25*np.cos(7*z) + .6*np.maximum(z-.2, 0)
+    rng = np.random.RandomState(int(seed))
+    # Preserve the existing seeded draws for the N=1, 3, and 5 plots.
+    pool = 48
+    fourier_b = rng.uniform(0, 2*np.pi, pool)
+    fourier_omega = rng.normal(0, 5, pool)
+    fourier = np.cos(fourier_b[None, :] + z[:, None]*fourier_omega[None, :])
+    knots = rng.uniform(-1, 1, pool)
+    relu_b, relu_omega = -knots, np.ones(pool)
+    relu = np.maximum(0, z[:, None] - knots[None, :])
     fixed_design = np.column_stack([np.ones(len(z)), z, z*z])
     fixed_fit = fixed_design @ np.linalg.lstsq(fixed_design, target, rcond=1e-12)[0]
     n = int(num_features)
-    if not 1 <= n <= 48:
-        raise ValueError("Choose between 1 and 48 features.")
-    fig,axes=plt.subplots(1,2,figsize=(11,4.0),sharex=True,sharey=True,constrained_layout=True);errs=[]
-    for ax,features,name in zip(axes,[fourier,relu],['Fourier','ReLU']):
-     design=np.column_stack([np.ones(len(x)),features[:,:n]]);w=np.linalg.lstsq(design,target,rcond=1e-12)[0];fit=design@w;error=np.sqrt(np.mean((fit-target)**2));errs.append(float(error))
-     ax.plot(x,fixed_fit,':',color='#7c8798',lw=2,label='Quadratic');ax.plot(x,target,'--',color='#182c3e',lw=2,label='Target');ax.plot(x,fit,color='#c73838',lw=2,label='Random features');ax.set(title=f'{name} · N = {n}',xlabel='state s',ylim=(.15,max(2.2,float(np.max(fixed_fit))+.15)));ax.text(.03,.95,f'RMSE = {error:.4f}',transform=ax.transAxes,va='top',fontsize=15);ax.grid(alpha=.2);ax.legend(loc='lower right',fontsize=15)
-    axes[0].set_ylabel('function value');plt.show()
+    if not 1 <= n <= 5:
+        raise ValueError("Choose between 1 and 5 features.")
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.0), sharex=True, sharey=True,
+                             constrained_layout=True)
+    families = []
+    for ax, features, name, b, omega in zip(
+            axes, [fourier, relu], ['Fourier', 'ReLU'],
+            [fourier_b, relu_b], [fourier_omega, relu_omega]):
+        design = np.column_stack([np.ones(len(x)), features[:, :n]])
+        weights = np.linalg.lstsq(design, target, rcond=1e-12)[0]
+        fit = design @ weights
+        error = float(np.sqrt(np.mean((fit-target)**2)))
+        families.append({
+            'name': name, 'rmse': error,
+            'features': [{'index': j+1, 'b': float(b[j]), 'omega': float(omega[j])}
+                         for j in range(n)],
+        })
+        ax.plot(x, fixed_fit, ':', color='#7c8798', lw=2, label='Quadratic')
+        ax.plot(x, target, '--', color='#1f65c1', lw=3, label=r'$V^*$')
+        ax.plot(x, fit, color='#c73838', lw=2, label='Random features')
+        ax.set(title=f'{name} · N = {n}', xlabel='state s',
+               ylim=(.15, max(2.2, float(np.max(fixed_fit))+.15)))
+        ax.text(.03, .95, f'RMSE = {error:.4f}', transform=ax.transAxes,
+                va='top', fontsize=15)
+        ax.grid(alpha=.2)
+        ax.legend(loc='lower right', fontsize=15)
+    _random_feature_fit_details = {'numFeatures': n, 'families': families}
+    axes[0].set_ylabel('function value')
+    plt.show()
 
 
 _sg_progression_cache = None
