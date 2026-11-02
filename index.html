@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="styles/continuous.css">
   <link rel="stylesheet" href="styles/continuous-decisions.css">
   <link rel="stylesheet" href="styles/continuous-import.css?v=all-tutorial-math">
-  <link rel="stylesheet" href="styles/closing.css?v=contributors-20261101">
+  <link rel="stylesheet" href="styles/closing.css?v=solver-tools-20261102">
   <link rel="stylesheet" href="styles/projection.css?v=browser-review-20261031">
   <link rel="stylesheet" href="styles/navigation.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -2676,44 +2676,44 @@ plot_feature_bounds(seed, best_so_far, num_features)</textarea>
           display:block!important;
       }</style></aside>
 <!-- ====================================================================
-SLIDE 35 — Evolution of Solvers: Foundation Models
+SLIDE 35 — Computational tools for MDP approximations
 ==================================================================== -->
 </section>
 <section id="solver-evolution" class="slide level2 content-slide solver-evolution-slide">
-<h2>Evolution of Solvers: Foundation Models</h2>
+<h2>Computational tools for MDP approximations</h2>
 <div class="slide-body">
-<p class="solver-evolution-question">How do we solve sequential decision problems under uncertainty?</p>
-<p class="solver-evolution-direction">Increasing abstraction changes what users specify and control.</p>
-<ol class="solver-evolution" aria-label="Four stages in the evolution of computational tools">
+<p class="solver-evolution-question">What capabilities enable self-adapting approximations?</p>
+<ul class="solver-evolution" aria-label="Complementary computational tools for MDP approximations">
   <li>
-    <p class="solver-evolution-era">1988–2000s</p>
     <h3>Mathematical<br> programming</h3>
-    <p class="solver-evolution-examples">CPLEX, Gurobi</p>
-    <p class="solver-evolution-task">You formulate the optimization model.</p>
+    <p class="solver-evolution-task">Exploit structure with compact formulations and adaptive action generation.</p>
+    <div class="solver-evolution-citations">
+      <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108" title="Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes">Nadarajah &amp; Cire<br><em>Management Science</em> (2025)</a></p>
+      <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326" title="Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes">Nadarajah &amp; Cire<br>Working paper (2026)</a></p>
+    </div>
   </li>
   <li class="fragment" data-fragment-index="0">
-    <p class="solver-evolution-era">1990s–2010</p>
-    <h3>Classical<br> machine learning</h3>
-    <p class="solver-evolution-examples">Trees, SVMs, scikit-learn</p>
-    <p class="solver-evolution-task">You engineer features and fit a model.</p>
+    <h3>First-order<br> methods</h3>
+    <p class="solver-evolution-task">Fit value functions with inexpensive updates and parallel computation.</p>
+    <div class="solver-evolution-citations">
+      <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2984602" title="Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage">Lin, Nadarajah &amp; Soheili<br><em>Management Science</em> (2020)</a></p>
+      <p><a href="https://arxiv.org/abs/2603.12636" title="Weakly Time-Coupled Approximation of Markov Decision Processes">Soheili, Nadarajah &amp; Yang<br>Working paper (2026)</a></p>
+    </div>
   </li>
   <li class="fragment" data-fragment-index="1">
-    <p class="solver-evolution-era">2012–2015</p>
-    <h3>Deep<br> learning</h3>
-    <p class="solver-evolution-examples">Deep nets, PyTorch</p>
-    <p class="solver-evolution-task">You train a model to learn features.</p>
+    <h3>High-dimensional<br> sampling</h3>
+    <p class="solver-evolution-task">Target constraint violations and enrich value functions with sampled features.</p>
+    <div class="solver-evolution-citations">
+      <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2984602" title="Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage">Lin, Nadarajah &amp; Soheili<br><em>Management Science</em> (2020)</a></p>
+      <p><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038" title="Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes">Pakiman et al.<br><em>Management Science</em> (2025)</a></p>
+    </div>
   </li>
   <li class="fragment" data-fragment-index="2">
-    <p class="solver-evolution-era">2020–2022</p>
     <h3>Foundation<br> models</h3>
-    <p class="solver-evolution-examples">Language and vision models</p>
-    <p class="solver-evolution-task">You adapt a pretrained model.</p>
+    <p class="solver-evolution-task">What could we automate next?</p>
+    <p class="solver-evolution-open">An open frontier across<br>Construct, Optimize, and Refine.</p>
   </li>
-</ol>
-<div class="solver-evolution-goal fragment" data-fragment-index="3">
-  <strong>The goal: faithful and accessible approaches</strong>
-  <p>Adapt the response to the needs and difficulty of the decision problem.</p>
-</div>
+</ul>
 </div>
 <div class="logo-strip" aria-label="Authors and participating universities">
 <div class="footer-authors">
@@ -2722,10 +2722,20 @@ SLIDE 35 — Evolution of Solvers: Foundation Models
 <p><img data-src="assets/logos/rotman.png" class="logo-rotman" alt="Rotman School of Management"> <img data-src="assets/logos/uic-business-horizontal.png" class="logo-uic" alt="UIC Business"> <img data-src="assets/logos/ub-management-horizontal-white.png" class="logo-buffalo" alt="University at Buffalo School of Management"></p>
 </div>
 <aside class="notes">
-<p>Source: Selvaprabu Nadarajah, ADA keynote, ADAKeyNoteDuke_2026_V6, slide 27, “Evolution of Solvers: Foundation Models.” The reference cites CPLEX / Bixby (1988), Pedregosa et al.&nbsp;(2011), Krizhevsky et al.&nbsp;(2012), and Bommasani et al.&nbsp;(2021). The date ranges are illustrative, overlapping adoption periods from the keynote, rather than invention dates or release dates for every example tool.</p>
-<p>Allow about one minute. Mathematical programming is visible on entry. Reveal classical machine learning, deep learning, and foundation models in sequence, then reveal the goal. These approaches continue to coexist and can complement one another.</p>
-<p>The progression shifts the level at which users work: specifying an optimization model, engineering features, training learned representations, and adapting a pretrained model. Greater abstraction can reduce implementation effort while giving users less direct control over some modeling and computational choices. It does not by itself ensure better decisions or preserve optimization guarantees.</p>
-<p>The keynote’s goal is a faithful, accessible response proportionate to each problem instance. For sequential decisions, fidelity means retaining the objectives, constraints, uncertainty, and dynamics that matter to the user. Accessibility means reducing the expertise and effort needed to obtain a useful approach. Foundation models offer opportunities to assist Construct, Optimize, or Refine, as discussed in Tutorial §5. Assess their effect on user effort, computation, and policy quality using the criteria on the next slide.</p>
+<p>Sources: Tutorial §3.2, §3.3, §4.2, §4.3, and §5; references [14], [17], [18], [22], and [33]. Allow about one minute. Mathematical programming is visible on entry; reveal first-order methods, high-dimensional sampling, and foundation models in sequence.</p>
+<p>These are complementary computational tools. Mathematical programming exploits formulation structure, first-order methods provide inexpensive iterative updates, and sampling supports both optimization and approximation construction. The categories overlap: constraint-violation learning combines primal-dual stochastic mirror descent with adaptive sampling, so Lin, Nadarajah, and Soheili (2020) appears in both columns. This is a capability map, not an invention or adoption timeline.</p>
+<p>For mathematical programming, self-adapting network relaxations compress the representation of feasible decisions while retaining linking constraints. Delayed allocation maintains a restricted support of feasible joint actions and expands it through pricing. Their bounds and policy guarantees depend on the conditions established in the respective papers.</p>
+<p>For first-order methods, constraint-violation learning fits value-function coefficients through primal-dual stochastic mirror descent. The weakly time-coupled approximation reorganizes temporal dependence to support parallel block-coordinate optimization. Its horizon-independent complexity result relies on the paper’s formulation and assumptions; it is not a general property of all first-order methods.</p>
+<p>For sampling, constraint-violation learning samples informative state-action pairs from a density adapted to constraint violations, replacing repeated global separation with targeted sampling. Sampling this density can itself be difficult in high dimensions. Self-guided ALPs sample random features and enrich the approximation across solves, reducing manual basis design. They still require solving the resulting ALPs; random-feature sampling alone is not an optimization algorithm. Representation, optimization, and policy-quality guarantees remain distinct.</p>
+<p>Foundation models remain an open direction, as discussed in Tutorial §5. Possible roles span model construction, interpretation of solver output, refinement choices, and approximate subproblem oracles. How to integrate them with bounds and guarantees remains open. Assess any benefits using the user-effort, computation, and decision-quality criteria on the next slide.</p>
+<p>Paper references:</p>
+<ul>
+<li>Nadarajah, S., and Cire, A. A. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01108">Self-Adapting Network Relaxations for Weakly Coupled Markov Decision Processes</a>. <em>Management Science</em>, 71(2), 1779–1802. Tutorial reference [17].</li>
+<li>Nadarajah, S., and Cire, A. A. (2026). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6127326">Delayed Allocation in Marginalized Flow Models for Weakly Coupled Markov Decision Processes</a>. Working paper. Tutorial reference [18].</li>
+<li>Lin, Q., Nadarajah, S., and Soheili, N. (2020). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2984602">Revisiting Approximate Linear Programming: Constraint-Violation Learning with Applications to Inventory Control and Energy Storage</a>. <em>Management Science</em>, 66(4), 1544–1562. Tutorial reference [14].</li>
+<li>Soheili, N., Nadarajah, S., and Yang, B. (2026). <a href="https://arxiv.org/abs/2603.12636">Weakly Time-Coupled Approximation of Markov Decision Processes</a>. Working paper. Tutorial reference [33].</li>
+<li>Pakiman, P., Nadarajah, S., Soheili, N., and Lin, Q. (2025). <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.00038">Self-Guided Approximate Linear Programs: Randomized Multi-Shot Approximation of Discounted Cost Markov Decision Processes</a>. <em>Management Science</em>, 71(4), 3384–3404. Tutorial reference [22].</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
