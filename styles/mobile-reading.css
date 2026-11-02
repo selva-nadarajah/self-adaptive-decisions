@@ -65,4 +65,10 @@ body:not(.reveal-viewport) section.level2 {scroll-margin-top:20px;}
   body:not(.reveal-viewport) :is(#s38,#s42,#s43,#s44) .demo-output {max-width:100%;overflow-x:auto;}
   body:not(.reveal-viewport) :is(#s38,#s42,#s43,#s44) .demo-output img {width:700px;min-width:700px;max-width:none;height:auto;}
   body:not(.reveal-viewport) :is(#s38,#s42,#s43,#s44) .demo-output:has(img)::before {content:"Swipe to view the full plot";display:block;font-size:14px;color:var(--muted);margin-bottom:10px;}
+  body:not(.reveal-viewport) #s38 .random-feature-python-controls {grid-template-columns:minmax(0,1fr);gap:12px;}
+  body:not(.reveal-viewport) #s38 .random-feature-python-controls>.demo-controls {grid-column:1;grid-row:2;}
+  body:not(.reveal-viewport) #s38 .demo-output {grid-template-columns:minmax(0,1fr);min-height:0;}
+  body:not(.reveal-viewport) #s38 .random-feature-tables {grid-template-columns:minmax(0,1fr);}
+  body:not(.reveal-viewport) #s38 .demo-output img {width:100%;min-width:0;max-width:100%;height:auto;max-height:none;}
+  body:not(.reveal-viewport) #s38 .demo-output:has(img)::before {content:none;}
 }

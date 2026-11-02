@@ -6,7 +6,9 @@
 .reveal #s25 .lp-value-chart svg text {font-size:23px;}
 .reveal #s27 .alp-input {font-size:24px;}
 .reveal #s27 .alp-input p:last-child {font-size:22px;}
-.reveal #s27 .slide-body>.equation-box {font-size:26px;}
+.reveal #s27 .slide-body>.equation-box {font-size:24px;}
+.reveal #s27 .slide-body>.equation-box>.center {font-size:22px;}
+.reveal #s27 .slide-body>.equation-box :is(math[display="block"],.display-math) {font-size:23px;}
 .reveal #s27 .badge {display:none;}
 .reveal #s27 .slide-body>h3 {display:none;}
 .reveal #s29 .inventory-model-visual h3 {font-size:24px!important;}
@@ -61,11 +63,11 @@
 .reveal :is(#s38,#s42,#s44) :is([data-progression-count],[data-bounds-count]) {font-size:24px;}
 .reveal :is(#s38,#s42,#s43,#s44) .demo-editor-label {font-size:22px;}
 .reveal :is(#s38,#s42,#s43,#s44) .demo-output>.demo-hint {font-size:22px;}
-.reveal #s38 .continuous-python-lab {grid-template-columns:minmax(300px,.75fr) minmax(0,1.6fr);gap:10px 20px;}
+.reveal #s38 .continuous-python-lab {display:flex;flex-direction:column;gap:8px;}
 .reveal #s38 .demo-controls {gap:7px;}
-.reveal #s38 textarea[data-demo-editor] {height:160px;min-height:160px;max-height:160px;}
-.reveal #s38 .demo-output {min-height:225px;max-height:270px;}
-.reveal #s38 .demo-output img {max-height:260px;}
+.reveal #s38 textarea[data-demo-editor] {height:78px;min-height:78px;max-height:78px;font-size:16px;line-height:1.25;padding:8px 10px;}
+.reveal #s38 .demo-output {min-height:390px;max-height:none;}
+.reveal #s38 .demo-output img {height:250px;max-height:none;}
 .reveal #s42 textarea[data-demo-editor] {height:105px;min-height:105px;}
 .reveal #s44 textarea[data-demo-editor] {height:135px;min-height:135px;}
 .reveal #s44 .continuous-python-lab {grid-template-columns:1.55fr 1fr;}

@@ -733,8 +733,9 @@ def plot_random_feature_fit(seed=17, num_features=1):
     n = int(num_features)
     if not 1 <= n <= 5:
         raise ValueError("Choose between 1 and 5 features.")
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.0), sharex=True, sharey=True,
-                             constrained_layout=True)
+    # Each family gets an image aligned with its matching formula in the page.
+    axes = [plt.subplots(figsize=(7, 3.4), constrained_layout=True)[1]
+            for _ in range(2)]
     families = []
     for ax, features, name, b, omega in zip(
             axes, [fourier, relu], ['Fourier', 'ReLU'],
@@ -758,7 +759,8 @@ def plot_random_feature_fit(seed=17, num_features=1):
         ax.grid(alpha=.2)
         ax.legend(loc='lower right', fontsize=15)
     _random_feature_fit_details = {'numFeatures': n, 'families': families}
-    axes[0].set_ylabel('function value')
+    for ax in axes:
+        ax.set_ylabel('function value')
     plt.show()
 
 
