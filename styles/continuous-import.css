@@ -779,7 +779,7 @@ body:has(.slides>section.speaker-change.present) .reveal>.projected-footer .logo
 body:has(.slides>section.speaker-change.present) .reveal>.projected-footer {mix-blend-mode:screen;}
 body:has(.slides>section.speaker-change.present) .reveal>.projected-footer img {mix-blend-mode:normal;}
 
-.continuous-import-slide .demo-loading {display:flex;align-items:center;justify-content:center;gap:12px;min-height:210px;color:var(--muted);font-size:18px;}
+.continuous-import-slide .demo-loading,.refinement-live-plot .demo-loading {display:flex;align-items:center;justify-content:center;gap:12px;min-height:210px;color:var(--muted);font-size:18px;}
 .demo-loading-spinner {width:24px;height:24px;border:3px solid #dce4e9;border-top-color:var(--accent);border-radius:50%;animation:demo-loading-spin .9s linear infinite;flex-shrink:0;}
 @keyframes demo-loading-spin {to {transform:rotate(360deg);}}
 @media(prefers-reduced-motion:reduce) {.demo-loading-spinner {animation:none;}}

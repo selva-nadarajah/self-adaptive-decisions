@@ -1,4 +1,4 @@
-/* Forward navigation first runs a visible Python demo, then waits for success.
+/* Forward navigation steps through interactive demos and runs visible Python.
  * Reveal's own fragment/slide navigation remains in charge after completion.
  */
 (() => {
@@ -7,8 +7,8 @@
     if (!deck || !document.querySelector('.reveal')) return;
     function currentLabs() {
       const slide = deck.getCurrentSlide();
-      if (!slide?.matches('#s24,.continuous-import-slide')) return [];
-      return [...slide.querySelectorAll('[data-continuous-python]')].filter(root => {
+      if (!slide) return [];
+      return [...slide.querySelectorAll('[data-continuous-python],[data-refinement-python]')].filter(root => {
         const style = getComputedStyle(root);
         return style.display !== 'none' && style.visibility !== 'hidden' && root.getClientRects().length;
       });
@@ -19,10 +19,10 @@
       if (labs.some(root => root.getAttribute('aria-busy') === 'true')) return true;
       const pending = labs.find(root => root.dataset.completed !== 'true');
       if (!pending) {
-        const sequences = [...(deck.getCurrentSlide()?.querySelectorAll('[data-static-sequence]') || [])];
+        const sequences = [...(deck.getCurrentSlide()?.querySelectorAll('[data-static-sequence],[data-navigation-steps]') || [])];
         return [...labs, ...sequences].some(root => !root.dispatchEvent(new Event('demo-next-request', {cancelable:true})));
       }
-      const run = pending.querySelector('[data-demo-run]');
+      const run = pending.querySelector('[data-demo-run],[data-refinement-run]');
       if (run && !run.disabled) run.click();
       return true;
     }
@@ -66,7 +66,7 @@
       });
     }
     for (const name of ['slidechanged','fragmentshown','fragmenthidden']) deck.on(name, updateNextControl);
-    document.querySelectorAll('[data-continuous-python]').forEach(root => {
+    document.querySelectorAll('[data-continuous-python],[data-refinement-python]').forEach(root => {
       new MutationObserver(updateNextControl).observe(root, {attributes:true, attributeFilter:['data-completed','aria-busy','data-navigation-pending']});
     });
     const controls = document.querySelector('.reveal .controls');

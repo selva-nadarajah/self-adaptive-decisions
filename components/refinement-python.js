@@ -16,9 +16,10 @@
   const certificate = root.querySelector('[data-refinement-certificate]');
   const probabilities = root.querySelector('[data-refinement-probabilities]');
   const finalWeights = root.querySelector('[data-refinement-final-weights]');
-  let worker, timer, imageURL, runId = 0;
+  let worker, timer, imageURL, executedCode, runId = 0;
 
   function busy(enabled) {
+    if (!enabled) plot.querySelector('.demo-loading')?.remove();
     run.disabled = enabled;
     stop.disabled = !enabled;
     root.setAttribute('aria-busy', String(enabled));
@@ -31,8 +32,10 @@
     busy(false);
     status.textContent = message;
     root.dataset.state = 'stopped';
+    delete root.dataset.completed;
   }
   function clear() {
+    delete root.dataset.completed;
     if (imageURL) URL.revokeObjectURL(imageURL);
     imageURL = null;
     history.replaceChildren();
@@ -73,6 +76,11 @@
 
   run.addEventListener('click', () => {
     clear();
+    const loading = document.createElement('div');
+    loading.className = 'demo-loading';
+    loading.setAttribute('role', 'status');
+    loading.innerHTML = '<span class="demo-loading-spinner" aria-hidden="true"></span><span>Loading plot…</span>';
+    plot.append(loading);
     busy(true);
     root.dataset.state = 'running';
     delete root.dataset.iteration;
@@ -93,6 +101,7 @@
           return;
         }
         const result = data.value;
+        root.dataset.completed = String(editor.value === executedCode);
         root.dataset.state = result.converged ? 'converged' : 'limited';
         status.textContent = result.converged
           ? `Converged after ${result.iterations} additions.`
@@ -125,7 +134,8 @@
         terminate('Python could not start. Run again to retry.');
       };
     }
-    worker.postMessage({id, code: editor.value, reduced: matchMedia('(prefers-reduced-motion: reduce)').matches});
+    executedCode = editor.value;
+    worker.postMessage({id, code: executedCode, reduced: matchMedia('(prefers-reduced-motion: reduce)').matches});
     timer = setTimeout(() => terminate('Stopped after 90 seconds. Run again to retry.'), 90000);
   });
   stop.addEventListener('click', () => terminate('Stopped. Edit rewards and run again.'));
@@ -144,6 +154,7 @@
     delete root.dataset.iteration;
   });
   editor.addEventListener('input', () => {
+    delete root.dataset.completed;
     if (!run.disabled) status.textContent = 'Code changed · run to update the results.';
   });
   editor.addEventListener('keydown', event => {

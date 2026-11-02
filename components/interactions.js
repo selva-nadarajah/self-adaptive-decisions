@@ -96,6 +96,12 @@
       }
       render();
     });
+    root.setAttribute('data-navigation-steps','');
+    root.addEventListener('demo-next-request',event=>{
+      if(phase===4||(root.classList.contains('fragment')&&!root.classList.contains('visible')))return;
+      event.preventDefault();
+      $(root,'[data-action="advance"]').click();
+    });
   }
   function notation(root) {
     let step=0;
@@ -118,6 +124,13 @@
     };
     const render=()=>{output(root,'products',j);$(root,'.counts').innerHTML=`<div class="panel blue"><span class="label">15 inventory levels per product</span>${count(15)}<span>15<sup>${j}</sup> joint states</span></div><div class="panel peach"><span class="label">4 order choices per product</span>${count(4)}<span>4<sup>${j}</sup> candidate joint actions</span></div>`;$(root,'input').value=j;};
     install(root,`<div class="toolbar">${range('Products','products',1,1,30)}${reset()}</div><div class="cols counts" aria-live="polite"></div>`,render,(name,el)=>{j=name==='reset'?1:+el.value;render();});
+    root.setAttribute('data-navigation-steps','');
+    root.addEventListener('demo-next-request',event=>{
+      if(j>=30||root.closest('.fragment:not(.visible)'))return;
+      event.preventDefault();
+      j=Math.min(30,j+5);
+      render();
+    });
   }
   function methods(root) {
     let selected='optimization';
